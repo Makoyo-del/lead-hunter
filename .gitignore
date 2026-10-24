@@ -3,5 +3,7 @@
 *.log
 .events_log.jsonl
 .audits_events_log.jsonl
+.resend_key
+.env*
 .DS_Store
 Thumbs.db
