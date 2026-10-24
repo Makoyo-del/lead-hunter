@@ -50,13 +50,47 @@
         /* Side-by-side 2-column layout on md+ */
         .comparison-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             gap: 1rem;
+        }
+        .comparison-grid > * {
+            min-width: 0;
+            max-width: 100%;
         }
         @media (min-width: 768px) {
             .comparison-grid {
-                grid-template-columns: 1fr 1fr !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
             }
+        }
+
+        /* Strict Guardrails for Raw Merchant HTML (Prevents Page Blowouts) */
+        .raw-html-container {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        .raw-html-container img,
+        .raw-html-container table,
+        .raw-html-container pre,
+        .raw-html-container iframe,
+        .raw-html-container embed,
+        .raw-html-container object,
+        .raw-html-container video {
+            max-width: 100% !important;
+            height: auto !important;
+            overflow-x: auto;
+        }
+        .raw-html-container table {
+            display: block;
+            width: 100% !important;
+            overflow-x: auto;
+        }
+        .raw-html-container iframe {
+            aspect-ratio: 16 / 9;
+            width: 100% !important;
         }
 
         /* Subtle Glow Buttons */
@@ -323,7 +357,7 @@
                 <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
                     
                     <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
-                    <section class="rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
@@ -358,7 +392,7 @@
                             <!-- Field 4: Description -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
-                                <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
                                     <p>Package of 10, 9" Disposable Bags</p>
 <p>For use with the following models:</p>
 <p>ADM; PRO; VACPAC</p>
@@ -376,7 +410,7 @@
                     </section>
 
                     <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
-                    <section class="rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
@@ -488,7 +522,7 @@
                 <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
                     
                     <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
-                    <section class="rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
@@ -523,7 +557,7 @@
                             <!-- Field 4: Description -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
-                                <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
                                     <p>For Use With the Following Models:</p>
 <p>HRS-83BA; SUPERVACNBLASTER</p>
 <!---->
@@ -539,7 +573,7 @@
                     </section>
 
                     <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
-                    <section class="rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
@@ -651,7 +685,7 @@
                 <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
                     
                     <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
-                    <section class="rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
@@ -686,7 +720,7 @@
                             <!-- Field 4: Description -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
-                                <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
                                     <p>For Use With the Following Model:</p>
 <p>PRO-83BA-CS</p>
 <!---->
@@ -702,7 +736,7 @@
                     </section>
 
                     <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
-                    <section class="rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
@@ -814,7 +848,7 @@
                 <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
                     
                     <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
-                    <section class="rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
@@ -849,7 +883,7 @@
                             <!-- Field 4: Description -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
-                                <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
                                     <span data-mce-fragment="1">Nozzle insert to regulate airflow</span>
                                 </div>
                             </div>
@@ -863,7 +897,7 @@
                     </section>
 
                     <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
-                    <section class="rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
@@ -975,7 +1009,7 @@
                 <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
                     
                     <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
-                    <section class="rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
@@ -1010,7 +1044,7 @@
                             <!-- Field 4: Description -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
-                                <div class="text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
                                     <span data-mce-fragment="1">Ice Blaster flat jet nozzle with 100 mm jet width and new geometry. Ideal for spraying dry ice onto large surfaces. For even spraying through the whole width of the jet.</span>
                                 </div>
                             </div>
@@ -1024,7 +1058,7 @@
                     </section>
 
                     <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
-                    <section class="rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
                         <div>
                             <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
                                 <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
