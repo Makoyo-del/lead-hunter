@@ -1,0 +1,7 @@
+# Ignore local log files and OS artifacts in Git deployment repo
+*.jsonl
+*.log
+.events_log.jsonl
+.audits_events_log.jsonl
+.DS_Store
+Thumbs.db

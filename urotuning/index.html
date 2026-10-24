@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog X-Ray Audit & Proof-of-Work: UroTuning (urotuning.com)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .prose li { margin-bottom: 0.25rem; }
+        .prose h3 { font-size: 0.875rem; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.25rem; color: #111827; }
+
+        /* Printable / PDF-Ready View Styling */
+        @media print {
+            @page { margin: 10mm; size: auto; }
+            body { background: white !important; color: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            header, .no-print { display: none !important; }
+            .product-card { break-inside: avoid; page-break-inside: avoid; margin-bottom: 2rem; border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            .print-only-header { display: block !important; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem; }
+        }
+        @media screen {
+            .print-only-header { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
+
+    <!-- Print Only Header -->
+    <div class="print-only-header">
+        <h1 class="text-2xl font-black text-slate-950">UroTuning (urotuning.com) — Catalog X-Ray Audit & Proof-of-Work</h1>
+        <p class="text-sm text-slate-600">Prepared by Duncan Makoyo (duncan@duncanmakoyo.com) | Catalog Defect Score: 27.1/100 | Total Defective Products: 500</p>
+    </div>
+
+    <!-- Top Executive Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-40 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-emerald-400 flex items-center justify-center font-extrabold text-white text-lg shadow-lg">
+                    ⚡
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Catalog X-Ray Audit</span>
+                        <span class="text-xs text-slate-500">•</span>
+                        <span class="text-xs text-slate-400">Proof-of-Work Report</span>
+                    </div>
+                    <h1 class="text-lg font-bold text-white tracking-tight">UroTuning <span class="text-slate-400 font-normal">(urotuning.com)</span></h1>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <button onclick="window.print()" class="inline-flex items-center px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition border border-slate-700">
+                    🖨️ Print / Save PDF
+                </button>
+                <a href="mailto:duncan@duncanmakoyo.com?subject=Approve%20Catalog%20Upgrade%20for%20UroTuning&body=Hey%20Duncan,%20please%20push%20all%20500%20upgraded%20products%20into%20our%20Shopify%20drafts%20for%20a%20flat%20$400." 
+                   class="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition shadow-sm">
+                    Claim All 500 Upgrades via API
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Executive Metrics Card -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm mb-10">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div>
+                    <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">Public Catalog Health Diagnostic</h2>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Programmatic analysis of public product feed at <code class="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-xs">urotuning.com/products.json</code></p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="text-right">
+                        <div class="text-xs uppercase tracking-wider text-gray-400 font-bold">Catalog Defect Score</div>
+                        <div class="text-2xl font-black text-amber-600">27.1<span class="text-sm font-normal text-gray-400">/100</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 Core Metrics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="text-xs text-gray-500 font-medium">Total Products Scanned</div>
+                    <div class="text-2xl font-black text-slate-900 mt-1">500</div>
+                    <div class="text-[11px] text-gray-400 mt-1">Live active SKUs</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-purple-50 border border-purple-200">
+                    <div class="text-xs text-purple-800 font-medium">Products With Defects</div>
+                    <div class="text-2xl font-black text-purple-800 mt-1">500</div>
+                    <div class="text-[11px] text-purple-600 mt-1">100.0% of scanned catalog</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-amber-50 border border-amber-200">
+                    <div class="text-xs text-amber-800 font-medium">Missing Image Alt-Text</div>
+                    <div class="text-2xl font-black text-amber-800 mt-1">500</div>
+                    <div class="text-[11px] text-amber-600 mt-1">Buries Google Image SEO</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-indigo-50 border border-indigo-200">
+                    <div class="text-xs text-indigo-800 font-medium">Missing Product Taxonomy</div>
+                    <div class="text-2xl font-black text-indigo-800 mt-1">6</div>
+                    <div class="text-[11px] text-indigo-600 mt-1">Blocks Google Shopping categorization</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-red-50 border border-red-200 col-span-2 md:col-span-1">
+                    <div class="text-xs text-red-700 font-medium">Thin Descriptions (&lt;35w)</div>
+                    <div class="text-2xl font-black text-red-700 mt-1">13</div>
+                    <div class="text-[11px] text-red-500 mt-1">Hurt search rank & conversions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="mb-6 flex items-center justify-between">
+            <div>
+                <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">Side-by-Side Proof of Work (Top 5 Defective Samples)</h2>
+                <p class="text-xs sm:text-sm text-gray-500">Inspecting 5 actual live items from your store, enriched with structured HTML, technical specs, and Google Shopping attributes.</p>
+            </div>
+            <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('urotuning')" class="hidden sm:inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-800 underline no-print">
+                📥 Download Shopify CSV Import File
+            </a>
+        </div>
+
+        <!-- Product Comparison Cards -->
+        
+            <!-- Product Item #1 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#1</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">UroTuning Jet Tag Key Chain</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$900.00</strong></span>
+                        <a href="https://urotuning.com/products/urotuning-jet-tag-key-chain-ut-kc-2601" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">20 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">UroTuning Jet Tag Key Chain</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Swag > Accessories</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0005/7773/2663/files/UTTAG.png?v=1792699729' alt='UroTuning black embroidered fabric jet tag keychain with white stitching on steel key ring' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>High quality stitched jet tag - show your support for your favorite parts shop by rocking this jet tag keychain!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>1026C&C</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x105</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x110</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112-57.1</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x120</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x130</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Avail-InStock-OOS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:new</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:sale</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Universal</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">UroTuning Premium Stitched Fabric Jet Tag Keychain</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Apparel & Accessories > Clothing Accessories > Keychains
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> UroTuning black embroidered fabric jet tag keychain with white stitching on steel key ring
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Show your passion for European automotive performance everywhere you go with the official UroTuning Jet Tag Keychain. Built from heavy-duty woven fabric with high-density embroidered lettering, this jet tag delivers durable daily style for car enthusiasts.</p><h3>Key Features & Benefits</h3><ul><li>High-density embroidered UroTuning branding for long-lasting vibrant contrast.</li><li>Heavy-duty woven nylon construction resists fraying and everyday wear.</li><li>Reinforced metal ring ensures secure attachment to keys, lanyards, or bags.</li><li>Double-sided graphic stitching ensures full visibility from any angle.</li><li>Soft fabric design prevents scratching vehicle ignitions or interior trim.</li></ul><div class="specs-summary"><h3>Specifications</h3><ul><li>Material: Heavy-Duty Woven Nylon</li><li>Attachment: Hardened Steel Key Ring</li><li>Dimensions: Standard Aviation Jet Tag Size</li><li>Design: Double-Sided Embroidered Branding</li><li>Fitment: Universal</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ UroTuning</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Jet Tag</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Keychain</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Swag</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Accessories</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Car Merchandise</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #2 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#2</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">Anti-Corporate Hoodie</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$7300.00</strong></span>
+                        <a href="https://urotuning.com/products/anti-corporate-hoodie" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">18 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">Anti-Corporate Hoodie</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Swag > Shirts / Hoodies / Jackets</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0005/7773/2663/files/front_attachment_18af241a-abfc-4489-bfd9-4f1ca26d2adf.png?v=1792421198' alt='Front view of black UroTuning Anti-Corporate Parts Shop pullover hoodie with screen-printed graphics' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p><br>Make sure everyone knows you don't support big business by wearing our new Anti Corporate Parts Shop Hoodie.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x105</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x110</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112-57.1</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x120</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x130</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Avail-InStock-OOS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>findify-remove</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Notify-WEB-BIS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:new</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Universal</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">UroTuning Anti-Corporate Parts Shop Pullover Hoodie</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Apparel & Accessories > Clothing > Outerwear > Hoodies & Sweatshirts
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> Front view of black UroTuning Anti-Corporate Parts Shop pullover hoodie with screen-printed graphics
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Make a bold statement against big business auto conglomerates with the UroTuning Anti-Corporate Parts Shop Hoodie. Crafted from a premium cotton-poly blend, this heavyweight pullover offers ultimate warmth and street-ready enthusiast style.</p><h3>Key Features & Benefits</h3><ul><li>Heavyweight cotton-poly fleece construction provides maximum comfort and warmth.</li><li>Premium screen-printed Anti-Corporate graphics built to resist fading and cracking.</li><li>Double-lined fleece hood with adjustable drawstring for customized cold-weather coverage.</li><li>Roomy front kangaroo pocket offers convenient hand warmth and storage.</li><li>Ribbed cuffs and waistband hold shape for a structured, comfortable fit.</li></ul><div class="specs-summary"><h3>Specifications</h3><ul><li>Material: Cotton / Polyester Blend Fleece</li><li>Fit: Standard Unisex Pullover</li><li>Care: Machine Wash Cold, Tumble Dry Low</li><li>Style: Heavyweight Streetwear Hoodie</li><li>Fitment: Universal Apparel</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ UroTuning</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Hoodie</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Anti-Corporate</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Swag</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Outerwear</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #3 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#3</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">German Style UroTuning Hoodie</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$7300.00</strong></span>
+                        <a href="https://urotuning.com/products/german-style-urotuning-hoodie" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">31 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">German Style UroTuning Hoodie</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Swag > Shirts / Hoodies / Jackets</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0005/7773/2663/files/front_attachment.png?v=1792421040' alt='Front view of German Style UroTuning pullover hoodie with minimalist chest branding' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p><span><br>Premium feel, clean design, and that low-key “if you know, you know” energy. Perfect for car meets, garage nights, or everyday wear when you want to flex without saying a word.</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x105</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x110</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112-57.1</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x120</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x130</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Avail-InStock-OOS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>findify-remove</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Notify-WEB-BIS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:new</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Universal</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">UroTuning German Style Euro Enthusiast Pullover Hoodie</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Apparel & Accessories > Clothing > Outerwear > Hoodies & Sweatshirts
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> Front view of German Style UroTuning pullover hoodie with minimalist chest branding
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Represent classic European motoring heritage with the clean, minimalist German Style UroTuning Hoodie. Designed for car meets and cold garage nights, this premium pullover delivers subtle enthusiast energy with effortless daily comfort.</p><h3>Key Features & Benefits</h3><ul><li>Clean German-inspired aesthetic provides an understated euro enthusiast look.</li><li>High-grade fleece lining delivers superior warmth and ultra-soft interior comfort.</li><li>Precision screen-printed chest artwork engineered for long-lasting color retention.</li><li>Reinforced dual-needle stitching across shoulder seams for enhanced durability.</li><li>Spandex-infused ribbed cuffs and waist maintain clean structure after repeated washes.</li></ul><div class="specs-summary"><h3>Specifications</h3><ul><li>Material: Premium Cotton / Polyester Fleece</li><li>Design: German Style Euro Branding</li><li>Fit: Unisex Standard Fit</li><li>Pocket: Front Kangaroo Pocket</li><li>Fitment: Universal Apparel</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ UroTuning</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Hoodie</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ German Style</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Euro Swag</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Outerwear</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #4 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#4</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">UroTuning Funky Bearing T-Shirt (Gulf Racing Colors)</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$3000.00</strong></span>
+                        <a href="https://urotuning.com/products/urotuning-funky-bearing-t-shirt-gulf-racing-colors-uroswag-080-s" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">24 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">UroTuning Funky Bearing T-Shirt (Gulf Racing Colors)</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Swag > Shirts / Hoodies / Jackets</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0005/7773/2663/files/bearingshirt2026v5BACK.jpg?v=1792075564' alt='Back view of UroTuning Funky Bearing graphic t-shirt featuring iconic Gulf Racing blue and orange design' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>A retro-revision to our popular Funky Bearing design highlighting our motto on the back! <br><br>Sizes range from small to 4XL, make your selection above. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>1026C&C</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>4x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x100</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x105</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x108</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x110</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x112-57.1</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x114.3</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x120</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x130</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>5x98</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Avail-InStock-OOS</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>LOE26</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>rel_UroShirt</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:new</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>sticker:sale</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Universal</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">UroTuning Funky Bearing Graphic T-Shirt - Gulf Racing Colors</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Apparel & Accessories > Clothing > Tops > Shirts & Tops > T-Shirts
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> Back view of UroTuning Funky Bearing graphic t-shirt featuring iconic Gulf Racing blue and orange design
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Celebrate motorsport heritage in style with the retro-revised UroTuning Funky Bearing T-Shirt featuring iconic Gulf Racing colors. Crafted from ultra-soft combed cotton, this high-grade graphic tee showcases custom technical artwork that highlights the UroTuning motto.</p><h3>Key Features & Benefits</h3><ul><li>Heritage Gulf Racing colorway pays homage to classic endurance motorsport history.</li><li>Retro Funky Bearing artwork with bold UroTuning branding on front and back.</li><li>Premium 100% combed ringspun cotton fabric yields a soft, lightweight feel.</li><li>Shoulder-to-shoulder taping and side-seamed construction prevent deformation over time.</li><li>Breathable, durable fabric ideal for car shows, garage days, or everyday casual wear.</li></ul><div class="specs-summary"><h3>Specifications</h3><ul><li>Material: 100% Combed Ringspun Cotton</li><li>Graphic: Gulf Racing Color Scheme (Front & Back)</li><li>Sizing Range: Small to 4XL</li><li>Care: Machine Wash Cold, Tumble Dry Low</li><li>Fitment: Universal Apparel</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ UroTuning</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ T-Shirt</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Gulf Racing</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Funky Bearing</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Swag</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #5 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#5</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">Transfer Case - BMW</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$505900.00</strong></span>
+                        <a href="https://urotuning.com/products/transfer-case-bmw-genuine-33107636992" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">20 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">Transfer Case - BMW</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Drivetrain > Transfer Case</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0005/7773/2663/files/V20-4503_02.jpg?v=1784328223' alt='Genuine BMW xDrive transfer case assembly OEM part 33107636992 for X5 F15 and X6 F16' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p><br>The GENUINE part, as sold new by the dealer.<br><br><br><br>Part # 33-10-7-636-992 / 33 10 7 636 992 / 33107636992   <br> <br><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Avail-InStock-MTO1-2D</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>BMW X Series F15 (2014-2018) X5 sDrive35d N57 3.0L</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>BMW X Series F15 (2014-2018) X5 xDrive 35i N55 3.0L</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>BMW X Series F16 (2015-2019) X6 xDrive35i N55 3.0L</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>BMW-Part</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>core-850</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Image Disclaimer</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>OEM-Part</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>OEM2GEN</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>rel_33107636992</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">Genuine BMW X5 X6 Transfer Case Assembly 33107636992</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Vehicles & Parts > Vehicle Parts & Accessories > Motor Vehicle Drivetrain Parts > Transfer Cases
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> Genuine BMW xDrive transfer case assembly OEM part 33107636992 for X5 F15 and X6 F16
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Restore smooth all-wheel drive performance to your BMW X5 or X6 with this Genuine OEM Transfer Case Assembly. Engineered directly by the factory to resolve drivetrain shuddering, binding, or error codes in xDrive vehicles.</p><h3>Key Features & Benefits</h3><ul><li>Original Equipment Manufacturer (OEM) Genuine BMW part guarantees exact fit and performance.</li><li>Engineered to eliminate transfer case slipping, binding, and xDrive fault codes.</li><li>Precision-machined internal gearing ensures optimal torque transfer to front and rear wheels.</li><li>Direct bolt-on replacement utilizing standard factory mounting locations and connections.</li><li>Restores quiet drivetrain operation and original factory driving dynamics.</li></ul><div class="specs-summary"><h3>Specifications</h3><ul><li>Part Number: 33-10-7-636-992 / 33107636992</li><li>Brand: Genuine BMW</li><li>Compatibility: BMW F15 X5 (2014-2018), F16 X6 (2015-2019)</li><li>Engine Fitment: 3.0L N55 / N57 Engines</li><li>Component: xDrive Transfer Case Assembly</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ BMW</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Transfer Case</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ xDrive</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ OEM Part</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Drivetrain</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ F15 X5</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ F16 X6</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        <!-- Bottom CTA Sticky Banner -->
+        <div class="mt-12 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-indigo-900/50 relative overflow-hidden text-center no-print">
+            <div class="max-w-3xl mx-auto relative z-10">
+                <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-4">
+                    Automated Shopify API Push
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
+                    Ready to push all 500 upgraded products to your store via API in 24 hours?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
+                    Prepared by <strong>Duncan Makoyo</strong> (<a href="mailto:duncan@duncanmakoyo.com" class="text-emerald-400 underline">duncan@duncanmakoyo.com</a>). Flat $400 turn-key upgrade. We inject full structured HTML, SEO titles, Google Shopping taxonomy, and image alt text directly into your store as safe drafts—without you touching a spreadsheet.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('urotuning')"
+                       class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg transform hover:-translate-y-0.5">
+                        Download 5 Ready-to-Import Upgrades (Free Test)
+                    </a>
+                    <a href="mailto:duncan@duncanmakoyo.com?subject=Approve%20Catalog%20Upgrade%20for%20UroTuning&body=Hey%20Duncan,%20please%20push%20all%20500%20upgraded%20products%20into%20our%20Shopify%20drafts%20for%20a%20flat%20$400."
+                       class="px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition border border-slate-700">
+                        Approve Full Store Upgrade ($400)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-gray-200 py-6 text-center text-xs text-gray-400 no-print">
+        <p>Shopify Catalog X-Ray Automated Pipeline • Built for Duncan Makoyo • duncan@duncanmakoyo.com</p>
+    </footer>
+
+    <!-- Engagement Tracking Script -->
+    <script>
+        function trackEvent(evt) {
+            try {
+                var url = '../tracker.php?store=' + encodeURIComponent('urotuning') + '&event=' + encodeURIComponent(evt);
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url);
+                } else {
+                    fetch(url, { method: 'GET', mode: 'no-cors' });
+                }
+            } catch(e) {}
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            trackEvent('page_view');
+        });
+        function trackDownload(slug) {
+            trackEvent('csv_download');
+        }
+    </script>
+
+</body>
+</html>

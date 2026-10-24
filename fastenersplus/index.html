@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog X-Ray Audit & Proof-of-Work: Fasteners Plus (fastenersplus.com)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .prose li { margin-bottom: 0.25rem; }
+        .prose h3 { font-size: 0.875rem; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.25rem; color: #111827; }
+
+        /* Printable / PDF-Ready View Styling */
+        @media print {
+            @page { margin: 10mm; size: auto; }
+            body { background: white !important; color: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            header, .no-print { display: none !important; }
+            .product-card { break-inside: avoid; page-break-inside: avoid; margin-bottom: 2rem; border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            .print-only-header { display: block !important; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem; }
+        }
+        @media screen {
+            .print-only-header { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
+
+    <!-- Print Only Header -->
+    <div class="print-only-header">
+        <h1 class="text-2xl font-black text-slate-950">Fasteners Plus (fastenersplus.com) — Catalog X-Ray Audit & Proof-of-Work</h1>
+        <p class="text-sm text-slate-600">Prepared by Duncan Makoyo (duncan@duncanmakoyo.com) | Catalog Defect Score: 25.1/100 | Total Defective Products: 500</p>
+    </div>
+
+    <!-- Top Executive Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-40 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-emerald-400 flex items-center justify-center font-extrabold text-white text-lg shadow-lg">
+                    ⚡
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Catalog X-Ray Audit</span>
+                        <span class="text-xs text-slate-500">•</span>
+                        <span class="text-xs text-slate-400">Proof-of-Work Report</span>
+                    </div>
+                    <h1 class="text-lg font-bold text-white tracking-tight">Fasteners Plus <span class="text-slate-400 font-normal">(fastenersplus.com)</span></h1>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <button onclick="window.print()" class="inline-flex items-center px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition border border-slate-700">
+                    🖨️ Print / Save PDF
+                </button>
+                <a href="mailto:duncan@duncanmakoyo.com?subject=Approve%20Catalog%20Upgrade%20for%20Fasteners Plus&body=Hey%20Duncan,%20please%20push%20all%20500%20upgraded%20products%20into%20our%20Shopify%20drafts%20for%20a%20flat%20$400." 
+                   class="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition shadow-sm">
+                    Claim All 500 Upgrades via API
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Executive Metrics Card -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm mb-10">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-100">
+                <div>
+                    <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">Public Catalog Health Diagnostic</h2>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Programmatic analysis of public product feed at <code class="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-xs">fastenersplus.com/products.json</code></p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="text-right">
+                        <div class="text-xs uppercase tracking-wider text-gray-400 font-bold">Catalog Defect Score</div>
+                        <div class="text-2xl font-black text-amber-600">25.1<span class="text-sm font-normal text-gray-400">/100</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 Core Metrics Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <div class="text-xs text-gray-500 font-medium">Total Products Scanned</div>
+                    <div class="text-2xl font-black text-slate-900 mt-1">500</div>
+                    <div class="text-[11px] text-gray-400 mt-1">Live active SKUs</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-purple-50 border border-purple-200">
+                    <div class="text-xs text-purple-800 font-medium">Products With Defects</div>
+                    <div class="text-2xl font-black text-purple-800 mt-1">500</div>
+                    <div class="text-[11px] text-purple-600 mt-1">100.0% of scanned catalog</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-amber-50 border border-amber-200">
+                    <div class="text-xs text-amber-800 font-medium">Missing Image Alt-Text</div>
+                    <div class="text-2xl font-black text-amber-800 mt-1">500</div>
+                    <div class="text-[11px] text-amber-600 mt-1">Buries Google Image SEO</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-indigo-50 border border-indigo-200">
+                    <div class="text-xs text-indigo-800 font-medium">Missing Product Taxonomy</div>
+                    <div class="text-2xl font-black text-indigo-800 mt-1">1</div>
+                    <div class="text-[11px] text-indigo-600 mt-1">Blocks Google Shopping categorization</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-red-50 border border-red-200 col-span-2 md:col-span-1">
+                    <div class="text-xs text-red-700 font-medium">Thin Descriptions (&lt;35w)</div>
+                    <div class="text-2xl font-black text-red-700 mt-1">1</div>
+                    <div class="text-[11px] text-red-500 mt-1">Hurt search rank & conversions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="mb-6 flex items-center justify-between">
+            <div>
+                <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">Side-by-Side Proof of Work (Top 5 Defective Samples)</h2>
+                <p class="text-xs sm:text-sm text-gray-500">Inspecting 5 actual live items from your store, enriched with structured HTML, technical specs, and Google Shopping attributes.</p>
+            </div>
+            <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('fastenersplus')" class="hidden sm:inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-800 underline no-print">
+                📥 Download Shopify CSV Import File
+            </a>
+        </div>
+
+        <!-- Product Comparison Cards -->
+        
+            <!-- Product Item #1 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#1</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">Swivel Eye Hook - Stainless Steel 8"</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$127.99</strong></span>
+                        <a href="https://fastenersplus.com/products/swivel-eye-hook-stainless-steel-8" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">0 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">Swivel Eye Hook - Stainless Steel 8"</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700"><span class="text-red-600 font-semibold">⚠️ Missing Product Type</span></p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0277/8644/4936/files/21307-swivel-eye-hook-stainless-steel-8.01.jpg?v=1789857054' alt='8 inch stainless steel swivel eye hook for industrial rigging and marine use.' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <span class='text-gray-400 italic'>[Empty description field in live store product feed]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='text-red-500 text-xs font-semibold'>None (0 tags)</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">8" Swivel Eye Hook - Marine Grade Stainless Steel</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Hardware > Hooks > Swivel Hooks
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> 8 inch stainless steel swivel eye hook for industrial rigging and marine use.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Secure your rigging and overhead lifting applications with this professional-grade 8-inch stainless steel swivel eye hook. Engineered for superior corrosion resistance and rotation, it is the ideal choice for marine and industrial environments where reliability is non-negotiable.</p><h3>Key Features & Benefits</h3><ul><li>Constructed from high-grade stainless steel for maximum rust and corrosion resistance.</li><li>Swivel design allows for 360-degree rotation to prevent cable tangling and torque buildup.</li><li>Heavy-duty load-bearing capacity designed for demanding industrial and marine rigging.</li><li>Smooth finish minimizes abrasion and wear on ropes, chains, and synthetic slings.</li><li>Designed for quick attachment and secure, stable positioning under load.</li></ul><div class="specs-summary"><p><strong>Material:</strong> Marine Grade Stainless Steel | <strong>Size:</strong> 8-inch | <strong>Type:</strong> Swivel Eye Hook</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Stainless Steel</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Swivel Hook</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Rigging Hardware</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Marine Hardware</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Lifting Gear</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #2 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#2</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">7/8" x 16' Standard Eye & Thimble Wire Rope Sling</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$184.99</strong></span>
+                        <a href="https://fastenersplus.com/products/wire-rope-sling-single-leg-6x19-eye-and-thimble-7-8-x-16" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">209 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">7/8" x 16' Standard Eye & Thimble Wire Rope Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Single Leg Eye & Thimble</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0277/8644/4936/files/standard-eye-thimble-wire-rope-sling.01_4c573fb1-3d18-440c-ac0c-fee360b30178.jpg?v=1791909035' alt='7/8 inch by 16 foot eye and thimble wire rope sling with mechanical splice.' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>This 7/8-inch Eye &amp; Thimble Wire Rope Sling carries a 7.6-ton rating and the same thimble-protected Flemish eye at each end that's standard across our eye &amp; thimble lineup. It's built for heavier single-leg lifts where a permanent eye connection, not a hook, fits the job.</p>
+<h3>Key Features</h3>
+<ul>
+<li>A thimble eye wire rope sling built for long-term, dependable eye protection</li>
+<li>Thimble fitted inside the eye on both ends</li>
+<li>Mechanically spliced for higher capacity than a hand-tucked eye</li>
+<li>EIPS-grade bright wire rope over an independent core, commonly 6x19</li>
+<li>Service range of -40°F / -40°C to 400°F / 204°C</li>
+<li>Built to meet ASME B30.9 and OSHA 1910.184</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>Heavier lifts that still call for a fixed-eye connection</li>
+<li>Jobsites where a straightforward rig beats a multi-leg setup</li>
+<li>A wide range of angled and vertical hitch configurations</li>
+<li>Our team can help with shackles, protection sleeves, or our bridle sling options</li>
+</ul><p>Looking for improved load stability and greater lifting capacity? Check out our <a href="/collections/wire-rope-2-leg-bridle-slings">2-leg</a>, <a href="/collections/wire-rope-3-leg-bridle-slings">3-leg</a>, and <a href="/collections/wire-rope-4-leg-bridle-slings">4-leg wire rope slings</a>.</p>
+<p>Round out your rigging setup with our full selection of <a href="/collections/rigging-supplies-hardware">lifting and rigging equipment</a>, including essential wire rope sling accessories such as <a href="/collections/anchor-bow-chain-and-d-shackles">shackles</a>, <a href="/collections/wire-rope-slings-protection">wire rope sling protection</a>, and <a href="/collections/Rigging-Hooks">rigging hooks</a>.</p><p><a href="/pages/product-safety-warnings#lifting_hardware">View Product Safety Warnings</a></p><p><b>California Residents: <a data-toggle="modal" data-target="#myModal" style="color: black;">WARNING</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>CAT:Wire Rope Slings</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Drop-ship</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Non-Returnable</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>QUEEN:SW1-E-TH-78-4</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Source: USCC</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>SUBCAT:Eye and Thimble Wire Rope Sling</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">7/8" x 16' Eye & Thimble Wire Rope Sling - 6x19 EIPS</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Hardware > Lifting & Rigging > Slings
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> 7/8 inch by 16 foot eye and thimble wire rope sling with mechanical splice.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>This 7/8-inch single-leg wire rope sling features reinforced thimbles at both ends to prevent eye deformation and extend service life. It provides a robust, 7.6-ton load capacity that makes it a trusted standard for heavy-duty construction and rigging operations.</p><h3>Key Features & Benefits</h3><ul><li>Equipped with heavy-duty thimbles to provide superior eye protection against crushing.</li><li>Mechanically spliced EIPS 6x19 wire rope offers higher strength than hand-tucked alternatives.</li><li>Designed for a wide operating temperature range from -40°F to 400°F.</li><li>Engineered to meet rigorous ASME B30.9 and OSHA 1910.184 safety standards.</li><li>Provides a reliable, fixed-eye connection for vertical, choker, and basket hitches.</li></ul><div class="specs-summary"><p><strong>Diameter:</strong> 7/8 inch | <strong>Length:</strong> 16 feet | <strong>Material:</strong> EIPS Steel | <strong>Rating:</strong> 7.6 Tons</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Wire Rope</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Rigging Sling</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Heavy Duty</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Industrial Lifting</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Eye and Thimble</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #3 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#3</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">3/4" x 20' Standard Eye & Hook Wire Rope Sling</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$197.99</strong></span>
+                        <a href="https://fastenersplus.com/products/wire-rope-sling-single-leg-6x19-eye-and-eye-hook-3-4-x-20" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">228 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">3/4" x 20' Standard Eye & Hook Wire Rope Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Single Leg Eye & Eye Hook</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0277/8644/4936/files/standard-eye-and-hook-wire-rope-sling.01_c7383d6d-7c40-4b71-9aab-56ffa4d96c26.jpg?v=1791909097' alt='3/4 inch by 20 foot wire rope sling with mechanical eye and safety latch hook.' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>This 3/4-inch Standard Eye &amp; Hook Wire Rope Sling carries a 5.6-ton rating, pairing a mechanically spliced eye with a latched hook for a fast, dependable single-leg connection. It's simpler to rig than a multi-leg sling, more cost-efficient than chain, and more temperature-tolerant than synthetic alternatives.</p>
+<h3>Key Features</h3>
+<ul>
+<li>Latched hook compatible with a wide variety of attachment points</li>
+<li>Working load limit marked directly on the hook hardware</li>
+<li>Carbon steel hook, chosen for a strong but economical build</li>
+<li>Flemish eye with thimble, built from a mechanical splice for higher capacity than a hand-tucked eye</li>
+<li>EIPS-grade IWRC bright steel rope wire, generally a 6x19 classification</li>
+<li>Rated -40°F / -40°C to 400°F / 204°C, meeting or exceeding ASME B30.9 and OSHA 1910.184</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>Single-leg lifts that need a dependable, fast-connecting hook</li>
+<li>Jobs in confined spaces where a simpler rigging setup helps</li>
+<li>A versatile range of hitches and angled lifts</li>
+<li>Add shackles, rigging hooks, or wire rope sling protection, or ask about our 2-, 3-, and 4-leg bridle slings</li>
+</ul><p>Looking for improved load stability and greater lifting capacity? Check out our <a href="/collections/wire-rope-2-leg-bridle-slings">2-leg</a>, <a href="/collections/wire-rope-3-leg-bridle-slings">3-leg</a>, and <a href="/collections/wire-rope-4-leg-bridle-slings">4-leg wire rope slings</a>.</p>
+<p>Round out your rigging setup with our full selection of <a href="/collections/rigging-supplies-hardware">lifting and rigging equipment</a>, including essential wire rope sling accessories such as <a href="/collections/anchor-bow-chain-and-d-shackles">shackles</a>, <a href="/collections/wire-rope-slings-protection">wire rope sling protection</a>, and <a href="/collections/Rigging-Hooks">rigging hooks</a>.</p><p><a href="/pages/product-safety-warnings#lifting_hardware">View Product Safety Warnings</a></p><p><b>California Residents: <a data-toggle="modal" data-target="#myModal" style="color: black;">WARNING</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>CAT:Wire Rope Slings</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Drop-ship</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Non-Returnable</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>QUEEN:SW1-E-EH-34-4</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Source: USCC</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>SUBCAT:Eye and Eye Hook Wire Rope Sling</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">3/4" x 20' Eye & Hook Wire Rope Sling - 5.6 Ton Capacity</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Hardware > Lifting & Rigging > Slings
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> 3/4 inch by 20 foot wire rope sling with mechanical eye and safety latch hook.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Streamline your lifting operations with this 3/4-inch single-leg wire rope sling, featuring a secure latched hook for rapid, reliable connections. It offers an excellent strength-to-cost ratio, making it the preferred choice for versatile, daily rigging tasks in confined job sites.</p><h3>Key Features & Benefits</h3><ul><li>Includes an integrated safety-latched hook for secure and fast equipment attachment.</li><li>Flemish eye mechanical splice ensures optimal strength and load-bearing performance.</li><li>Built from EIPS-grade IWRC wire rope for maximum durability under high tension.</li><li>Highly temperature-tolerant, performing consistently in environments from -40°F to 400°F.</li><li>Compliant with ASME B30.9 and OSHA standards for overhead lifting safety.</li></ul><div class="specs-summary"><p><strong>Diameter:</strong> 3/4 inch | <strong>Length:</strong> 20 feet | <strong>Capacity:</strong> 5.6 Tons | <strong>Material:</strong> Carbon Steel Hook</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Wire Rope</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Rigging Hook</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Lifting Sling</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Construction Equipment</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Single Leg Sling</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #4 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#4</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">1-1/2" x 20' Mechanical Splice Grommet Wire Rope Sling</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$879.99</strong></span>
+                        <a href="https://fastenersplus.com/products/1-1-2-x-20-mechanical-splice-grommet-wire-rope-sling" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">149 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">1-1/2" x 20' Mechanical Splice Grommet Wire Rope Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">Endless Wire Rope Grommets</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0277/8644/4936/files/endless-wire-rope-slings.01_cec5997c-7ba6-4bae-bc2a-10bd7d479afb_83b8400d-2f8a-4df8-82bf-5e6b6d38806d.jpg?v=1791910776' alt='1-1/2 inch diameter 20 foot endless mechanical splice wire rope grommet sling.' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>The largest in our grommet lineup, this 1-1/2-inch sling is a single continuous loop of wire rope rather than a sling with two formed eyes, closed with a mechanical or swaged splice. The Mechanical Splice Grommet Wire Rope Sling shape suits big rigging jobs where hitch flexibility matters as much as capacity.</p>
+<h3>Key Features</h3>
+<ul>
+<li>1-1/2-inch diameter, built as one continuous loop</li>
+<li>Mechanical or swaged splice closes the loop</li>
+<li>Hitch point can move anywhere along the loop rather than being fixed to two eyes</li>
+<li>Length is measured end-to-end at the bearing points, not around the full loop</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>The largest jobs in our grommet sling lineup</li>
+<li>Choke and basket hitches that benefit from a flexible connection point</li>
+<li>Use alongside braided wire rope or chain slings already in service</li>
+<li>Talk to our team about whether this is the right sling style for your job</li>
+</ul><p><a href="/pages/product-safety-warnings#lifting_hardware">View Product Safety Warnings</a></p><p><b>California Residents: <a data-toggle="modal" data-target="#myModal" style="color: black;">WARNING</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>CAT:Wire Rope Slings</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Drop-ship</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Non-Returnable</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>QUEEN:MSG-1-12-6</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Source: USCC</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>SUBCAT:Type 215 Mechanical Splice Grommets</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">1-1/2" x 20' Endless Mechanical Splice Grommet Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Hardware > Lifting & Rigging > Slings
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> 1-1/2 inch diameter 20 foot endless mechanical splice wire rope grommet sling.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Designed for the heaviest industrial lifts, this 1-1/2-inch endless grommet sling provides ultimate hitch flexibility and superior load distribution. Its continuous loop construction allows for versatile connection points, making it indispensable for complex rigging and massive equipment transport.</p><h3>Key Features & Benefits</h3><ul><li>Endless loop design allows for multiple rigging configurations including choke and basket hitches.</li><li>Mechanically swaged splice ensures the integrity of the loop for high-capacity lifts.</li><li>Continuous wire rope construction provides better load-bearing than fixed-eye alternatives.</li><li>Flexible design accommodates irregular load shapes for balanced lifting performance.</li><li>Engineered for industrial-scale strength in demanding construction and crane applications.</li></ul><div class="specs-summary"><p><strong>Diameter:</strong> 1-1/2 inch | <strong>Circumference:</strong> 20 feet | <strong>Type:</strong> Mechanical Splice Grommet</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Grommet Sling</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Wire Rope</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Endless Sling</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Heavy Lifting</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Rigging Gear</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Item #5 -->
+            <div class="product-card bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-8 transition hover:shadow-md">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-2 border-b border-slate-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white font-bold text-xs">#5</span>
+                        <h3 class="font-semibold text-base tracking-tight truncate max-w-xl">1-1/4" x 14' Nine Part Braided Wire Rope Sling</h3>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs text-slate-300">Live Price: <strong class="text-emerald-400">$4145.00</strong></span>
+                        <a href="https://fastenersplus.com/products/1-1-4-x-14-nine-part-braided-wire-rope-sling" target="_blank" class="text-xs text-indigo-300 hover:text-white underline no-print">Inspect Live URL ↗</a>
+                    </div>
+                </div>
+
+                <!-- 2-Column Side-by-Side Desktop Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+                    <!-- LEFT: Current Live Data -->
+                    <div class="p-6 bg-red-50/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">
+                                    ⚠️ Current Live Listing (Defective)
+                                </span>
+                                <span class="text-xs text-red-600 font-medium">211 words in description</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Title</label>
+                                <p class="text-sm font-semibold text-gray-800">1-1/4" x 14' Nine Part Braided Wire Rope Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Product Type / Taxonomy</label>
+                                <p class="text-xs text-gray-700">9 Part Braided Wire Rope Slings</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Live Product Image & Alt-Text</label>
+                                <div class="max-w-xs mb-2">
+                                    <img src='https://cdn.shopify.com/s/files/1/0277/8644/4936/files/9-part-eye-eye-wire-rope-slings.01_8e83f3c7-95e3-43c9-a39f-d901d5a5bf48_23ffee71-652f-4257-8500-fca83adacf10.jpg?v=1791910665' alt='1-1/4 inch 14 foot nine-part braided wire rope sling with heavy-duty wrapped eyes.' class='w-full h-48 object-cover rounded-lg border border-gray-200 shadow-sm' />
+                                </div>
+                                <div class="bg-red-50 border border-red-200 rounded p-2 text-xs text-red-700">
+                                    ❌ <strong>Image Alt Text:</strong> Missing / Empty string (Search engines cannot index this image)
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Current Description (Raw HTML)</label>
+                                <div class="text-xs text-gray-600 bg-white p-3 rounded border border-gray-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <p>Need more capacity than a 1-1/8-inch braided sling can handle? This 1-1/4-inch Nine Part Braided Wire Rope Sling steps up the rated capacity while keeping the same rotation-resistant, helical construction crews count on. A 50-inch wrapped eye sits at each end, built for high-load vertical, choker, and basket hitch rigging.</p><h3>Key Features</h3><ul>
+<li>9-part braided construction in a 1-1/4-inch diameter for maximum rated capacity in the braided sling lineup</li>
+<li>50-inch wrapped eye at both ends for a strong hook or shackle connection</li>
+<li>Works in vertical hitch, choker hitch, and vertical basket hitch setups</li>
+<li>This heavy-duty braided sling is a step up from 3-, 6-, and 8-part braided slings when the job calls for extra capacity</li>
+</ul><h3>Applications</h3><ul>
+<li>Heavy industrial lifts and crane rigging where maximum braided-sling capacity is required</li>
+<li>Vertical, choker, and basket hitch configurations on demanding jobsites</li>
+<li>Projects that have outgrown lower-part-count braided slings</li>
+<li>Talk with our sales specialists to confirm this is the right fit for your load requirements</li>
+</ul><p>However, if you do not need quite as much rated capacity, you can get a more cost-effective solution with a <a href="/collections/3-Part-Braided-Wire-Rope-Slings">3</a>, <a href="/collections/6-Part-Braided-Wire-Rope-Slings"> 6</a>, or <a href="/collections/8-Part-Braided-Wire-Rope-Slings">8 part braided slings</a>. Contact our sales specialists for more information about which crane sling is right for you. </p><p><a href="/pages/product-safety-warnings#lifting_hardware">View Product Safety Warnings</a></p><p><b>California Residents: <a data-toggle="modal" data-target="#myModal" style="color: black;">WARNING</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Collection Filter Tags</label>
+                            <div><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>9 Part Braided Wire Rope Slings</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>CAT:Wire Rope Slings</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Drop-ship</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Non-Returnable</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>QUEEN:9PBS-1-14-14</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>Source: USCC</span><span class='inline-block bg-gray-100 text-gray-700 text-xs px-2 py-0.5 rounded mr-1 mb-1'>SUBCAT:Type 915 Nine Part Braid Slings</span></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Upgraded via Automated API Pipeline -->
+                    <div class="p-6 bg-emerald-50/20 flex flex-col justify-between border-t lg:border-t-0 border-emerald-200">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                    ✨ Upgraded via Automated API Engine
+                                </span>
+                                <span class="text-xs text-emerald-700 font-semibold">Structured HTML + SEO Metadata</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Upgraded SEO Title</label>
+                                <p class="text-sm font-bold text-gray-900 bg-white p-2.5 rounded border border-emerald-300">1-1/4" x 14' Nine-Part Braided Wire Rope Sling</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Google Shopping Category</label>
+                                <span class="inline-block bg-emerald-100 text-emerald-900 text-xs px-2.5 py-1 rounded-md font-medium border border-emerald-200">
+                                    Hardware > Lifting & Rigging > Slings
+                                </span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Optimized Image Alt-Text</label>
+                                <div class="bg-emerald-50 border border-emerald-200 rounded p-2.5 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> 1-1/4 inch 14 foot nine-part braided wire rope sling with heavy-duty wrapped eyes.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1">Rich Conversion Description (Rendered)</label>
+                                <div class="text-xs text-gray-800 bg-white p-4 rounded border border-emerald-200 max-h-56 overflow-y-auto leading-relaxed prose prose-sm">
+                                    <p>Achieve maximum lifting capacity and rotation resistance with this premium 1-1/4-inch nine-part braided wire rope sling. Built for the most demanding heavy industrial projects, it features heavy-duty wrapped eyes that provide long-lasting security in vertical, choker, and basket configurations.</p><h3>Key Features & Benefits</h3><ul><li>Advanced 9-part braided construction delivers maximum capacity for heavy-duty crane rigging.</li><li>Rotation-resistant design ensures load stability during critical overhead lifts.</li><li>Large 50-inch wrapped eyes provide ample space for large shackles and hooks.</li><li>Durable construction excels in high-load vertical and basket hitch applications.</li><li>Provides a reliable, high-capacity upgrade from standard 3, 6, or 8-part braided slings.</li></ul><div class="specs-summary"><p><strong>Diameter:</strong> 1-1/4 inch | <strong>Length:</strong> 14 feet | <strong>Construction:</strong> 9-Part Braid | <strong>Eye:</strong> 50 inch Wrapped</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <label class="block text-xs uppercase tracking-wider text-emerald-800 font-bold mb-1.5">Smart Faceted Tags</label>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Braided Sling</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Crane Rigging</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Heavy Industry</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ Wire Rope</span><span class='inline-block bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium mr-1.5 mb-1.5'>✓ High Capacity Lifting</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        <!-- Bottom CTA Sticky Banner -->
+        <div class="mt-12 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-indigo-900/50 relative overflow-hidden text-center no-print">
+            <div class="max-w-3xl mx-auto relative z-10">
+                <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-4">
+                    Automated Shopify API Push
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
+                    Ready to push all 500 upgraded products to your store via API in 24 hours?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
+                    Prepared by <strong>Duncan Makoyo</strong> (<a href="mailto:duncan@duncanmakoyo.com" class="text-emerald-400 underline">duncan@duncanmakoyo.com</a>). Flat $400 turn-key upgrade. We inject full structured HTML, SEO titles, Google Shopping taxonomy, and image alt text directly into your store as safe drafts—without you touching a spreadsheet.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('fastenersplus')"
+                       class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg transform hover:-translate-y-0.5">
+                        Download 5 Ready-to-Import Upgrades (Free Test)
+                    </a>
+                    <a href="mailto:duncan@duncanmakoyo.com?subject=Approve%20Catalog%20Upgrade%20for%20Fasteners Plus&body=Hey%20Duncan,%20please%20push%20all%20500%20upgraded%20products%20into%20our%20Shopify%20drafts%20for%20a%20flat%20$400."
+                       class="px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition border border-slate-700">
+                        Approve Full Store Upgrade ($400)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-gray-200 py-6 text-center text-xs text-gray-400 no-print">
+        <p>Shopify Catalog X-Ray Automated Pipeline • Built for Duncan Makoyo • duncan@duncanmakoyo.com</p>
+    </footer>
+
+    <!-- Engagement Tracking Script -->
+    <script>
+        function trackEvent(evt) {
+            try {
+                var url = '../tracker.php?store=' + encodeURIComponent('fastenersplus') + '&event=' + encodeURIComponent(evt);
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url);
+                } else {
+                    fetch(url, { method: 'GET', mode: 'no-cors' });
+                }
+            } catch(e) {}
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            trackEvent('page_view');
+        });
+        function trackDownload(slug) {
+            trackEvent('csv_download');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Hardened Security Configuration for Hostinger Audits Directory
+# Duncan Makoyo Catalog X-Ray Pipeline
+
+# Disable directory browsing
+Options -Indexes
+
+# Block access to log files, git, environment configs, and sensitive files
+<FilesMatch "\.(jsonl|log|git|env|ini|sh|bak)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to hidden dotfiles (e.g. .git, .audits_events_log.jsonl, .events_log.jsonl)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Enforce UTF-8 charset
+AddDefaultCharset UTF-8
