@@ -117,14 +117,19 @@
         </div>
 
         <!-- Section Title -->
-        <div class="mb-6 flex items-center justify-between">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
             <div>
                 <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">Side-by-Side Proof of Work (Top 5 Defective Samples)</h2>
                 <p class="text-xs sm:text-sm text-gray-500">Inspecting 5 actual live items from your store, enriched with structured HTML, technical specs, and Google Shopping attributes.</p>
             </div>
-            <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('urotuning')" class="hidden sm:inline-flex items-center text-xs font-bold text-indigo-600 hover:text-indigo-800 underline no-print">
-                📥 Download Shopify CSV Import File
-            </a>
+            <div class="flex items-center space-x-3 no-print">
+                <a href="./urotuning_5_upgraded_products.xlsx" download="urotuning_5_upgraded_products.xlsx" onclick="trackDownload('urotuning', 'xlsx_download')" class="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm transition">
+                    📊 Download Formatted Excel (.xlsx)
+                </a>
+                <a href="./sample_5_import.csv" download="sample_5_import.csv" onclick="trackDownload('urotuning', 'csv_download')" class="inline-flex items-center px-3 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-xs transition">
+                    Shopify CSV (.csv)
+                </a>
+            </div>
         </div>
 
         <!-- Product Comparison Cards -->
@@ -662,14 +667,20 @@
                 <p class="text-slate-300 text-sm sm:text-base mb-8 leading-relaxed">
                     Prepared by <strong>Duncan Makoyo</strong> (<a href="mailto:duncan@duncanmakoyo.com" class="text-emerald-400 underline">duncan@duncanmakoyo.com</a>). Flat $400 turn-key upgrade. We inject full structured HTML, SEO titles, Google Shopping taxonomy, and image alt text directly into your store as safe drafts—without you touching a spreadsheet.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="./sample_5_import.csv?utm_source=audit_page" download onclick="trackDownload('urotuning')"
-                       class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg transform hover:-translate-y-0.5">
-                        Download 5 Ready-to-Import Upgrades (Free Test)
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="./urotuning_5_upgraded_products.xlsx" download="urotuning_5_upgraded_products.xlsx" onclick="trackDownload('urotuning', 'xlsx_download')"
+                       class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm uppercase tracking-wider transition shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                        <span>📊</span>
+                        <span>Download 5 Upgrades in Excel (.xlsx)</span>
                     </a>
                     <a href="mailto:duncan@duncanmakoyo.com?subject=Approve%20Catalog%20Upgrade%20for%20UroTuning&body=Hey%20Duncan,%20please%20push%20all%20500%20upgraded%20products%20into%20our%20Shopify%20drafts%20for%20a%20flat%20$400."
                        class="px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition border border-slate-700">
                         Approve Full Store Upgrade ($400)
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <a href="./sample_5_import.csv" download="sample_5_import.csv" onclick="trackDownload('urotuning', 'csv_download')" class="text-xs text-slate-400 hover:text-white underline">
+                        Or download raw Shopify Admin Import File (sample_5_import.csv)
                     </a>
                 </div>
             </div>
@@ -697,8 +708,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             trackEvent('page_view');
         });
-        function trackDownload(slug) {
-            trackEvent('csv_download');
+        function trackDownload(slug, evt) {
+            trackEvent(evt || 'xlsx_download');
         }
     </script>
 

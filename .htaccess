@@ -28,3 +28,17 @@ Options -Indexes
 
 # Enforce UTF-8 charset
 AddDefaultCharset UTF-8
+
+# MIME Types for Excel & CSV Deliverables
+AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+AddType text/csv .csv
+AddCharset utf-8 .csv
+
+# Force direct browser file download for .xlsx and .csv
+<FilesMatch "\.(csv|xlsx)$">
+    <IfModule mod_headers.c>
+        Header set Content-Disposition "attachment"
+        Header set X-Content-Type-Options "nosniff"
+    </IfModule>
+</FilesMatch>
+

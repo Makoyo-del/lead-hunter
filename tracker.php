@@ -93,12 +93,12 @@ if (!preg_match('/^[a-z0-9\-]{2,60}$/', $rawStore)) {
     exit;
 }
 
-$allowedEvents = ['page_view', 'csv_download'];
+$allowedEvents = ['page_view', 'csv_download', 'xlsx_download'];
 if (!in_array($rawEvent, $allowedEvents, true)) {
     http_response_code(400);
     echo json_encode([
         'status' => 'error',
-        'message' => 'Invalid event parameter: Must be page_view or csv_download'
+        'message' => 'Invalid event parameter: Must be page_view, csv_download, or xlsx_download'
     ], JSON_UNESCAPED_SLASHES);
     exit;
 }
