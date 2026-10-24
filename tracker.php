@@ -161,66 +161,55 @@ if ($rawEvent === 'lead_submission') {
     $record['email'] = $cleanEmail;
     $record['choice'] = $cleanChoice;
     $record['note'] = $cleanNote;
+    // Secure server-to-server forwarding to Render API (24/7 backend with RESEND_API_KEY)
+    $webhookUrl = 'https://api.duncanmakoyo.com/lead-webhook';
+    $forwardPayload = json_encode([
+        'source' => 'shopify_catalog_audit',
+        'store' => $rawStore,
+        'name' => $cleanName,
+        'email' => $cleanEmail,
+        'choice' => $cleanChoice,
+        'note' => $cleanNote,
+        'timestamp' => date('c'),
+        'ip' => $record['ip'],
+        'user_agent' => $record['user_agent'],
+        'referrer' => $record['referrer']
+    ], JSON_UNESCAPED_SLASHES);
 
-    // Immediately dispatch notification to Duncan via Resend API
-    $resendApiKey = (string)getenv('RESEND_API_KEY');
-    if (empty($resendApiKey)) {
-        $candidateFiles = [$parentDir . '/.resend_key', $parentDir . '/.env', __DIR__ . '/.resend_key'];
-        foreach ($candidateFiles as $cfg) {
-            if (is_file($cfg) && is_readable($cfg)) {
-                $content = (string)file_get_contents($cfg);
-                if (str_contains($content, 'RESEND_API_KEY=')) {
-                    foreach (explode("\n", $content) as $line) {
-                        $line = trim($line);
-                        if (str_starts_with($line, 'RESEND_API_KEY=')) {
-                            $resendApiKey = trim(substr($line, 15));
-                            break 2;
-                        }
-                    }
-                } elseif (str_starts_with(trim($content), 're_')) {
-                    $resendApiKey = trim($content);
-                    break;
-                }
-            }
-        }
-    }
-    if (!empty($resendApiKey)) {
-        $choiceLabel = ($cleanChoice === 'full_upgrade') ? 'Full Catalog Upgrade ($395-$550)' : 'Push 5 Free Samples to Drafts';
-        $emailHtml = "<div style='font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#FAF7F2;border-radius:12px;border:1px solid #E5E7EB;'>"
-            . "<h2 style='color:#0B2418;margin-top:0;'>🚨 New Inbound Lead Submission!</h2>"
-            . "<p>A store owner just submitted the instant approval modal on their audit page:</p>"
-            . "<table style='width:100%;border-collapse:collapse;margin:16px 0;'>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;border-bottom:1px solid #E5E7EB;'>Store:</td><td style='padding:8px;border-bottom:1px solid #E5E7EB;'><strong>{$rawStore}</strong></td></tr>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;border-bottom:1px solid #E5E7EB;'>Name:</td><td style='padding:8px;border-bottom:1px solid #E5E7EB;'>{$cleanName}</td></tr>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;border-bottom:1px solid #E5E7EB;'>Email:</td><td style='padding:8px;border-bottom:1px solid #E5E7EB;'><a href='mailto:{$cleanEmail}'>{$cleanEmail}</a></td></tr>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;border-bottom:1px solid #E5E7EB;'>Selection:</td><td style='padding:8px;border-bottom:1px solid #E5E7EB;'><span style='background:#B9FF66;color:#0B2418;padding:4px 8px;border-radius:6px;font-weight:bold;'>{$choiceLabel}</span></td></tr>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;border-bottom:1px solid #E5E7EB;'>Note / Time:</td><td style='padding:8px;border-bottom:1px solid #E5E7EB;'>" . ($cleanNote ?: 'None provided') . "</td></tr>"
-            . "<tr><td style='padding:8px;font-weight:bold;color:#4B5563;'>Timestamp:</td><td style='padding:8px;'>" . date('Y-m-d H:i:s T') . "</td></tr>"
-            . "</table>"
-            . "<div style='margin-top:20px;'><a href='mailto:{$cleanEmail}?subject=Re:%20Shopify%20Catalog%20Upgrade%20for%20{$rawStore}&body=Hey%20{$cleanName},' style='background:#0B2418;color:#FFFFFF;padding:12px 24px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;'>Reply to {$cleanName} Directly</a></div>"
-            . "</div>";
+    $forwardSuccess = false;
+    $forwardHttpCode = 0;
+    $forwardError = '';
 
-        $resendPayload = json_encode([
-            'from' => 'Shopify Audit Lead <duncan@duncanmakoyo.com>',
-            'to' => ['duncan@duncanmakoyo.com'],
-            'subject' => "🚨 NEW INBOUND LEAD: {$cleanName} ({$rawStore}) - {$choiceLabel}",
-            'html' => $emailHtml
+    if (function_exists('curl_init')) {
+        $ch = curl_init($webhookUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $forwardPayload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Accept: application/json',
+            'User-Agent: ShopifyCatalogXRay-HostingerTracker/2.0'
         ]);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 6);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-        if (function_exists('curl_init')) {
-            $ch = curl_init('https://api.resend.com/emails');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $resendPayload);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                'Authorization: Bearer ' . $resendApiKey,
-                'Content-Type: application/json'
-            ]);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 4);
-            @curl_exec($ch);
-            @curl_close($ch);
+        $responseBody = @curl_exec($ch);
+        $forwardHttpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if ($responseBody === false) {
+            $forwardError = (string)curl_error($ch);
+        } else {
+            $forwardSuccess = ($forwardHttpCode >= 200 && $forwardHttpCode < 300);
         }
+        @curl_close($ch);
     }
+
+    $record['render_forward'] = [
+        'endpoint' => $webhookUrl,
+        'http_code' => $forwardHttpCode,
+        'success' => $forwardSuccess,
+        'error' => $forwardError ?: null
+    ];
 }
 
 // Append record to log file safely
