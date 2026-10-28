@@ -345,9 +345,9 @@
                         </p>
 
                         <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin description (0w)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing product type</span>
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300'>Feed Disconnect (Theme vs API)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin feed copy (0w)</span>
                             <span class="text-xs text-slate-500 font-medium ml-1">
-                                4 verified defects · 5 fields improved
+                                5 verified defects · 5 fields improved
                             </span>
                         </div>
                     </div>
@@ -364,8 +364,23 @@
                                     <span class="text-base font-black">⊗</span>
                                     <span>BEFORE · Current listing</span>
                                 </h4>
-                                <span class="text-xs text-rose-700 font-semibold">0 words</span>
+                                <span class="text-xs text-rose-700 font-semibold">0 words in API feed</span>
                             </div>
+
+                            
+                <div class="mb-4 p-3 rounded-xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed shadow-xs">
+                    <div class="font-bold flex items-center gap-1.5 text-amber-900 mb-1">
+                        <span class="text-sm">⚠️</span>
+                        <span>Feed-to-Theme Disconnect Detected</span>
+                    </div>
+                    <p class="text-[11px] text-amber-900 mb-1">
+                        • <strong>Live Storefront:</strong> Renders ~555 words to human shoppers via theme accordions/metafields.
+                    </p>
+                    <p class="text-[11px] text-amber-900">
+                        • <strong>Shopify Catalog API / Google Shopping Feed:</strong> 0 words (Raw <code>body_html</code> field is empty). Google Merchant Center and Meta Ads ingest this raw database feed, receiving 0 words of copy and suppressing ad ranking.
+                    </p>
+                </div>
+                
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
@@ -413,14 +428,14 @@
                                     <span class="text-base font-black">✓</span>
                                     <span>AFTER · Upgraded listing</span>
                                 </h4>
-                                <span class="text-xs text-emerald-800 font-semibold">126 words · Technical Specs</span>
+                                <span class="text-xs text-emerald-800 font-semibold">97 words · Technical Specs</span>
                             </div>
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
                                 <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
-                                    Beauty Rest Routine | Everyday Performance & Fit
+                                    Mario Badescu Beauty Rest Routine Skincare Set
                                 </p>
                             </div>
 
@@ -428,7 +443,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
                                 <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
-                                    Apparel & Accessories > Clothing
+                                    Health & Beauty > Personal Care > Cosmetics > Skin Care > Facial Skin Care
                                 </span>
                             </div>
 
@@ -436,7 +451,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
                                 <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
-                                    ✓ <strong>Alt Text:</strong> Beauty Rest Routine - Mariobadescu Official Product View
+                                    ✓ <strong>Alt Text:</strong> Mario Badescu Beauty Rest Routine skincare bundle featuring night treatment products on a white background.
                                 </div>
                             </div>
 
@@ -444,17 +459,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
                                 <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
-                                    <p>The <strong>Beauty Rest Routine</strong> by Mariobadescu represents the highest standard of intentional craftsmanship and functional design. Thoughtfully engineered to eliminate compromises, it delivers everyday dependability with refined modern aesthetics.</p>
-<h3>Key Features & Highlights</h3>
-<ul style='padding-left:20px; line-height:1.6;'>
-<li style='margin-bottom:6px;'><strong>Performance Fabric Blend:</strong> Engineered for superior breathability, natural stretch, and all-day comfort.</li><li style='margin-bottom:6px;'><strong>Tailored Precision Silhouette:</strong> Modern athletic profile that transitions seamlessly from office to active wear.</li><li style='margin-bottom:6px;'><strong>Reinforced Durability:</strong> Double-needle flatlock stitching on high-stress seams prevents warping and fraying.</li><li style='margin-bottom:6px;'><strong>Pre-Shrunk & Easy Care:</strong> Maintains original fit, color depth, and soft hand-feel wash after wash.</li>
-</ul>
-<h3>Technical Specifications</h3>
-<table style='width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; text-align:left;'>
-  <tbody>
-<tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fabric Composition</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Premium Cotton & Technical Performance Blend</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fit Profile</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Modern Tailored Silhouette (True to Size)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Care Instructions</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Machine wash cold with like colors, tumble dry low</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Brand Origin</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Mariobadescu (United States)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Craftsmanship</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Reinforced Seams & Colorfast Finish</td></tr>
-  </tbody>
-</table>
+                                    <p>Unlock your skin's natural glow overnight with this curated collection designed to soothe and hydrate while you sleep. Apply these essential treatments in the evening to wake up to a refreshed, deeply nourished, and visibly radiant complexion.</p><h3>Key Features & Benefits</h3><ul><li>Overnight recovery complex to soothe stressed skin.</li><li>Deeply hydrating formulas for lasting moisture retention.</li><li>Promotes a smoother and more even skin texture by morning.</li><li>Formulated for all skin types including sensitive complexions.</li><li>Essential nighttime regimen for a healthy-looking glow.</li></ul><div class="specs-summary">Includes: Nighttime treatment serums and hydrating moisture boosters. Compatibility: Safe for daily use on all skin types.</div>
                                 </div>
                             </div>
                         </div>
@@ -462,7 +467,7 @@
                         <!-- Field 5: Smart Tags -->
                         <div class="pt-3 border-t border-emerald-200/60 mt-2">
                             <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
-                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Everyday Wear</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Fit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Premium Essentials</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Made in USA</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Tailored Collection</span></div>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Skincare Set</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Night Routine</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Hydration</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ All Skin Types</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Mario Badescu</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Anti-Aging</span></div>
                         </div>
                     </section>
 
@@ -473,7 +478,7 @@
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
                         <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
                         <span>•</span>
-                        <span><strong>Description:</strong> 0w → 126w (structured features & technical specs)</span>
+                        <span><strong>Description:</strong> 0w → 97w (structured features & technical specs)</span>
                         <span>•</span>
                         <span><strong>Alt text:</strong> Generated from verified attributes</span>
                         <span>•</span>
@@ -516,9 +521,9 @@
                         </p>
 
                         <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin description (0w)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing product type</span>
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300'>Feed Disconnect (Theme vs API)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin feed copy (0w)</span>
                             <span class="text-xs text-slate-500 font-medium ml-1">
-                                4 verified defects · 5 fields improved
+                                5 verified defects · 5 fields improved
                             </span>
                         </div>
                     </div>
@@ -535,8 +540,23 @@
                                     <span class="text-base font-black">⊗</span>
                                     <span>BEFORE · Current listing</span>
                                 </h4>
-                                <span class="text-xs text-rose-700 font-semibold">0 words</span>
+                                <span class="text-xs text-rose-700 font-semibold">0 words in API feed</span>
                             </div>
+
+                            
+                <div class="mb-4 p-3 rounded-xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed shadow-xs">
+                    <div class="font-bold flex items-center gap-1.5 text-amber-900 mb-1">
+                        <span class="text-sm">⚠️</span>
+                        <span>Feed-to-Theme Disconnect Detected</span>
+                    </div>
+                    <p class="text-[11px] text-amber-900 mb-1">
+                        • <strong>Live Storefront:</strong> Renders ~595 words to human shoppers via theme accordions/metafields.
+                    </p>
+                    <p class="text-[11px] text-amber-900">
+                        • <strong>Shopify Catalog API / Google Shopping Feed:</strong> 0 words (Raw <code>body_html</code> field is empty). Google Merchant Center and Meta Ads ingest this raw database feed, receiving 0 words of copy and suppressing ad ranking.
+                    </p>
+                </div>
+                
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
@@ -584,14 +604,14 @@
                                     <span class="text-base font-black">✓</span>
                                     <span>AFTER · Upgraded listing</span>
                                 </h4>
-                                <span class="text-xs text-emerald-800 font-semibold">126 words · Technical Specs</span>
+                                <span class="text-xs text-emerald-800 font-semibold">94 words · Technical Specs</span>
                             </div>
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
                                 <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
-                                    Morning Brightness Routine | Everyday Performance & Fit
+                                    Mario Badescu Morning Brightness Routine Skincare Kit
                                 </p>
                             </div>
 
@@ -599,7 +619,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
                                 <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
-                                    Apparel & Accessories > Clothing
+                                    Health & Beauty > Personal Care > Cosmetics > Skin Care > Facial Skin Care
                                 </span>
                             </div>
 
@@ -607,7 +627,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
                                 <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
-                                    ✓ <strong>Alt Text:</strong> Morning Brightness Routine - Mariobadescu Official Product View
+                                    ✓ <strong>Alt Text:</strong> Mario Badescu Morning Brightness Routine collection featuring daily brightening skincare products on a white background.
                                 </div>
                             </div>
 
@@ -615,17 +635,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
                                 <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
-                                    <p>The <strong>Morning Brightness Routine</strong> by Mariobadescu represents the highest standard of intentional craftsmanship and functional design. Thoughtfully engineered to eliminate compromises, it delivers everyday dependability with refined modern aesthetics.</p>
-<h3>Key Features & Highlights</h3>
-<ul style='padding-left:20px; line-height:1.6;'>
-<li style='margin-bottom:6px;'><strong>Performance Fabric Blend:</strong> Engineered for superior breathability, natural stretch, and all-day comfort.</li><li style='margin-bottom:6px;'><strong>Tailored Precision Silhouette:</strong> Modern athletic profile that transitions seamlessly from office to active wear.</li><li style='margin-bottom:6px;'><strong>Reinforced Durability:</strong> Double-needle flatlock stitching on high-stress seams prevents warping and fraying.</li><li style='margin-bottom:6px;'><strong>Pre-Shrunk & Easy Care:</strong> Maintains original fit, color depth, and soft hand-feel wash after wash.</li>
-</ul>
-<h3>Technical Specifications</h3>
-<table style='width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; text-align:left;'>
-  <tbody>
-<tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fabric Composition</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Premium Cotton & Technical Performance Blend</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fit Profile</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Modern Tailored Silhouette (True to Size)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Care Instructions</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Machine wash cold with like colors, tumble dry low</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Brand Origin</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Mariobadescu (United States)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Craftsmanship</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Reinforced Seams & Colorfast Finish</td></tr>
-  </tbody>
-</table>
+                                    <p>Start your day with a luminous complexion using this energizing routine tailored to brighten and revitalize tired skin. These high-performance formulas work together to defend against daily environmental stressors while providing an instant, healthy-looking glow.</p><h3>Key Features & Benefits</h3><ul><li>Formulated to brighten dull skin and improve clarity.</li><li>Provides essential daytime antioxidant protection.</li><li>Lightweight textures absorb quickly for effortless layering.</li><li>Boosts skin radiance for a fresh and energized appearance.</li><li>Ideal for creating a smooth canvas for makeup application.</li></ul><div class="specs-summary">Includes: Brightening cleanser, serum, and daytime moisturizer. Compatibility: Suitable for daily morning use for all skin types.</div>
                                 </div>
                             </div>
                         </div>
@@ -633,7 +643,7 @@
                         <!-- Field 5: Smart Tags -->
                         <div class="pt-3 border-t border-emerald-200/60 mt-2">
                             <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
-                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Everyday Wear</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Fit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Premium Essentials</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Made in USA</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Tailored Collection</span></div>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Skincare Set</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Morning Routine</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Brightening</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Vitamin C</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ All Skin Types</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Daily Care</span></div>
                         </div>
                     </section>
 
@@ -644,7 +654,7 @@
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
                         <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
                         <span>•</span>
-                        <span><strong>Description:</strong> 0w → 126w (structured features & technical specs)</span>
+                        <span><strong>Description:</strong> 0w → 94w (structured features & technical specs)</span>
                         <span>•</span>
                         <span><strong>Alt text:</strong> Generated from verified attributes</span>
                         <span>•</span>
@@ -687,9 +697,9 @@
                         </p>
 
                         <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin description (0w)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing product type</span>
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300'>Feed Disconnect (Theme vs API)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin feed copy (0w)</span>
                             <span class="text-xs text-slate-500 font-medium ml-1">
-                                4 verified defects · 5 fields improved
+                                5 verified defects · 5 fields improved
                             </span>
                         </div>
                     </div>
@@ -706,8 +716,23 @@
                                     <span class="text-base font-black">⊗</span>
                                     <span>BEFORE · Current listing</span>
                                 </h4>
-                                <span class="text-xs text-rose-700 font-semibold">0 words</span>
+                                <span class="text-xs text-rose-700 font-semibold">0 words in API feed</span>
                             </div>
+
+                            
+                <div class="mb-4 p-3 rounded-xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed shadow-xs">
+                    <div class="font-bold flex items-center gap-1.5 text-amber-900 mb-1">
+                        <span class="text-sm">⚠️</span>
+                        <span>Feed-to-Theme Disconnect Detected</span>
+                    </div>
+                    <p class="text-[11px] text-amber-900 mb-1">
+                        • <strong>Live Storefront:</strong> Renders ~822 words to human shoppers via theme accordions/metafields.
+                    </p>
+                    <p class="text-[11px] text-amber-900">
+                        • <strong>Shopify Catalog API / Google Shopping Feed:</strong> 0 words (Raw <code>body_html</code> field is empty). Google Merchant Center and Meta Ads ingest this raw database feed, receiving 0 words of copy and suppressing ad ranking.
+                    </p>
+                </div>
+                
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
@@ -755,14 +780,14 @@
                                     <span class="text-base font-black">✓</span>
                                     <span>AFTER · Upgraded listing</span>
                                 </h4>
-                                <span class="text-xs text-emerald-800 font-semibold">126 words · Technical Specs</span>
+                                <span class="text-xs text-emerald-800 font-semibold">97 words · Technical Specs</span>
                             </div>
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
                                 <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
-                                    Complete PDRN Routine | Everyday Performance & Fit
+                                    Mario Badescu Complete PDRN Routine Skin Set
                                 </p>
                             </div>
 
@@ -770,7 +795,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
                                 <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
-                                    Apparel & Accessories > Clothing
+                                    Health & Beauty > Personal Care > Cosmetics > Skin Care > Facial Skin Care
                                 </span>
                             </div>
 
@@ -778,7 +803,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
                                 <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
-                                    ✓ <strong>Alt Text:</strong> Complete PDRN Routine - Mariobadescu Official Product View
+                                    ✓ <strong>Alt Text:</strong> Mario Badescu Complete PDRN Routine set featuring regenerative facial skincare products on a white background.
                                 </div>
                             </div>
 
@@ -786,17 +811,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
                                 <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
-                                    <p>The <strong>Complete PDRN Routine</strong> by Mariobadescu represents the highest standard of intentional craftsmanship and functional design. Thoughtfully engineered to eliminate compromises, it delivers everyday dependability with refined modern aesthetics.</p>
-<h3>Key Features & Highlights</h3>
-<ul style='padding-left:20px; line-height:1.6;'>
-<li style='margin-bottom:6px;'><strong>Performance Fabric Blend:</strong> Engineered for superior breathability, natural stretch, and all-day comfort.</li><li style='margin-bottom:6px;'><strong>Tailored Precision Silhouette:</strong> Modern athletic profile that transitions seamlessly from office to active wear.</li><li style='margin-bottom:6px;'><strong>Reinforced Durability:</strong> Double-needle flatlock stitching on high-stress seams prevents warping and fraying.</li><li style='margin-bottom:6px;'><strong>Pre-Shrunk & Easy Care:</strong> Maintains original fit, color depth, and soft hand-feel wash after wash.</li>
-</ul>
-<h3>Technical Specifications</h3>
-<table style='width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; text-align:left;'>
-  <tbody>
-<tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fabric Composition</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Premium Cotton & Technical Performance Blend</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fit Profile</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Modern Tailored Silhouette (True to Size)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Care Instructions</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Machine wash cold with like colors, tumble dry low</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Brand Origin</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Mariobadescu (United States)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Craftsmanship</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Reinforced Seams & Colorfast Finish</td></tr>
-  </tbody>
-</table>
+                                    <p>Transform your complexion with the regenerative power of our advanced PDRN routine designed to strengthen and revitalize skin elasticity. Use this system consistently to support a firm, youthful appearance and improve the overall resilience of your skin barrier.</p><h3>Key Features & Benefits</h3><ul><li>Utilizes advanced PDRN technology for deep cellular support.</li><li>Visibly improves skin firmness and overall elasticity.</li><li>Helps reinforce the natural moisture barrier against damage.</li><li>Smoothes the appearance of fine lines and uneven texture.</li><li>Advanced formula suitable for all skin types and ages.</li></ul><div class="specs-summary">Includes: PDRN-infused serum and restorative cream. Compatibility: Daily use for firming and anti-aging benefits.</div>
                                 </div>
                             </div>
                         </div>
@@ -804,7 +819,7 @@
                         <!-- Field 5: Smart Tags -->
                         <div class="pt-3 border-t border-emerald-200/60 mt-2">
                             <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
-                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Everyday Wear</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Fit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Premium Essentials</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Made in USA</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Tailored Collection</span></div>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ PDRN</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Anti-Aging</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Firming</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Skincare Routine</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Mario Badescu</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Skin Barrier</span></div>
                         </div>
                     </section>
 
@@ -815,7 +830,7 @@
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
                         <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
                         <span>•</span>
-                        <span><strong>Description:</strong> 0w → 126w (structured features & technical specs)</span>
+                        <span><strong>Description:</strong> 0w → 97w (structured features & technical specs)</span>
                         <span>•</span>
                         <span><strong>Alt text:</strong> Generated from verified attributes</span>
                         <span>•</span>
@@ -858,9 +873,9 @@
                         </p>
 
                         <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin description (17w)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing product type</span>
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300'>Feed Disconnect (Theme vs API)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin feed copy (17w)</span>
                             <span class="text-xs text-slate-500 font-medium ml-1">
-                                4 verified defects · 5 fields improved
+                                5 verified defects · 5 fields improved
                             </span>
                         </div>
                     </div>
@@ -877,8 +892,23 @@
                                     <span class="text-base font-black">⊗</span>
                                     <span>BEFORE · Current listing</span>
                                 </h4>
-                                <span class="text-xs text-rose-700 font-semibold">17 words</span>
+                                <span class="text-xs text-rose-700 font-semibold">17 words in API feed</span>
                             </div>
+
+                            
+                <div class="mb-4 p-3 rounded-xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed shadow-xs">
+                    <div class="font-bold flex items-center gap-1.5 text-amber-900 mb-1">
+                        <span class="text-sm">⚠️</span>
+                        <span>Feed-to-Theme Disconnect Detected</span>
+                    </div>
+                    <p class="text-[11px] text-amber-900 mb-1">
+                        • <strong>Live Storefront:</strong> Renders ~266 words to human shoppers via theme accordions/metafields.
+                    </p>
+                    <p class="text-[11px] text-amber-900">
+                        • <strong>Shopify Catalog API / Google Shopping Feed:</strong> 17 words (Raw <code>body_html</code> field is empty). Google Merchant Center and Meta Ads ingest this raw database feed, receiving 0 words of copy and suppressing ad ranking.
+                    </p>
+                </div>
+                
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
@@ -928,14 +958,14 @@
                                     <span class="text-base font-black">✓</span>
                                     <span>AFTER · Upgraded listing</span>
                                 </h4>
-                                <span class="text-xs text-emerald-800 font-semibold">126 words · Technical Specs</span>
+                                <span class="text-xs text-emerald-800 font-semibold">95 words · Technical Specs</span>
                             </div>
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
                                 <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
-                                    Salon Gift Certificates | Everyday Performance & Fit
+                                    Mario Badescu Salon Physical Gift Certificate
                                 </p>
                             </div>
 
@@ -943,7 +973,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
                                 <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
-                                    Apparel & Accessories > Clothing
+                                    Business & Industrial > Customer Service > Gift Certificates
                                 </span>
                             </div>
 
@@ -951,7 +981,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
                                 <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
-                                    ✓ <strong>Alt Text:</strong> Salon Gift Certificates - Mariobadescu Official Product View
+                                    ✓ <strong>Alt Text:</strong> Physical Mario Badescu Salon gift certificate card on a clean white background.
                                 </div>
                             </div>
 
@@ -959,17 +989,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
                                 <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
-                                    <p>The <strong>Salon Gift Certificates</strong> by Mariobadescu represents the highest standard of intentional craftsmanship and functional design. Thoughtfully engineered to eliminate compromises, it delivers everyday dependability with refined modern aesthetics.</p>
-<h3>Key Features & Highlights</h3>
-<ul style='padding-left:20px; line-height:1.6;'>
-<li style='margin-bottom:6px;'><strong>Performance Fabric Blend:</strong> Engineered for superior breathability, natural stretch, and all-day comfort.</li><li style='margin-bottom:6px;'><strong>Tailored Precision Silhouette:</strong> Modern athletic profile that transitions seamlessly from office to active wear.</li><li style='margin-bottom:6px;'><strong>Reinforced Durability:</strong> Double-needle flatlock stitching on high-stress seams prevents warping and fraying.</li><li style='margin-bottom:6px;'><strong>Pre-Shrunk & Easy Care:</strong> Maintains original fit, color depth, and soft hand-feel wash after wash.</li>
-</ul>
-<h3>Technical Specifications</h3>
-<table style='width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; text-align:left;'>
-  <tbody>
-<tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fabric Composition</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Premium Cotton & Technical Performance Blend</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fit Profile</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Modern Tailored Silhouette (True to Size)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Care Instructions</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Machine wash cold with like colors, tumble dry low</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Brand Origin</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Mariobadescu (United States)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Craftsmanship</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Reinforced Seams & Colorfast Finish</td></tr>
-  </tbody>
-</table>
+                                    <p>Treat someone special to the ultimate relaxation experience with a physical gift certificate redeemable at our iconic Mario Badescu salon. This elegant gift is the perfect way to provide a loved one with world-class facial treatments and expert skincare services.</p><h3>Key Features & Benefits</h3><ul><li>Redeemable for professional services at the Mario Badescu Salon.</li><li>Physical card shipped directly to your preferred address.</li><li>The perfect gift for any skincare enthusiast or fan.</li><li>High-quality presentation for a premium gifting experience.</li><li>Flexible usage for a variety of salon treatments.</li></ul><div class="specs-summary">Type: Physical Gift Certificate. Redemption: Valid for in-salon services only.</div>
                                 </div>
                             </div>
                         </div>
@@ -977,7 +997,7 @@
                         <!-- Field 5: Smart Tags -->
                         <div class="pt-3 border-t border-emerald-200/60 mt-2">
                             <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
-                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Everyday Wear</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Fit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Premium Essentials</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Made in USA</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Tailored Collection</span></div>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Gift Card</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Salon Services</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Gift Ideas</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Mario Badescu Salon</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Physical Gift</span></div>
                         </div>
                     </section>
 
@@ -988,7 +1008,7 @@
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
                         <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
                         <span>•</span>
-                        <span><strong>Description:</strong> 17w → 126w (structured features & technical specs)</span>
+                        <span><strong>Description:</strong> 17w → 95w (structured features & technical specs)</span>
                         <span>•</span>
                         <span><strong>Alt text:</strong> Generated from verified attributes</span>
                         <span>•</span>
@@ -1031,9 +1051,9 @@
                         </p>
 
                         <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
-                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin description (0w)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing product type</span>
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-900 border border-amber-300'>Feed Disconnect (Theme vs API)</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span> <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Thin feed copy (0w)</span>
                             <span class="text-xs text-slate-500 font-medium ml-1">
-                                4 verified defects · 5 fields improved
+                                5 verified defects · 5 fields improved
                             </span>
                         </div>
                     </div>
@@ -1050,8 +1070,23 @@
                                     <span class="text-base font-black">⊗</span>
                                     <span>BEFORE · Current listing</span>
                                 </h4>
-                                <span class="text-xs text-rose-700 font-semibold">0 words</span>
+                                <span class="text-xs text-rose-700 font-semibold">0 words in API feed</span>
                             </div>
+
+                            
+                <div class="mb-4 p-3 rounded-xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs leading-relaxed shadow-xs">
+                    <div class="font-bold flex items-center gap-1.5 text-amber-900 mb-1">
+                        <span class="text-sm">⚠️</span>
+                        <span>Feed-to-Theme Disconnect Detected</span>
+                    </div>
+                    <p class="text-[11px] text-amber-900 mb-1">
+                        • <strong>Live Storefront:</strong> Renders ~477 words to human shoppers via theme accordions/metafields.
+                    </p>
+                    <p class="text-[11px] text-amber-900">
+                        • <strong>Shopify Catalog API / Google Shopping Feed:</strong> 0 words (Raw <code>body_html</code> field is empty). Google Merchant Center and Meta Ads ingest this raw database feed, receiving 0 words of copy and suppressing ad ranking.
+                    </p>
+                </div>
+                
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
@@ -1099,14 +1134,14 @@
                                     <span class="text-base font-black">✓</span>
                                     <span>AFTER · Upgraded listing</span>
                                 </h4>
-                                <span class="text-xs text-emerald-800 font-semibold">126 words · Technical Specs</span>
+                                <span class="text-xs text-emerald-800 font-semibold">100 words · Technical Specs</span>
                             </div>
 
                             <!-- Field 1: Title -->
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
                                 <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
-                                    Custom Gift Certificate | Everyday Performance & Fit
+                                    Mario Badescu E-Gift Certificate
                                 </p>
                             </div>
 
@@ -1114,7 +1149,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
                                 <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
-                                    Apparel & Accessories > Clothing
+                                    Business & Industrial > Customer Service > Gift Certificates
                                 </span>
                             </div>
 
@@ -1122,7 +1157,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
                                 <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
-                                    ✓ <strong>Alt Text:</strong> Custom Gift Certificate - Mariobadescu Official Product View
+                                    ✓ <strong>Alt Text:</strong> Mario Badescu digital e-gift certificate card design displayed on screen.
                                 </div>
                             </div>
 
@@ -1130,17 +1165,7 @@
                             <div class="mb-3.5">
                                 <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
                                 <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
-                                    <p>The <strong>Custom Gift Certificate</strong> by Mariobadescu represents the highest standard of intentional craftsmanship and functional design. Thoughtfully engineered to eliminate compromises, it delivers everyday dependability with refined modern aesthetics.</p>
-<h3>Key Features & Highlights</h3>
-<ul style='padding-left:20px; line-height:1.6;'>
-<li style='margin-bottom:6px;'><strong>Performance Fabric Blend:</strong> Engineered for superior breathability, natural stretch, and all-day comfort.</li><li style='margin-bottom:6px;'><strong>Tailored Precision Silhouette:</strong> Modern athletic profile that transitions seamlessly from office to active wear.</li><li style='margin-bottom:6px;'><strong>Reinforced Durability:</strong> Double-needle flatlock stitching on high-stress seams prevents warping and fraying.</li><li style='margin-bottom:6px;'><strong>Pre-Shrunk & Easy Care:</strong> Maintains original fit, color depth, and soft hand-feel wash after wash.</li>
-</ul>
-<h3>Technical Specifications</h3>
-<table style='width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; text-align:left;'>
-  <tbody>
-<tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fabric Composition</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Premium Cotton & Technical Performance Blend</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Fit Profile</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Modern Tailored Silhouette (True to Size)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Care Instructions</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Machine wash cold with like colors, tumble dry low</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Brand Origin</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Mariobadescu (United States)</td></tr><tr><td style='padding:6px 10px; border:1px solid #e2e8f0; font-weight:600; background:#f8fafc; width:35%;'>Craftsmanship</td><td style='padding:6px 10px; border:1px solid #e2e8f0;'>Reinforced Seams & Colorfast Finish</td></tr>
-  </tbody>
-</table>
+                                    <p>Give the gift of personalized skincare with a convenient e-gift certificate that allows recipients to choose their favorite Mario Badescu products. Delivered instantly via email, this flexible option is ideal for last-minute gifting and ensures your loved one gets exactly what they need.</p><h3>Key Features & Benefits</h3><ul><li>Delivered via email for instant, hassle-free gifting.</li><li>Redeemable for any product across the Mario Badescu online store.</li><li>Allows recipients to curate their own personalized skincare routine.</li><li>The perfect solution for birthdays, holidays, and special occasions.</li><li>No expiration dates for maximum shopping convenience.</li></ul><div class="specs-summary">Type: Digital E-Gift Card. Redemption: Valid for online store purchases only.</div>
                                 </div>
                             </div>
                         </div>
@@ -1148,7 +1173,7 @@
                         <!-- Field 5: Smart Tags -->
                         <div class="pt-3 border-t border-emerald-200/60 mt-2">
                             <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
-                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Apparel</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Everyday Wear</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Fit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Premium Essentials</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Made in USA</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Tailored Collection</span></div>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ E-Gift Card</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Digital Gift</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Skincare Gift</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Online Shopping</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Mario Badescu</span></div>
                         </div>
                     </section>
 
@@ -1159,7 +1184,7 @@
                     <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
                         <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
                         <span>•</span>
-                        <span><strong>Description:</strong> 0w → 126w (structured features & technical specs)</span>
+                        <span><strong>Description:</strong> 0w → 100w (structured features & technical specs)</span>
                         <span>•</span>
                         <span><strong>Alt text:</strong> Generated from verified attributes</span>
                         <span>•</span>
