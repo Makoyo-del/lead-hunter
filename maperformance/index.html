@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Catalog Audit & Proof-of-Work: Maperformance (maperformance.com)</title>
+    <meta name="description" content="Personalized Shopify catalog audit and proof-of-work report for Maperformance. We identified catalog data gaps and prepared 5 upgraded product listings for review.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            --bg-page: #F8F8F4;
+            --text-main: #18251F;
+            --text-muted: #52615A;
+            --brand-forest: #0B281C;
+            --cta-lime: #B8F36A;
+            --cta-lime-hover: #a3e650;
+            --surface-before: #FFF3F1;
+            --border-before: #F1C5BF;
+            --surface-after: #ECFDF3;
+            --border-after: #A7E3BD;
+        }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            font-size: 15px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .font-display {
+            font-family: var(--font-display);
+        }
+        .product-title {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            letter-spacing: -0.015em;
+        }
+        .tabular-nums {
+            font-variant-numeric: tabular-nums;
+        }
+        .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+        .prose li { margin-bottom: 0.25rem; }
+        .prose h3 { font-size: 0.875rem; font-weight: 700; margin-top: 0.75rem; margin-bottom: 0.25rem; color: #111827; }
+
+        /* Side-by-side 2-column layout on md+ */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 1rem;
+        }
+        .comparison-grid > * {
+            min-width: 0;
+            max-width: 100%;
+        }
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+            }
+        }
+
+        /* Strict Guardrails for Raw Merchant HTML (Prevents Page Blowouts) */
+        .raw-html-container {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        .raw-html-container img,
+        .raw-html-container table,
+        .raw-html-container pre,
+        .raw-html-container iframe,
+        .raw-html-container embed,
+        .raw-html-container object,
+        .raw-html-container video {
+            max-width: 100% !important;
+            height: auto !important;
+            overflow-x: auto;
+        }
+        .raw-html-container table {
+            display: block;
+            width: 100% !important;
+            overflow-x: auto;
+        }
+        .raw-html-container iframe {
+            aspect-ratio: 16 / 9;
+            width: 100% !important;
+        }
+
+        /* Subtle Glow Buttons */
+        .btn-lime {
+            background-color: #B8F36A;
+            color: #0B281C;
+            font-weight: 800;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-lime:hover {
+            background-color: #a3e650;
+            box-shadow: 0 0 25px rgba(184, 243, 106, 0.45);
+            transform: translateY(-1px);
+        }
+
+        /* Printable / PDF-Ready View Styling */
+        @media print {
+            @page { margin: 10mm; size: auto; }
+            body { background: white !important; color: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            header, .no-print, #leadModal { display: none !important; }
+            .product-card, article { break-inside: avoid; page-break-inside: avoid; margin-bottom: 2rem; border: 1px solid #cbd5e1 !important; box-shadow: none !important; }
+            .print-only-header { display: block !important; margin-bottom: 1.5rem; border-bottom: 2px solid #0f172a; padding-bottom: 1rem; }
+        }
+        @media screen {
+            .print-only-header { display: none; }
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F8F4] text-[#18251F] antialiased min-h-screen">
+
+    <!-- Print Only Header -->
+    <div class="print-only-header">
+        <h1 class="text-2xl font-black text-[#0B281C]">Maperformance (maperformance.com) — Personalized Catalog Audit & Proof-of-Work</h1>
+        <p class="text-sm text-slate-600">Prepared by Duncan Makoyo (duncan@duncanmakoyo.com) | Catalog Defect Score: 25.0/100 | Defective Products: 500</p>
+    </div>
+
+    <!-- Compact Sticky Bar (Unobtrusive & Functional) -->
+    <header class="bg-[#0B281C] text-white border-b border-emerald-950/40 sticky top-0 z-40 no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 min-w-0">
+                <div class="w-8 h-8 rounded-lg bg-[#B8F36A] text-[#0B281C] flex items-center justify-center font-display font-extrabold text-sm shadow-xs flex-shrink-0">
+                    ⚡
+                </div>
+                <div class="min-w-0">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[11px] uppercase tracking-wider text-[#B8F36A] font-bold truncate">Catalog X-Ray</span>
+                        <span class="text-xs text-stone-500">•</span>
+                        <span class="text-xs text-stone-300 font-medium truncate">Maperformance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-2.5 flex-shrink-0">
+                <button onclick="window.print()" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-stone-200 font-medium text-xs transition border border-white/10">
+                    🖨️ PDF
+                </button>
+                <a href="#proof-of-work" class="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold text-xs transition border border-white/15">
+                    Review 5 Upgrades ↓
+                </a>
+                <button onclick="openLeadModal('full_upgrade')" class="btn-lime inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs uppercase tracking-wider shadow-xs">
+                    Fix Full Catalog ($395)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+
+        <!-- Above-The-Fold Hero & KPI Diagnostic Section (Wireframe Exact Match) -->
+        <section class="bg-[#0B281C] text-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-emerald-950/40 shadow-xl mb-12 relative overflow-hidden">
+            
+            <!-- Top Header Bar inside Hero Card -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-white/10">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-[#B8F36A] uppercase tracking-wider">
+                    📈 CATALOG HEALTH
+                </span>
+                <span class="text-xs text-stone-300 font-medium">
+                    Prepared for <strong>Maperformance</strong> (maperformance.com)
+                </span>
+            </div>
+
+            <!-- Personalized Audit Value Proposition -->
+            <div class="mt-6 mb-8 max-w-3xl">
+                <div class="text-xs uppercase tracking-widest text-[#B8F36A] font-extrabold mb-2">
+                    PERSONALIZED CATALOG AUDIT
+                </div>
+                <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.1] mb-3">
+                    Your product catalog has fixable data gaps.
+                </h1>
+                <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                    We analyzed your public product listings and prepared improved versions of five products for your review.
+                </p>
+            </div>
+
+            <!-- Score Box with Progress Meter -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 max-w-3xl">
+                <!-- White Score Box -->
+                <div class="bg-white text-slate-950 rounded-xl p-4 flex flex-col justify-center items-center text-center w-28 sm:w-32 flex-shrink-0 shadow-md">
+                    <span class="font-display text-3xl sm:text-4xl font-extrabold text-amber-700 tracking-tight tabular-nums">
+                        25.0
+                    </span>
+                    <span class="text-xs text-slate-500 font-semibold mt-0.5">/ 100</span>
+                </div>
+
+                <!-- Explainer & Metric Details -->
+                <div class="flex-1 min-w-0">
+                    <h3 class="font-display font-bold text-base sm:text-lg text-white">
+                        Catalog defect score
+                    </h3>
+                    <p class="text-xs sm:text-sm text-stone-300 mt-0.5 leading-snug">
+                        Higher scores indicate more detected issues, according to your audit scoring model.
+                    </p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-white/15 h-2 rounded-full overflow-hidden mt-3 max-w-md">
+                        <div class="bg-gradient-to-r from-emerald-400 via-amber-400 to-rose-500 h-full rounded-full" style="width: 25.0%"></div>
+                    </div>
+                    
+                    <div class="flex flex-wrap items-center gap-3 text-[11px] text-stone-400 mt-2">
+                        <span>500 of 500 products (100.0%) contain catalog defects</span>
+                        <span>•</span>
+                        <a href="#methodology" class="text-stone-300 hover:text-white underline">View methodology</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Rebalanced KPI Cards (Wireframe Exact Layout) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/10">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight tabular-nums">
+                        500
+                    </div>
+                    <div class="text-sm font-semibold text-stone-200 mt-1">Products scanned</div>
+                    <div class="text-[11px] text-stone-400 mt-0.5">Live active catalog</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight tabular-nums">
+                        500
+                    </div>
+                    <div class="text-sm font-semibold text-stone-200 mt-1">Products with defects</div>
+                    <div class="text-[11px] text-rose-300 mt-0.5">100.0% of scanned catalog</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight tabular-nums">
+                        1
+                    </div>
+                    <div class="text-sm font-semibold text-stone-200 mt-1">Defect categories found</div>
+                    <div class="text-[11px] text-stone-400 mt-0.5">Alt text, descriptions, taxonomy</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight tabular-nums">
+                        5
+                    </div>
+                    <div class="text-sm font-semibold text-stone-200 mt-1">Upgraded examples</div>
+                    <div class="text-[11px] text-[#B8F36A] mt-0.5">Inspect improvements below</div>
+                </div>
+            </div>
+
+            <!-- Subtitle Note -->
+            <div class="text-xs text-stone-400 mt-4 italic">
+                Data extracted from public Shopify product feed at <code class="bg-black/30 text-stone-300 px-1.5 py-0.5 rounded text-xs font-mono">maperformance.com/products.json</code>
+            </div>
+
+            <!-- Above-The-Fold CTA Pair -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+                <a href="#proof-of-work" class="btn-lime w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg">
+                    <span>Review upgraded listings</span>
+                    <span>→</span>
+                </a>
+                <button onclick="openLeadModal('free_test_5')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-black/40 hover:bg-black/60 text-white font-semibold text-xs border border-white/20 transition">
+                    <span>Download free audit</span>
+                </button>
+            </div>
+
+            <!-- Trust Strip (Scan date, scope, draft-only safety) -->
+            <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-stone-300">
+                <div class="flex items-center gap-2">
+                    <span>🔍</span>
+                    <span><strong>Source:</strong> Public listings scanned on October 28, 2026</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span>🛡️</span>
+                    <span><strong>Safety:</strong> Drafts only — zero live listings changed without explicit merchant approval</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span>📁</span>
+                    <span><strong>Deliverables:</strong> Styled Excel (.xlsx) & Shopify-Ready CSV</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Proof-of-Work Section Header & Downloads -->
+        <div id="proof-of-work" class="scroll-mt-20 mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-1 rounded-md inline-block mb-1.5">
+                    Proof of Work
+                </span>
+                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0B281C] tracking-tight">
+                    Side-by-Side Proof of Work (Top 5 Defective Samples)
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
+                    Inspecting 5 actual live items from your store, enriched with structured HTML, technical specs, and Google Shopping attributes.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3 no-print">
+                <a href="./maperformance_5_upgraded_products.xlsx" download="maperformance_5_upgraded_products.xlsx" onclick="trackDownload('maperformance', 'xlsx_download')" class="inline-flex items-center px-4 py-2.5 rounded-xl bg-[#0B281C] hover:bg-[#143827] text-white font-bold text-xs shadow-sm transition gap-2">
+                    <span>📊</span>
+                    <span>Download My 5-Product Audit (.xlsx)</span>
+                </a>
+                <a href="./sample_5_import.csv" download="sample_5_import.csv" onclick="trackDownload('maperformance', 'csv_download')" class="inline-flex items-center px-3.5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-semibold text-xs transition shadow-xs gap-1.5">
+                    <span>Download Shopify-Ready CSV</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Product Comparison Cards -->
+        
+            <!-- Product Item #1 -->
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm mb-8 transition hover:shadow-md">
+                
+                <!-- Disciplined Header Grid (88px on mobile, 120px on sm+) -->
+                <header class="grid grid-cols-[88px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-4 sm:gap-6 pb-5 border-b border-slate-100">
+                    <div class="aspect-square w-[88px] sm:w-[120px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+                        <img src='https://cdn.shopify.com/s/files/1/0890/6136/files/ER1_ae2241f2-7105-41bd-9b7f-70f9bce06eea.jpg?v=1764603986' alt='BC Racing ER-Series Coilovers | 2000-2005 Mitsubishi Eclipse (B-10-ER)' class='w-full h-full object-contain' loading='lazy' />
+                    </div>
+
+                    <div class="min-w-0 space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-block">
+                            PRODUCT 01
+                        </span>
+
+                        <h3 class="product-title break-words text-base sm:text-lg font-semibold text-slate-950 leading-snug">
+                            BC Racing ER-Series Coilovers | 2000-2005 Mitsubishi Eclipse (B-10-ER)
+                        </h3>
+
+                        <p class="text-xs text-slate-500 flex flex-wrap items-center gap-2">
+                            <span>SKU: <strong class="font-mono text-slate-700">BC-RACING-ER-SERIES--FIXED</strong></span>
+                            <span>·</span>
+                            <a href="https://maperformance.com/products/bc-racing-er-series-coilovers-2000-2005-mitsubishi-eclipse-b-10-er" target="_blank" rel="noopener" class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                <span>Existing product URL</span>
+                                <span>↗</span>
+                            </a>
+                            <span>·</span>
+                            <span class="text-slate-600 font-medium">Live Price: $1935.00</span>
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span>
+                            <span class="text-xs text-slate-500 font-medium ml-1">
+                                1 verified defects · 5 fields improved
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Fixed Comparison Structure: Strict 2-Column Side-by-Side Grid -->
+                <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
+                    
+                    <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
+                                    <span class="text-base font-black">⊗</span>
+                                    <span>BEFORE · Current listing</span>
+                                </h4>
+                                <span class="text-xs text-rose-700 font-semibold">228 words</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Product Title</span>
+                                <p class="text-sm text-slate-800 font-medium leading-snug">BC Racing ER-Series Coilovers | 2000-2005 Mitsubishi Eclipse (B-10-ER)</p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Shopify Product Type</span>
+                                <p class="text-xs text-rose-700 font-semibold">
+                                    Suspension Components
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Image Alt Text</span>
+                                <div class="bg-rose-100/60 border border-rose-200 rounded-lg p-2 text-xs text-rose-800 font-medium">
+                                    ❌ Missing / Empty string (Not indexed by Google Images)
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <div id="newdescr">
+<div id="newdescrRC">
+<h2>ER-Series Coilovers for 2000-2005 Mitsubishi Eclipse by BC Racing</h2>
+<p>The BC Racing ER Series Coilover System is the next evolution in your suspension tuning and vehicle setup needs. The ER Series offers 30-clicks of independently adjustable compression and rebound with remote reservoirs to increase oil capacity and help with faster heat dissipation. Each ER Series Coilover System undergoes the same rigorous testing and development as the coilover series that precede it, with the addition of more extensive real-world track testing. For racers and enthusiasts that are looking for more adjustability in terms of varying compression and rebound settings, look no further than the BC Racing ER Series Coilover System.</p>
+<p><strong>Please Note: Custom Spring rates and/or Swift Spring Upgrades are available as custom order, please contact our sales team at 651-927-4510 if you are interested to know more about these options. Product photos are generic and may not represent the product you will receive.</strong></p>
+<h3>Features</h3>
+<ul>
+<li>30-Clicks Of Rebound Adjustment From The Top Of The Damper</li>
+<li>30-Clicks Of Compression Adjustment Via The External Reservoirs</li>
+<li>Mono-Tube Damper</li>
+<li>Front Top Mount Option(s): Camber</li>
+<li>Front Spring Rate: 10KG</li>
+<li>Rear Top Mount Option(s): Pillowball</li>
+<li>Rear Spring Rate: 6KG</li>
+</ul>
+<h3>Benefits</h3>
+<ul>
+<li>Linear Twin-Piston Design</li>
+<li>Height Adjustment Independent Of Spring Compression</li>
+</ul>
+</div>
+<div id="newdescrLC">
+<h3>Applications</h3>
+<ul>
+<li>2000-2005 Mitsubishi Eclipse</li>
+<li>1999-2004 Mitsubishi Galant</li>
+</ul>
+<h3>What's In The Box?</h3>
+<ul>
+<li>1 - Set of Coilovers</li>
+<li>1 - Set of Spanner Wrenches</li>
+</ul>
+<h3>Warranty</h3>
+<ul>
+<li>Limited Manufacturers Warranty</li>
+</ul>
+</div>
+</div>
+<div class="clear"><br></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Tags -->
+                        <div class="pt-3 border-t border-rose-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Collection Tags</span>
+                            <div><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BC Racing</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCExtendUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCRACINGSINGLEPRINGLE</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCSwiftUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Coilovers</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>FluidReview</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Q4_2025</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Suspension Components</span></div>
+                        </div>
+                    </section>
+
+                    <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
+                                    <span class="text-base font-black">✓</span>
+                                    <span>AFTER · Upgraded listing</span>
+                                </h4>
+                                <span class="text-xs text-emerald-800 font-semibold">109 words · Technical Specs</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
+                                <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
+                                    BC Racing ER-Series Coilovers | 2000-2005 Mitsubishi Eclipse
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
+                                <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                                    Vehicles & Parts > Automotive Parts > Automotive Suspension > Coilovers
+                                </span>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
+                                <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> BC Racing ER-Series coilover set with remote reservoirs for 2000-2005 Mitsubishi Eclipse.
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
+                                <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
+                                    Upgrade your Mitsubishi Eclipse with the race-proven BC Racing ER-Series coilover system, featuring remote reservoirs for maximum heat dissipation. These high-performance coilovers offer independent compression and rebound adjustment to dial in the perfect track or street setup. <h3>Key Features & Benefits</h3> <ul><li>External reservoirs increase oil capacity for consistent damping performance.</li><li>30-clicks of independent compression and rebound adjustment for precision tuning.</li><li>Durable mono-tube shock design built for rigorous track and street use.</li><li>Height adjustment is fully independent of spring compression for maximum versatility.</li><li>Includes high-quality spanner wrenches for easy ride height and preload setup.</li></ul> <div class="specs-summary"><strong>Compatibility:</strong> 2000-2005 Mitsubishi Eclipse / 1999-2004 Mitsubishi Galant. <strong>Front Spring Rate:</strong> 10KG. <strong>Rear Spring Rate:</strong> 6KG.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Smart Tags -->
+                        <div class="pt-3 border-t border-emerald-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BC Racing</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Coilovers</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Suspension</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Mitsubishi Eclipse</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Track Performance</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Adjustable Suspension</span></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Measurable Transformation Summary Footer -->
+                <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
+                        <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
+                        <span>•</span>
+                        <span><strong>Description:</strong> 228w → 109w (structured features & technical specs)</span>
+                        <span>•</span>
+                        <span><strong>Alt text:</strong> Generated from verified attributes</span>
+                        <span>•</span>
+                        <span><strong>Taxonomy:</strong> Standardized taxonomy applied</span>
+                    </div>
+                    <button onclick="openLeadModal('free_test_5')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0B281C] hover:bg-[#143827] text-[#B8F36A] font-bold text-xs transition shadow-xs">
+                        <span>Request Free Draft Import</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Product Item #2 -->
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm mb-8 transition hover:shadow-md">
+                
+                <!-- Disciplined Header Grid (88px on mobile, 120px on sm+) -->
+                <header class="grid grid-cols-[88px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-4 sm:gap-6 pb-5 border-b border-slate-100">
+                    <div class="aspect-square w-[88px] sm:w-[120px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+                        <img src='https://cdn.shopify.com/s/files/1/0890/6136/files/DSCoilovers_261b8225-be40-46f8-aea7-3b908cb8c465.png?v=1764106997' alt='BC Racing DS-Series Coilovers | 2000-2006 BMW M3 Convertible (I-121-DS)' class='w-full h-full object-contain' loading='lazy' />
+                    </div>
+
+                    <div class="min-w-0 space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-block">
+                            PRODUCT 02
+                        </span>
+
+                        <h3 class="product-title break-words text-base sm:text-lg font-semibold text-slate-950 leading-snug">
+                            BC Racing DS-Series Coilovers | 2000-2006 BMW M3 Convertible (I-121-DS)
+                        </h3>
+
+                        <p class="text-xs text-slate-500 flex flex-wrap items-center gap-2">
+                            <span>SKU: <strong class="font-mono text-slate-700">BC-RACING-DS-SERIES--FIXED</strong></span>
+                            <span>·</span>
+                            <a href="https://maperformance.com/products/bc-racing-ds-series-coilovers-2000-2006-bmw-e46-m3-convertible-i-121-ds" target="_blank" rel="noopener" class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                <span>Existing product URL</span>
+                                <span>↗</span>
+                            </a>
+                            <span>·</span>
+                            <span class="text-slate-600 font-medium">Live Price: $1395.00</span>
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span>
+                            <span class="text-xs text-slate-500 font-medium ml-1">
+                                1 verified defects · 5 fields improved
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Fixed Comparison Structure: Strict 2-Column Side-by-Side Grid -->
+                <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
+                    
+                    <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
+                                    <span class="text-base font-black">⊗</span>
+                                    <span>BEFORE · Current listing</span>
+                                </h4>
+                                <span class="text-xs text-rose-700 font-semibold">188 words</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Product Title</span>
+                                <p class="text-sm text-slate-800 font-medium leading-snug">BC Racing DS-Series Coilovers | 2000-2006 BMW M3 Convertible (I-121-DS)</p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Shopify Product Type</span>
+                                <p class="text-xs text-rose-700 font-semibold">
+                                    Suspension Components
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Image Alt Text</span>
+                                <div class="bg-rose-100/60 border border-rose-200 rounded-lg p-2 text-xs text-rose-800 font-medium">
+                                    ❌ Missing / Empty string (Not indexed by Google Images)
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <div id="newdescr">
+<div id="newdescrRC">
+<h2>DS-Series Coilovers for 2000-2006 BMW E46 M3 Convertible by BC Racing</h2>
+<p>BC Racing's new proprietary digressive piston design offers increased damping force at low piston velocities while maintaining a linear damper feel at higher piston velocities. One of the greatest advantages of increased low-speed damping force relates to what the driver feels, e.g., roll, pitch, dive, and quick weight transitions on technical road courses. For The Ultimate In Driver Feel - Choose BC Racing DS Series Coilovers.</p>
+<p><strong>Please Note: Custom Spring rates and/or Swift Spring Upgrades are available as custom order, please contact our sales team at 651-927-4510 if you are interested to know more about these options. Product photos are generic and may not represent the product you will receive.</strong></p>
+<h3>Features</h3>
+<ul>
+<li>Mono-Tube Shock Design</li>
+<li>30-Clicks Of Simultaneous Compression/Rebound Adjustment</li>
+<li>Front Top Mount Option(s): Camber</li>
+<li>Front Spring Rate: 6KG</li>
+<li>Rear Top Mount Option(s): Rubber</li>
+<li>Rear Spring Rate: 9KG</li>
+</ul>
+<h3>Benefits</h3>
+<ul>
+<li>Linear Piston And Damping Curve</li>
+<li>Height Adjustment Independent Of Spring Compression</li>
+</ul>
+</div>
+<div id="newdescrLC">
+<h3>Applications</h3>
+<ul><li>2000-2006 BMW E46 M3 Convertible</li></ul>
+<h3>What's In The Box?</h3>
+<ul>
+<li>1 - Set of Coilovers</li>
+<li>1 - Set of Spanner Wrenches</li>
+<li>End Links Included</li>
+</ul>
+<h3>Warranty</h3>
+<ul>
+<li>Limited Manufacturers Warranty</li>
+</ul>
+</div>
+</div>
+<div class="clear"><br></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Tags -->
+                        <div class="pt-3 border-t border-rose-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Collection Tags</span>
+                            <div><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2000 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2001 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2002 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2003 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2004 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2005 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>2006 BMW M3</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BC Racing</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCRACINGSINGLEPRINGLE</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCSwiftUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Coilovers</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>FluidReview</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Q4_2025</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Suspension Components</span></div>
+                        </div>
+                    </section>
+
+                    <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
+                                    <span class="text-base font-black">✓</span>
+                                    <span>AFTER · Upgraded listing</span>
+                                </h4>
+                                <span class="text-xs text-emerald-800 font-semibold">97 words · Technical Specs</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
+                                <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
+                                    BC Racing DS-Series Coilovers | 2000-2006 BMW E46 M3 Convertible
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
+                                <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                                    Vehicles & Parts > Automotive Parts > Automotive Suspension > Coilovers
+                                </span>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
+                                <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> BC Racing DS-Series coilover kit featuring digressive pistons for BMW E46 M3.
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
+                                <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
+                                    Experience superior handling with the BC Racing DS-Series, featuring a proprietary digressive piston design for razor-sharp weight transitions. These coilovers deliver increased low-speed damping force to minimize body roll and improve overall vehicle responsiveness. <h3>Key Features & Benefits</h3> <ul><li>Digressive piston design maintains stability during quick cornering maneuvers.</li><li>30-clicks of simultaneous compression and rebound damping adjustment.</li><li>Mono-tube shock construction prevents fluid aeration under high-performance loads.</li><li>Camber-adjustable front top mounts included for precision alignment tuning.</li><li>Height adjustment independent of spring preload preserves full damper stroke.</li></ul> <div class="specs-summary"><strong>Compatibility:</strong> 2000-2006 BMW E46 M3 Convertible. <strong>Front Spring Rate:</strong> 6KG. <strong>Rear Spring Rate:</strong> 9KG.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Smart Tags -->
+                        <div class="pt-3 border-t border-emerald-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BC Racing</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BMW E46</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ M3</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Coilovers</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Suspension</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Handling</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Parts</span></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Measurable Transformation Summary Footer -->
+                <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
+                        <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
+                        <span>•</span>
+                        <span><strong>Description:</strong> 188w → 97w (structured features & technical specs)</span>
+                        <span>•</span>
+                        <span><strong>Alt text:</strong> Generated from verified attributes</span>
+                        <span>•</span>
+                        <span><strong>Taxonomy:</strong> Standardized taxonomy applied</span>
+                    </div>
+                    <button onclick="openLeadModal('free_test_5')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0B281C] hover:bg-[#143827] text-[#B8F36A] font-bold text-xs transition shadow-xs">
+                        <span>Request Free Draft Import</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Product Item #3 -->
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm mb-8 transition hover:shadow-md">
+                
+                <!-- Disciplined Header Grid (88px on mobile, 120px on sm+) -->
+                <header class="grid grid-cols-[88px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-4 sm:gap-6 pb-5 border-b border-slate-100">
+                    <div class="aspect-square w-[88px] sm:w-[120px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+                        <img src='https://cdn.shopify.com/s/files/1/0890/6136/files/RMCoilovers_c2dbd990-f69d-4f2a-8e9a-8e9073040dc5.png?v=1764107088' alt='BC Racing RM-Series Coilovers | 2021-2024 BMW M2 / M3 / M4 (I-103-RM)' class='w-full h-full object-contain' loading='lazy' />
+                    </div>
+
+                    <div class="min-w-0 space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-block">
+                            PRODUCT 03
+                        </span>
+
+                        <h3 class="product-title break-words text-base sm:text-lg font-semibold text-slate-950 leading-snug">
+                            BC Racing RM-Series Coilovers | 2021-2024 BMW M2 / M3 / M4 (I-103-RM)
+                        </h3>
+
+                        <p class="text-xs text-slate-500 flex flex-wrap items-center gap-2">
+                            <span>SKU: <strong class="font-mono text-slate-700">BC-RACING-RM-SERIES--FIXED</strong></span>
+                            <span>·</span>
+                            <a href="https://maperformance.com/products/bc-racing-rm-series-coilovers-2020-2024-bmw-g80-m3-m4-i-103-rm" target="_blank" rel="noopener" class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                <span>Existing product URL</span>
+                                <span>↗</span>
+                            </a>
+                            <span>·</span>
+                            <span class="text-slate-600 font-medium">Live Price: $1495.00</span>
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span>
+                            <span class="text-xs text-slate-500 font-medium ml-1">
+                                1 verified defects · 5 fields improved
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Fixed Comparison Structure: Strict 2-Column Side-by-Side Grid -->
+                <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
+                    
+                    <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
+                                    <span class="text-base font-black">⊗</span>
+                                    <span>BEFORE · Current listing</span>
+                                </h4>
+                                <span class="text-xs text-rose-700 font-semibold">259 words</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Product Title</span>
+                                <p class="text-sm text-slate-800 font-medium leading-snug">BC Racing RM-Series Coilovers | 2021-2024 BMW M2 / M3 / M4 (I-103-RM)</p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Shopify Product Type</span>
+                                <p class="text-xs text-rose-700 font-semibold">
+                                    Suspension Components
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Image Alt Text</span>
+                                <div class="bg-rose-100/60 border border-rose-200 rounded-lg p-2 text-xs text-rose-800 font-medium">
+                                    ❌ Missing / Empty string (Not indexed by Google Images)
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <div id="newdescr">
+<div id="newdescrRC">
+<h2>RM-Series Coilovers for 2021-2024 BMW M2 by BC Racing</h2>
+<p>The BC Racing RM Series Coilover System uses a mono-tube inverted damper in the front and rear of vehicles that use McPherson style OEM strut suspension. On vehicles that use front struts only, BC Racing provides an inverted front strut and then provides an upright BR Series damper for the rear. Inverted dampers are useful in decreasing unsprung weight by moving the greatest mass of the strut to the top where it connects to the sprung weight of the chassis, where weight can be more easily shaved. The BC Racing RM Series Coilover System uses a much larger inverted piston shaft that can handle higher lateral loads for longer periods of time without fatigue. These higher lateral loads are only prevalent on McPherson style strut suspension, not on Double A-Arm vehicles.</p>
+<p><strong>Please Note: Custom Spring rates and/or Swift Spring Upgrades are available as custom order, please contact our sales team at 651-927-4510 if you are interested to know more about these options. Product photos are generic and may not represent the product you will receive.</strong></p>
+<h3>Features</h3>
+<ul>
+<li>30-Clicks Of Simultaneous Compression/Rebound Adjustment</li>
+<li>Inverted Mono-Tube Strut Design</li>
+<li>Front Top Mount Option(s): Camber</li>
+<li>Front Spring Rate: 6KG</li>
+<li>Rear Top Mount Option(s): OEM</li>
+<li>Rear Spring Rate: 14KG</li>
+</ul>
+<h3>Benefits</h3>
+<ul>
+<li>Linear Piston And Damping Curve</li>
+<li>Height Adjustment Independent Of Spring Compression</li>
+</ul>
+</div>
+<div id="newdescrLC">
+<h3>Applications</h3>
+<ul><li>2021-2024 BMW M2 / M3 / M4 (G87 / G80 / G82)</li></ul>
+<h3>What's In The Box?</h3>
+<ul>
+<li>1 - Set of Coilovers</li>
+<li>1 - Set of Spanner Wrenches</li>
+<li>End Links Included</li>
+</ul>
+<h3>Warranty</h3>
+<ul>
+<li>Limited Manufacturers Warranty</li>
+</ul>
+</div>
+</div>
+<div class="clear"><br></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Tags -->
+                        <div class="pt-3 border-t border-rose-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Collection Tags</span>
+                            <div><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BC Racing</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCRACINGSINGLEPRINGLE</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCSwiftUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Coilovers</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>FluidReview</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Q4_2025</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Suspension Components</span></div>
+                        </div>
+                    </section>
+
+                    <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
+                                    <span class="text-base font-black">✓</span>
+                                    <span>AFTER · Upgraded listing</span>
+                                </h4>
+                                <span class="text-xs text-emerald-800 font-semibold">107 words · Technical Specs</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
+                                <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
+                                    BC Racing RM-Series Coilovers | 2021-2024 BMW M3 / M4 (G80/G82)
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
+                                <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                                    Vehicles & Parts > Automotive Parts > Automotive Suspension > Coilovers
+                                </span>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
+                                <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> BC Racing RM-Series inverted coilover system for 2021-2024 BMW M3 and M4.
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
+                                <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
+                                    Maximize your BMW G80 chassis performance with the BC Racing RM-Series featuring inverted mono-tube dampers for reduced unsprung weight. These coilovers are engineered to handle high lateral loads, making them the ultimate upgrade for aggressive track and performance street driving. <h3>Key Features & Benefits</h3> <ul><li>Inverted mono-tube design moves mass closer to the chassis for improved response.</li><li>Large-diameter inverted piston shaft handles extreme lateral cornering forces.</li><li>30-clicks of simultaneous compression and rebound adjustment for fine-tuning.</li><li>Camber-adjustable front top mounts allow for aggressive track alignment settings.</li><li>Height adjustment remains independent of spring compression for consistent handling.</li></ul> <div class="specs-summary"><strong>Compatibility:</strong> 2021-2024 BMW M2/M3/M4 (G87/G80/G82). <strong>Front Spring Rate:</strong> 6KG. <strong>Rear Spring Rate:</strong> 14KG.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Smart Tags -->
+                        <div class="pt-3 border-t border-emerald-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BC Racing</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BMW M3</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ G80</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Coilovers</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Suspension</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Track Ready</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Performance Upgrade</span></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Measurable Transformation Summary Footer -->
+                <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
+                        <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
+                        <span>•</span>
+                        <span><strong>Description:</strong> 259w → 107w (structured features & technical specs)</span>
+                        <span>•</span>
+                        <span><strong>Alt text:</strong> Generated from verified attributes</span>
+                        <span>•</span>
+                        <span><strong>Taxonomy:</strong> Standardized taxonomy applied</span>
+                    </div>
+                    <button onclick="openLeadModal('free_test_5')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0B281C] hover:bg-[#143827] text-[#B8F36A] font-bold text-xs transition shadow-xs">
+                        <span>Request Free Draft Import</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Product Item #4 -->
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm mb-8 transition hover:shadow-md">
+                
+                <!-- Disciplined Header Grid (88px on mobile, 120px on sm+) -->
+                <header class="grid grid-cols-[88px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-4 sm:gap-6 pb-5 border-b border-slate-100">
+                    <div class="aspect-square w-[88px] sm:w-[120px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+                        <img src='https://cdn.shopify.com/s/files/1/0890/6136/files/bc-racing-default-ds-series_deebfdd2-8a04-40a7-8574-e5616eb50d53.webp?v=1766513443' alt='BC Racing ZX-Series Coilovers | 2006-2011 Honda Civic (A-18-ZX)' class='w-full h-full object-contain' loading='lazy' />
+                    </div>
+
+                    <div class="min-w-0 space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-block">
+                            PRODUCT 04
+                        </span>
+
+                        <h3 class="product-title break-words text-base sm:text-lg font-semibold text-slate-950 leading-snug">
+                            BC Racing ZX-Series Coilovers | 2006-2011 Honda Civic (A-18-ZX)
+                        </h3>
+
+                        <p class="text-xs text-slate-500 flex flex-wrap items-center gap-2">
+                            <span>SKU: <strong class="font-mono text-slate-700">BC-RACING-ZX-SERIES--FIXED</strong></span>
+                            <span>·</span>
+                            <a href="https://maperformance.com/products/bc-racing-zx-series-coilovers-2006-2011-honda-civic-a-18-zx" target="_blank" rel="noopener" class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                <span>Existing product URL</span>
+                                <span>↗</span>
+                            </a>
+                            <span>·</span>
+                            <span class="text-slate-600 font-medium">Live Price: $2545.00</span>
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span>
+                            <span class="text-xs text-slate-500 font-medium ml-1">
+                                1 verified defects · 5 fields improved
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Fixed Comparison Structure: Strict 2-Column Side-by-Side Grid -->
+                <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
+                    
+                    <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
+                                    <span class="text-base font-black">⊗</span>
+                                    <span>BEFORE · Current listing</span>
+                                </h4>
+                                <span class="text-xs text-rose-700 font-semibold">222 words</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Product Title</span>
+                                <p class="text-sm text-slate-800 font-medium leading-snug">BC Racing ZX-Series Coilovers | 2006-2011 Honda Civic (A-18-ZX)</p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Shopify Product Type</span>
+                                <p class="text-xs text-rose-700 font-semibold">
+                                    Suspension Components
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Image Alt Text</span>
+                                <div class="bg-rose-100/60 border border-rose-200 rounded-lg p-2 text-xs text-rose-800 font-medium">
+                                    ❌ Missing / Empty string (Not indexed by Google Images)
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <div id="newdescr">
+<div id="newdescrRC">
+<h2>ZX-Series Coilovers for 2006-2011 Honda Civic by BC Racing</h2>
+<p>The BC Racing ZX Series offers the highest level of adjustability within the BC Racing coilover system to date. Designed specifically for racing and track use, the ZX Series features 3-way adjustable damping force, providing 20 clicks of low-speed compression, 12 clicks of high-speed compression, and 30 clicks of rebound adjustment. The ZX Series adopts an upright cylinder design, allowing for the possibility of replacing the upper mount, while combining the excellent characteristics of the DS and ER series. Coupled with ultra-high viscosity index racing shock fluid, the ZX Series can maintain outstanding performance on the track and in drifting competitions for extended periods.</p>
+<p><strong>Please Note: Product photos are generic and may not represent the product you will receive.</strong></p>
+<h3>Features</h3>
+<ul>
+<li>30-Clicks Of Rebound Adjustment</li>
+<li>20-Clicks Of Low Speed Compression Adjustment</li>
+<li>12-Clicks Of High Speed Compression Adjustment</li>
+<li>Digressive Piston And Damping Curve</li>
+<li>Ultra-high Viscosity Index Full Synthetic Shock Fluid</li>
+<li>Track-oriented Setup</li>
+<li>Front Top Mount Option(s): Camber</li>
+<li>Front Spring Rate: 6KG</li>
+<li>Rear Top Mount Option(s): OEM</li>
+<li>Rear Spring Rate: 6KG</li>
+</ul>
+<h3>Benefits</h3>
+<ul>
+<li>3-way Adjustable Damping Control &amp; Fully Rebuildable</li>
+<li>Teflon-coated steel braided lines for external reservoir on inverted dampers</li>
+</ul>
+</div>
+<div id="newdescrLC">
+<h3>Applications</h3>
+<ul><li>2006-2011 Honda Civic / SI (8th Generation)</li></ul>
+<h3>What's In The Box?</h3>
+<ul>
+<li>1 - Set of Coilovers</li>
+<li>1 - Set of Spanner Wrenches</li>
+</ul>
+<h3>Warranty</h3>
+<ul>
+<li>Limited Manufacturers Warranty</li>
+</ul>
+</div>
+</div>
+<div class="clear"><br></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Tags -->
+                        <div class="pt-3 border-t border-rose-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Collection Tags</span>
+                            <div><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BC Racing</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCExtendUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCRACINGSINGLEPRINGLE</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Coilovers</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>FluidReview</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>New Arrival</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Q4_2026</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Suspension Components</span></div>
+                        </div>
+                    </section>
+
+                    <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
+                                    <span class="text-base font-black">✓</span>
+                                    <span>AFTER · Upgraded listing</span>
+                                </h4>
+                                <span class="text-xs text-emerald-800 font-semibold">97 words · Technical Specs</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
+                                <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
+                                    BC Racing ZX-Series 3-Way Coilovers | 2006-2011 Honda Civic
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
+                                <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                                    Vehicles & Parts > Automotive Parts > Automotive Suspension > Coilovers
+                                </span>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
+                                <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> BC Racing ZX-Series 3-way adjustable coilover system for 2006-2011 Honda Civic.
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
+                                <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
+                                    Achieve professional-grade suspension tuning with the BC Racing ZX-Series, engineered specifically for competitive track use and drifting. Featuring 3-way adjustability, this system allows for independent low and high-speed compression settings alongside rebound control. <h3>Key Features & Benefits</h3> <ul><li>3-way adjustable damping with separate high/low-speed compression controls.</li><li>Full synthetic, high-viscosity index shock fluid ensures fade-free performance.</li><li>Digressive piston valving provides optimal control during aggressive maneuvers.</li><li>Upright cylinder design allows for easy top-mount replacement and serviceability.</li><li>Includes spanner wrenches for precise ride height and coilover adjustments.</li></ul> <div class="specs-summary"><strong>Compatibility:</strong> 2006-2011 Honda Civic (8th Gen). <strong>Front Spring Rate:</strong> 6KG. <strong>Rear Spring Rate:</strong> 6KG.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Smart Tags -->
+                        <div class="pt-3 border-t border-emerald-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BC Racing</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Honda Civic</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ 8th Gen Civic</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Coilovers</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Track Suspension</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Drift Setup</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Adjustable</span></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Measurable Transformation Summary Footer -->
+                <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
+                        <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
+                        <span>•</span>
+                        <span><strong>Description:</strong> 222w → 97w (structured features & technical specs)</span>
+                        <span>•</span>
+                        <span><strong>Alt text:</strong> Generated from verified attributes</span>
+                        <span>•</span>
+                        <span><strong>Taxonomy:</strong> Standardized taxonomy applied</span>
+                    </div>
+                    <button onclick="openLeadModal('free_test_5')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0B281C] hover:bg-[#143827] text-[#B8F36A] font-bold text-xs transition shadow-xs">
+                        <span>Request Free Draft Import</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </article>
+            
+            <!-- Product Item #5 -->
+            <article class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm mb-8 transition hover:shadow-md">
+                
+                <!-- Disciplined Header Grid (88px on mobile, 120px on sm+) -->
+                <header class="grid grid-cols-[88px_minmax(0,1fr)] sm:grid-cols-[120px_minmax(0,1fr)] items-start gap-4 sm:gap-6 pb-5 border-b border-slate-100">
+                    <div class="aspect-square w-[88px] sm:w-[120px] rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2 flex-shrink-0 overflow-hidden">
+                        <img src='https://cdn.shopify.com/s/files/1/0890/6136/products/bc-racing-3884222915.jpg?v=1752533569' alt='BC Racing BR-Series Coilovers | 2000-2004 Subaru Legacy (F-05-BR)' class='w-full h-full object-contain' loading='lazy' />
+                    </div>
+
+                    <div class="min-w-0 space-y-2">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-md inline-block">
+                            PRODUCT 05
+                        </span>
+
+                        <h3 class="product-title break-words text-base sm:text-lg font-semibold text-slate-950 leading-snug">
+                            BC Racing BR-Series Coilovers | 2000-2004 Subaru Legacy (F-05-BR)
+                        </h3>
+
+                        <p class="text-xs text-slate-500 flex flex-wrap items-center gap-2">
+                            <span>SKU: <strong class="font-mono text-slate-700">SUBARU-LEGACY-98-03--FIXED</strong></span>
+                            <span>·</span>
+                            <a href="https://maperformance.com/products/subaru-legacy-98-03-br-series-coilover-by-bc-racing" target="_blank" rel="noopener" class="text-blue-600 hover:underline inline-flex items-center gap-1">
+                                <span>Existing product URL</span>
+                                <span>↗</span>
+                            </a>
+                            <span>·</span>
+                            <span class="text-slate-600 font-medium">Live Price: $1195.00</span>
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span class='inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200'>Missing alt text</span>
+                            <span class="text-xs text-slate-500 font-medium ml-1">
+                                1 verified defects · 5 fields improved
+                            </span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Fixed Comparison Structure: Strict 2-Column Side-by-Side Grid -->
+                <div class="comparison-grid grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch mt-5">
+                    
+                    <!-- LEFT: BEFORE · Current listing (Rose surface #FFF3F1, Border #F1C5BF) -->
+                    <section class="min-w-0 rounded-xl border border-[#F1C5BF] bg-[#FFF3F1] p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-rose-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-rose-800">
+                                    <span class="text-base font-black">⊗</span>
+                                    <span>BEFORE · Current listing</span>
+                                </h4>
+                                <span class="text-xs text-rose-700 font-semibold">256 words</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Product Title</span>
+                                <p class="text-sm text-slate-800 font-medium leading-snug">BC Racing BR-Series Coilovers | 2000-2004 Subaru Legacy (F-05-BR)</p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Shopify Product Type</span>
+                                <p class="text-xs text-rose-700 font-semibold">
+                                    Suspension Components
+                                </p>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Image Alt Text</span>
+                                <div class="bg-rose-100/60 border border-rose-200 rounded-lg p-2 text-xs text-rose-800 font-medium">
+                                    ❌ Missing / Empty string (Not indexed by Google Images)
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Raw Description</span>
+                                <div class="raw-html-container text-xs text-slate-600 bg-white p-3 rounded-xl border border-rose-200 max-h-48 overflow-y-auto leading-relaxed">
+                                    <div id="newdescr">
+<div id="newdescrRC">
+<h2>BR-Series Coilovers for 2000-2004 Subaru Legacy by BC Racing</h2>
+<p>The BC Racing BR Series offers the most affordable entry into coilover suspension without sacrificing performance, comfort, build quality, vehicle height, or handling. This is done by extensively testing each vehicle then refining the coilover characteristics as many times as needed to ensure the most well-balanced and affordable aftermarket suspension conceivable. BC Racing takes great pride in choosing spring rates for our off-the-shelf kits that strike the perfect balance between comfort and performance so you're never stuck with an oversprung suspension like many other brands sell. BC Racing offers one of the widest ranges of damping adjustment with 30-clicks of compression/rebound adjusted simultaneously on the BR Series. With meticulously chosen spring rates, damper valving, and one of the widest adjustment ranges in the industry, you can't go wrong with the BC Racing BR Series Coilover System.</p>
+<p><strong>Please Note: Custom Spring rates and/or Swift Spring Upgrades are available as custom order, please contact our sales team at 651-927-4510 if you are interested to know more about these options. Product photos are generic and may not represent the product you will receive.</strong></p>
+<h3>Features</h3>
+<ul>
+<li>Mono-Tube Shock Design</li>
+<li>30-Clicks Of Simultaneous Compression/Rebound Adjustment</li>
+<li>Front Top Mount Option(s): Camber</li>
+<li>Front Spring Rate: 7KG</li>
+<li>Rear Top Mount Option(s): Rubber or Pillowball</li>
+<li>Rear Spring Rate: 6KG</li>
+</ul>
+<h3>Benefits</h3>
+<ul>
+<li>Linear Piston And Damping Curve</li>
+<li>Height Adjustment Independent Of Spring Compression</li>
+</ul>
+</div>
+<div id="newdescrLC">
+<h3>Applications</h3>
+<ul><li>2000-2004 Subaru Legacy (BE / BH)</li></ul>
+<h3>What's In The Box?</h3>
+<ul>
+<li>1 - Set of Coilovers</li>
+<li>1 - Set of Spanner Wrenches</li>
+</ul>
+<h3>Warranty</h3>
+<ul>
+<li>Limited Manufacturers Warranty</li>
+</ul>
+</div>
+</div>
+<div class="clear"><br></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Tags -->
+                        <div class="pt-3 border-t border-rose-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Collection Tags</span>
+                            <div><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>allsubaru</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BC Racing</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCExtendUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCRACING1F2B</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BCSwiftUp</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>BUILTTOORDER</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Coilovers</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>flow-backfill</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Hidden recommendation</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>LEAD3TO5DAYS</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>MAP STRICT BRAND</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>Recommendations disabled</span><span class='inline-block bg-slate-100 text-slate-700 text-xs px-2 py-0.5 rounded mr-1 mb-1 font-medium'>zSwiftFix</span></div>
+                        </div>
+                    </section>
+
+                    <!-- RIGHT: AFTER · Upgraded listing (Emerald surface #ECFDF3, Border #A7E3BD) -->
+                    <section class="min-w-0 rounded-xl border border-[#A7E3BD] bg-[#ECFDF3] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200/60">
+                                <h4 class="flex items-center gap-2 text-sm font-bold text-emerald-800">
+                                    <span class="text-base font-black">✓</span>
+                                    <span>AFTER · Upgraded listing</span>
+                                </h4>
+                                <span class="text-xs text-emerald-800 font-semibold">102 words · Technical Specs</span>
+                            </div>
+
+                            <!-- Field 1: Title -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Upgraded SEO Title</span>
+                                <p class="text-sm font-semibold text-slate-900 bg-white p-2.5 rounded-xl border border-emerald-300 leading-snug">
+                                    BC Racing BR-Series Coilovers | 2000-2004 Subaru Legacy
+                                </p>
+                            </div>
+
+                            <!-- Field 2: Product Type / Taxonomy -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Google Shopping Category</span>
+                                <span class="inline-block bg-emerald-100 text-emerald-950 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                                    Vehicles & Parts > Automotive Parts > Automotive Suspension > Coilovers
+                                </span>
+                            </div>
+
+                            <!-- Field 3: Image Alt-Text -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Optimized Image Alt Text</span>
+                                <div class="bg-emerald-100/60 border border-emerald-300 rounded-lg p-2 text-xs text-emerald-900 font-medium">
+                                    ✓ <strong>Alt Text:</strong> BC Racing BR-Series street performance coilovers for 2000-2004 Subaru Legacy.
+                                </div>
+                            </div>
+
+                            <!-- Field 4: Description -->
+                            <div class="mb-3.5">
+                                <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1">Structured Merchandising Description</span>
+                                <div class="text-xs text-slate-800 bg-white p-3.5 rounded-xl border border-emerald-300 max-h-48 overflow-y-auto leading-relaxed prose prose-sm">
+                                    The BC Racing BR-Series is the gold standard for daily-driven vehicles, offering the perfect balance of street comfort and track-ready handling. These coilovers allow you to lower your Subaru Legacy while maintaining exceptional ride quality through 30-clicks of damping adjustment. <h3>Key Features & Benefits</h3> <ul><li>30-clicks of simultaneous compression and rebound damping adjustment.</li><li>Mono-tube shock design provides consistent damping and excellent heat dissipation.</li><li>Height adjustment independent of spring compression for customized drop height.</li><li>Camber-adjustable front top mounts included for precision alignment correction.</li><li>High-quality materials ensure durability and long-lasting suspension performance.</li></ul> <div class="specs-summary"><strong>Compatibility:</strong> 2000-2004 Subaru Legacy (BE/BH). <strong>Front Spring Rate:</strong> 7KG. <strong>Rear Spring Rate:</strong> 6KG.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Field 5: Smart Tags -->
+                        <div class="pt-3 border-t border-emerald-200/60 mt-2">
+                            <span class="block text-[11px] font-bold uppercase tracking-wider text-emerald-900 font-bold mb-1.5">Smart Faceted Tags</span>
+                            <div class="flex flex-wrap"><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ BC Racing</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Subaru Legacy</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Coilovers</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Suspension</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Lowering Kit</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Daily Driver</span><span class='inline-block bg-emerald-100/70 text-emerald-900 border border-emerald-300 text-xs px-2.5 py-0.5 rounded-md font-medium mr-1.5 mb-1.5'>✓ Handling</span></div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Measurable Transformation Summary Footer -->
+                <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-50/70 -mx-5 -mb-5 sm:-mx-6 sm:-mb-6 p-4 rounded-b-2xl">
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-600">
+                        <span><strong>Title:</strong> Rewritten for clearer product search identification</span>
+                        <span>•</span>
+                        <span><strong>Description:</strong> 256w → 102w (structured features & technical specs)</span>
+                        <span>•</span>
+                        <span><strong>Alt text:</strong> Generated from verified attributes</span>
+                        <span>•</span>
+                        <span><strong>Taxonomy:</strong> Standardized taxonomy applied</span>
+                    </div>
+                    <button onclick="openLeadModal('free_test_5')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#0B281C] hover:bg-[#143827] text-[#B8F36A] font-bold text-xs transition shadow-xs">
+                        <span>Request Free Draft Import</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </article>
+            
+
+        <!-- Scoring Methodology Section -->
+        <section id="methodology" class="scroll-mt-20 my-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded">Scoring Methodology</span>
+            </div>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-[#0B281C] mb-2">
+                How Your Catalog Defect Score Is Calculated
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl mb-4">
+                The Catalog Defect Score (0–100) measures catalog completeness and search indexability across four programmatic criteria:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                    <strong class="text-slate-900 block font-bold text-sm mb-1">Thin Descriptions</strong>
+                    <span class="text-slate-600">Listings with under 35 words lacking technical specifications or consumer benefits.</span>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                    <strong class="text-slate-900 block font-bold text-sm mb-1">Missing Alt-Text</strong>
+                    <span class="text-slate-600">Images with empty or missing alt text, preventing ranking in Google Image Search.</span>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                    <strong class="text-slate-900 block font-bold text-sm mb-1">Missing Taxonomy</strong>
+                    <span class="text-slate-600">Uncategorized product types that block automatic Google Shopping feed approval.</span>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+                    <strong class="text-slate-900 block font-bold text-sm mb-1">Unstructured Specs</strong>
+                    <span class="text-slate-600">Descriptions lacking clean bulleted feature points, dimensions, or compatibility blocks.</span>
+                </div>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-4 italic">
+                Note: A catalog defect score reflects technical data gaps. Catalog completeness directly improves search indexability and on-page conversion clarity; we never claim unverified revenue projections.
+            </p>
+        </section>
+
+        <!-- Bottom Commercial CTA Banner (Deep Forest Green + Lime Action) -->
+        <div class="my-12 bg-[#0B281C] text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-emerald-950/40 relative overflow-hidden text-center no-print">
+            <div class="max-w-3xl mx-auto relative z-10">
+                <span class="inline-block bg-[#B8F36A]/20 text-[#B8F36A] border border-[#B8F36A]/30 text-xs px-3.5 py-1 rounded-full font-bold uppercase tracking-wider mb-4">
+                    HIGH INTENT · PURCHASE OR FREE TRIAL
+                </span>
+                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Ready to upgrade all 500 defective products via API in 24 hours?
+                </h2>
+                <p class="text-stone-300 text-sm sm:text-base mb-8 leading-relaxed max-w-2xl mx-auto">
+                    Prepared by <strong>Duncan Makoyo</strong> (<a href="mailto:duncan@duncanmakoyo.com" class="text-[#B8F36A] underline">duncan@duncanmakoyo.com</a>). Transparent flat <strong>$395</strong> turn-key upgrade for up to 500 products. Full structured HTML, taxonomy, tags, and image alt text injected directly into your store as safe drafts.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openLeadModal('full_upgrade')"
+                       class="btn-lime px-8 py-4 rounded-2xl text-xs uppercase tracking-wider shadow-lg flex items-center justify-center space-x-2 w-full sm:w-auto">
+                        <span>⚡</span>
+                        <span>Fix My Full Catalog ($395)</span>
+                    </button>
+                    <button onclick="openLeadModal('free_test_5')"
+                       class="px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider transition border border-white/20 w-full sm:w-auto">
+                        Request Free Draft Import (5 Products)
+                    </button>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-stone-400">
+                    <a href="./maperformance_5_upgraded_products.xlsx" download="maperformance_5_upgraded_products.xlsx" onclick="trackDownload('maperformance', 'xlsx_download')" class="hover:text-[#B8F36A] underline">
+                        Download My 5-Product Audit (.xlsx)
+                    </a>
+                    <span>•</span>
+                    <a href="./sample_5_import.csv" download="sample_5_import.csv" onclick="trackDownload('maperformance', 'csv_download')" class="hover:text-white underline">
+                        Download Shopify-Ready CSV
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expanded FAQ Section (Addressing the 7 Core Trust Questions) -->
+        <section class="mt-16 bg-white text-slate-900 rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs px-3.5 py-1 rounded-full font-bold uppercase tracking-wider mb-3">
+                        Zero-Risk Guarantee
+                    </span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-[#0B281C] tracking-tight">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
+                        Everything you need to know about our catalog remediation process, pricing, and safety guardrails.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Q1 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            1. What exactly did you scan?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            We analyzed your public product catalog endpoint (<code class="bg-slate-200/70 text-slate-800 px-1 py-0.5 rounded text-xs font-mono">maperformance.com/products.json</code>). We programmatically checked descriptions for length and technical detail, evaluated image alt tags for Google Images indexability, and checked product type fields against the standardized Google Shopping product taxonomy.
+                        </p>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            2. How were the five products selected?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            They were ranked by our defect scoring engine as having the greatest technical data gaps in your public catalog (e.g., descriptions with under 35 words, completely missing alt text, or absent product categories). Upgrading these highest-defect listings provides the clearest demonstration of proof-of-work.
+                        </p>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            3. What do I receive for free?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            You get complete access to both the formatted Excel audit (<code class="font-mono text-xs text-slate-800">.xlsx</code>) and the ready-to-import Shopify CSV (<code class="font-mono text-xs text-slate-800">.csv</code>) containing all five enriched products. If you prefer not to touch spreadsheets, you can request an authorized draft push, and we will create draft listings directly in your Shopify admin at zero cost.
+                        </p>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            4. Will this change my live Shopify store?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            <strong>Never without your explicit approval.</strong> All changes are pushed strictly as unpublished <strong>Draft listings</strong> or provided via standalone import files. We never overwrite active listings, touch live inventory levels, change pricing, or alter checkout workflows. Your customer-facing storefront experiences zero downtime and zero disruptions.
+                        </p>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            5. How does the full-catalog fee work?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            We charge a transparent, one-time flat fee of <strong>$395</strong> to remediate up to 500 eligible products in your catalog. There are no recurring retainers, no per-hour consulting charges, and no hidden fees. You receive a confirmed 24-hour turnaround upon scope verification.
+                        </p>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            6. What happens when a product is missing reliable source data?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            We never fabricate or hallucinate technical specifications, working load limits, certifications, or safety ratings. If source data is missing, we populate standard categories and collection tags, format the existing copy into structured HTML, and explicitly flag the missing specifications in your audit workbook for merchant verification.
+                        </p>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50/50">
+                        <h3 class="font-display font-bold text-base text-[#0B281C] mb-1.5">
+                            7. What access or permissions do you need?
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            If you import the provided CSV manually, you need zero permissions. If you request our automated draft push, we simply send a standard Shopify Collaborator request with scoped <em>"Draft Products"</em> permissions only. We never ask for your password, customer records, payment settings, or administrative access.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Two-Option Conversion Modal (Matching Wireframe media_1792870709620.png) -->
+    <div id="leadModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[90vh] overflow-y-auto">
+            <!-- Close button -->
+            <button onclick="closeLeadModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl font-bold p-1 leading-none" aria-label="Close dialog">
+                ✕
+            </button>
+
+            <div id="modalFormContainer">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Shopify Catalog Remediation</span>
+                </div>
+                <h3 class="font-display text-2xl font-black text-[#0B281C] mb-1">
+                    Upgrade Maperformance
+                </h3>
+                <p class="text-xs text-slate-500 mb-6">
+                    Select your preferred outcome below. Duncan Makoyo will review and confirm directly.
+                </p>
+
+                <form id="leadCaptureForm" onsubmit="handleLeadSubmit(event)">
+                    <div class="space-y-4 mb-6">
+                        <!-- Option 1: FREE -->
+                        <label class="block p-4 rounded-2xl border-2 border-slate-200 hover:border-[#0B281C] cursor-pointer transition bg-white has-[:checked]:border-[#0B281C] has-[:checked]:bg-emerald-50/30">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="lead_choice" value="free_test_5" class="mt-1 accent-[#0B281C]" checked onchange="updateModalButtonText()">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                                            FREE
+                                        </span>
+                                        <span class="text-xs font-bold text-slate-900">$0</span>
+                                    </div>
+                                    <strong class="text-slate-950 block font-bold text-sm">Start with 5 products</strong>
+                                    <p class="text-xs text-slate-600 mt-1 leading-snug">
+                                        Review the generated listings and approve a draft import into your Shopify store.
+                                    </p>
+                                    <ul class="mt-2.5 space-y-1 text-xs text-slate-700">
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> Five upgraded product drafts</li>
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> Review before publishing</li>
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> No live listing changes without approval</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Option 2: FULL CATALOG -->
+                        <label class="block p-4 rounded-2xl border-2 border-slate-200 hover:border-[#0B281C] cursor-pointer transition bg-white has-[:checked]:border-[#0B281C] has-[:checked]:bg-emerald-50/30">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="lead_choice" value="full_upgrade" class="mt-1 accent-[#0B281C]" onchange="updateModalButtonText()">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-blue-800">
+                                            FULL CATALOG
+                                        </span>
+                                        <span class="text-sm font-extrabold text-slate-950">$395</span>
+                                    </div>
+                                    <strong class="text-slate-950 block font-bold text-sm">Fix the wider catalog problem</strong>
+                                    <p class="text-xs text-slate-600 mt-1 leading-snug">
+                                        For a defined scope of up to 500 eligible products, with agreed deliverables and a confirmed 24-hour turnaround.
+                                    </p>
+                                    <ul class="mt-2.5 space-y-1 text-xs text-slate-700">
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> All 500 defective products upgraded</li>
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> Confirmed 24-hour delivery timeline</li>
+                                        <li class="flex items-center gap-1.5"><span class="text-emerald-700 font-bold">✓</span> Shopify CSV import file + optional API Draft push</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="space-y-3.5 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Name *</label>
+                            <input type="text" id="lead_name" required placeholder="e.g. Alex Miller" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B281C] focus:ring-1 focus:ring-[#0B281C]">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Best Email *</label>
+                            <input type="email" id="lead_email" required placeholder="alex@maperformance.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B281C] focus:ring-1 focus:ring-[#0B281C]">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Optional Note / Store Scope</label>
+                            <textarea id="lead_note" rows="2" placeholder="Any specific questions or preferred rollout timing..." class="w-full px-4 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B281C] focus:ring-1 focus:ring-[#0B281C]"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-[11px] text-slate-500 mb-4 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                        🛡️ <strong>Safety Guarantee:</strong> Drafts created only. Zero live listings changed without explicit merchant approval.
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-lime w-full py-3.5 px-6 rounded-2xl text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+                        <span id="btnText">Request Free Draft Import →</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Container -->
+            <div id="modalSuccessContainer" class="hidden text-center py-6">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 text-3xl font-black flex items-center justify-center mx-auto mb-4">
+                    ✓
+                </div>
+                <h3 class="font-display text-2xl font-black text-[#0B281C] mb-2">Request Received!</h3>
+                <p id="successMsg" class="text-slate-600 text-sm leading-relaxed mb-6">
+                    Duncan Makoyo has been notified and will reply to your email within a few hours.
+                </p>
+                <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 text-xs text-slate-600 mb-6">
+                    Need immediate assistance? Email Duncan directly at <a href="mailto:duncan@duncanmakoyo.com" class="text-[#0B281C] font-bold underline">duncan@duncanmakoyo.com</a>
+                </div>
+                <button onclick="closeLeadModal()" class="w-full py-3 rounded-xl bg-[#0B281C] text-white font-bold text-xs uppercase tracking-wider hover:bg-slate-900 transition">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-slate-200 py-8 text-center text-xs text-slate-500 no-print">
+        <p>Shopify Catalog X-Ray Proof-of-Work Platform • Built for Duncan Makoyo • <a href="mailto:duncan@duncanmakoyo.com" class="underline text-slate-700">duncan@duncanmakoyo.com</a></p>
+    </footer>
+
+    <!-- Engagement Tracking, Dynamic Modal & Accessibility Scripts -->
+    <script>
+        function trackEvent(evt) {
+            try {
+                var url = '../tracker.php?store=' + encodeURIComponent('maperformance') + '&event=' + encodeURIComponent(evt);
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url);
+                } else {
+                    fetch(url, { method: 'GET', mode: 'no-cors' });
+                }
+            } catch(e) {}
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            trackEvent('page_view');
+        });
+
+        function trackDownload(slug, evt) {
+            trackEvent(evt || 'xlsx_download');
+        }
+
+        function updateModalButtonText() {
+            var choice = document.querySelector('input[name="lead_choice"]:checked');
+            var btnText = document.getElementById('btnText');
+            if (!choice || !btnText) return;
+            if (choice.value === 'full_upgrade') {
+                btnText.innerText = 'Choose Full Catalog Remediation ($395) →';
+            } else {
+                btnText.innerText = 'Request Free Draft Import →';
+            }
+        }
+
+        function openLeadModal(choice) {
+            var modal = document.getElementById('leadModal');
+            if (!modal) return;
+            if (choice) {
+                var radio = document.querySelector('input[name="lead_choice"][value="' + choice + '"]');
+                if (radio) radio.checked = true;
+            }
+            updateModalButtonText();
+            modal.classList.remove('hidden');
+        }
+
+        function closeLeadModal() {
+            var modal = document.getElementById('leadModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Dismiss on clicking backdrop or ESC key
+        document.addEventListener('click', function(e) {
+            var modal = document.getElementById('leadModal');
+            if (modal && e.target === modal) {
+                closeLeadModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLeadModal();
+            }
+        });
+
+        function handleLeadSubmit(e) {
+            e.preventDefault();
+            var btn = document.getElementById('submitBtn');
+            var btnText = document.getElementById('btnText');
+            var name = document.getElementById('lead_name').value.trim();
+            var email = document.getElementById('lead_email').value.trim();
+            var note = document.getElementById('lead_note').value.trim();
+            var choice = document.querySelector('input[name="lead_choice"]:checked') ? document.querySelector('input[name="lead_choice"]:checked').value : 'free_test_5';
+
+            if (!email) return;
+
+            btn.disabled = true;
+            btnText.innerText = 'Transmitting Request...';
+
+            var payload = {
+                store: 'maperformance',
+                event: 'lead_submission',
+                name: name,
+                email: email,
+                choice: choice,
+                note: note
+            };
+
+            fetch('../tracker.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(function(resp) { return resp.json(); })
+            .then(function(data) {
+                document.getElementById('modalFormContainer').classList.add('hidden');
+                var successContainer = document.getElementById('modalSuccessContainer');
+                successContainer.classList.remove('hidden');
+                document.getElementById('successMsg').innerHTML = 'Received! Duncan Makoyo has been notified and will reply to <strong>' + email + '</strong> within a few hours.';
+            })
+            .catch(function(err) {
+                // Graceful fallback display
+                document.getElementById('modalFormContainer').classList.add('hidden');
+                document.getElementById('modalSuccessContainer').classList.remove('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
