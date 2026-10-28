@@ -1,5 +1,13 @@
-# Hardened Security Configuration for Hostinger Audits Directory
+# Hardened Security & Direct Routing Configuration for Hostinger Audits Directory
 # Duncan Makoyo Catalog X-Ray Pipeline
+
+# Disable mod_rewrite inheritance from root SPA so static audit pages load directly
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+</IfModule>
+
+# Ensure directory index looks for index.html first
+DirectoryIndex index.html index.php
 
 # Disable directory browsing
 Options -Indexes
@@ -41,4 +49,3 @@ AddCharset utf-8 .csv
         Header set X-Content-Type-Options "nosniff"
     </IfModule>
 </FilesMatch>
-
