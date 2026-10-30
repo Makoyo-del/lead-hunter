@@ -114,20 +114,20 @@
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <header class="sticky top-0 z-50 border-b border-white/[0.07] bg-[#08080C]/85 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 shrink-0">
                 <a href="#" class="flex items-center gap-2.5 group">
-                    <span class="px-2.5 py-1 rounded-md bg-shop-purple text-white font-mono text-xs font-bold tracking-wider shadow-[0_0_16px_rgba(90,49,244,0.6)] group-hover:bg-shop-purpleHover transition">
+                    <span class="px-2.5 py-1 rounded-md bg-shop-purple text-white font-mono text-xs font-bold tracking-wider shadow-[0_0_16px_rgba(90,49,244,0.6)] group-hover:bg-shop-purpleHover transition whitespace-nowrap">
                         catalog.mcp
                     </span>
-                    <span class="font-semibold text-sm text-white tracking-tight">Catalog Intelligence</span>
+                    <span class="font-semibold text-sm text-white tracking-tight whitespace-nowrap">Catalog Intelligence</span>
                 </a>
-                <span class="hidden sm:inline-block text-zinc-600 text-xs">|</span>
-                <a href="https://duncanmakoyo.com" target="_blank" class="hidden sm:inline-block text-xs text-zinc-400 hover:text-white transition">
+                <span class="hidden 2xl:inline-block text-zinc-600 text-xs">|</span>
+                <a href="https://duncanmakoyo.com" target="_blank" class="hidden 2xl:inline-block text-xs text-zinc-400 hover:text-white transition whitespace-nowrap">
                     by Duncan Makoyo ↗
                 </a>
             </div>
 
-            <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
+            <nav class="hidden xl:flex items-center gap-5 text-xs font-medium text-zinc-400 whitespace-nowrap">
                 <a href="#scanner-console" class="hover:text-white transition">Live Scanner</a>
                 <a href="#billion-grid" class="hover:text-white transition">1B Product Grid</a>
                 <a href="#discovery-matrix" class="hover:text-white transition">Discovery Matrix</a>
@@ -137,20 +137,21 @@
             </nav>
 
             <div class="flex items-center gap-2.5">
-                <a href="#sprint-checkout" class="hidden sm:inline-block px-3.5 py-1.5 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold transition shadow-sm">
+                <a href="#sprint-checkout" class="hidden sm:inline-block whitespace-nowrap px-3.5 py-1.5 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold transition shadow-sm">
                     Get 5-Product Preview
                 </a>
-                <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-white/[0.06] border border-white/[0.1] text-white">
+                <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()" class="xl:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-white/[0.06] border border-white/[0.1] text-white">
                     <span id="menu-icon" class="text-lg leading-none">☰</span>
                 </button>
             </div>
         </div>
         <!-- Mobile dropdown menu -->
-        <nav id="mobile-menu" class="hidden md:hidden border-t border-white/[0.07] bg-[#08080C]/95 backdrop-blur-xl px-4 py-3 text-sm font-medium text-zinc-300">
+        <nav id="mobile-menu" class="hidden xl:hidden border-t border-white/[0.07] bg-[#08080C]/95 backdrop-blur-xl px-4 py-3 text-sm font-medium text-zinc-300">
             <a href="#scanner-console" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Live Scanner</a>
             <a href="#billion-grid" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">1B Product Grid</a>
             <a href="#discovery-matrix" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Discovery Matrix</a>
             <a href="#mcp-inspector" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Feed Inspector</a>
+            <a href="#sprint-checkout" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">$400 Sprint</a>
             <a href="#faq" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">FAQ</a>
             <a href="#sprint-checkout" onclick="closeMobileMenu()" class="mt-2 block text-center py-2.5 rounded-full bg-white text-zinc-950 font-semibold">Get 5-Product Preview</a>
         </nav>
@@ -416,7 +417,10 @@
                     Product discovery observations
                 </h2>
                 <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    A product can be eligible for Shopify Catalog yet fail to surface in specific shopping queries when underlying attributes, category taxonomy, or descriptions are unmapped. Here is how your sampled products performed:
+                    This is the <strong class="text-zinc-200 font-medium">per-store audit report</strong>. For the store entered under <em>"1. Storefront + MCP Audit"</em>, we take up to 3 of its real products, search for each in Shopify's 1B catalog (by exact title and by category/buyer intent), and check the product data AI agents read. It updates only when you press <strong class="text-zinc-200 font-medium">Scan Storefront</strong>. "Direct 1B Catalog Search" only refreshes the product grid above.
+                </p>
+                <p id="matrix-context" class="mt-3 inline-block px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-[11px] font-mono text-indigo-300">
+                    Run a storefront scan to see results here
                 </p>
 
                 <!-- Filter Pill Toggle (Matches the pill toggle above the sneaker cards) -->
@@ -814,7 +818,7 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') { closeProductModal(); closeMobileMenu(); }
         });
-        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 1280) closeMobileMenu(); });
 
         function switchMode(mode) {
             currentMode = mode;
@@ -945,6 +949,7 @@
                         false
                     );
                     updateKpiStrip(data);
+                    setMatrixContext(`Audit of ${data.brand_name} (${data.domain}) · ${data.country || country} · ${new Date(data.timestamp).toLocaleTimeString()}`);
                     renderCatalogGrid(currentCatalogItems);
                     renderObservationsMatrix(data.product_observations || []);
                     renderJsonInspector(data.raw_sample_json);
@@ -1055,6 +1060,11 @@
             }
         }
 
+        function setMatrixContext(text) {
+            const el = document.getElementById('matrix-context');
+            if (el) el.textContent = text;
+        }
+
         function renderObservationsMatrix(observations) {
             const container = document.getElementById('observations-cards-grid');
             if (!observations || !observations.length) {
@@ -1067,14 +1077,20 @@
                 const intent = obs.intent_search || null;
                 const exactOk = exact.status === 'OBSERVED';
                 const intentOk = intent && intent.status === 'OBSERVED';
+                const view = activeMatrixView;
 
-                const badgeHtml = exactOk
-                    ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Exact Search: OBSERVED (#${exact.rank})</span>`
-                    : `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">Exact Search: NOT_OBSERVED_IN_SAMPLE</span>`;
+                // Badge reflects the active view (all / exact / intent)
+                const badgeSrc = view === 'intent' ? { label: 'Category Search', data: intent, ok: intentOk } : { label: 'Exact Search', data: exact, ok: exactOk };
+                const badgeHtml = (view === 'intent' && !intent)
+                    ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-zinc-500/15 text-zinc-300 border border-zinc-500/30">Category Search: NOT RUN</span>`
+                    : (badgeSrc.ok
+                        ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">${badgeSrc.label}: OBSERVED (#${badgeSrc.data.rank})</span>`
+                        : `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">${badgeSrc.label}: NOT_OBSERVED_IN_SAMPLE</span>`);
 
                 const highlightCardClass = !exactOk || (obs.defects && obs.defects.length > 0) ? 'shop-card-active' : '';
 
-                const competingList = (exact.competing_offers || []).slice(0, 2).map(c =>
+                const offersSrc = (view === 'intent' ? (intent ? intent.competing_offers : []) : exact.competing_offers) || [];
+                const competingList = offersSrc.slice(0, 2).map(c =>
                     `<div class="flex items-center justify-between text-[11px] py-1 border-b border-white/[0.05] last:border-0">
                         <span class="text-zinc-300 truncate max-w-[68%]">• ${escapeHtml(c.seller_name)}</span>
                         <span class="font-mono text-indigo-300">${escapeHtml(c.price)}</span>
@@ -1110,20 +1126,24 @@
 
                             <!-- Query Discovery Results Box -->
                             <div class="p-3 rounded-xl bg-[#0B0C12] border border-white/[0.06] space-y-2 text-xs">
+                                ${view !== 'intent' ? `
                                 <div class="flex items-center justify-between">
                                     <span class="text-zinc-400 font-mono text-[11px]">Exact Query:</span>
                                     <span class="font-mono text-[11px] ${exactOk ? 'text-emerald-400 font-semibold' : 'text-amber-300'}">
                                         ${exactOk ? `Observed (Rank #${exact.rank})` : 'Not observed in sample'}
                                     </span>
                                 </div>
-                                ${intent ? `
-                                <div class="flex items-center justify-between pt-1.5 border-t border-white/[0.05]">
+                                ${view === 'exact' ? `<div class="text-[10px] font-mono text-zinc-500 break-words">Query: "${escapeHtml(exact.query || '')}"</div>` : ''}
+                                ` : ''}
+                                ${view === 'intent' && !intent ? `<div class="text-[11px] font-mono text-zinc-500">Category query is run on the first 2 sampled SKUs only to keep scans fast.</div>` : ''}
+                                ${intent && view !== 'exact' ? `
+                                <div class="flex items-center justify-between ${view === 'all' ? 'pt-1.5 border-t border-white/[0.05]' : ''}">
                                     <span class="text-zinc-400 font-mono text-[11px]">Category Query:</span>
                                     <span class="font-mono text-[11px] ${intentOk ? 'text-emerald-400 font-semibold' : 'text-amber-300'}">
                                         ${intentOk ? `Observed (Rank #${intent.rank})` : 'Not observed in sample'}
                                     </span>
                                 </div>
-                                <div class="text-[10px] font-mono text-zinc-500 truncate">Query: "${escapeHtml(intent.query)}"</div>
+                                <div class="text-[10px] font-mono text-zinc-500 break-words">Query: "${escapeHtml(intent.query)}"</div>
                                 ` : ''}
                             </div>
 
@@ -1135,7 +1155,7 @@
 
                             <!-- Other Merchant Offers Returned in Same Search -->
                             <div class="pt-2 border-t border-white/[0.06]">
-                                <div class="text-[11px] font-mono text-zinc-400 mb-1">Other Merchant Offers in Query Sample:</div>
+                                <div class="text-[11px] font-mono text-zinc-400 mb-1">Other Merchant Offers in ${view === 'intent' ? 'Category' : 'Exact'} Query Sample:</div>
                                 ${competingList}
                             </div>
                         </div>

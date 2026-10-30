@@ -38,6 +38,8 @@ if ($rawBody !== false && strlen($rawBody) > 0) {
     }
 }
 
+enforceRateLimit();
+
 $mode = (string)($input['mode'] ?? $_GET['mode'] ?? 'domain'); // 'domain' or 'search'
 $rawDomain = trim((string)($input['domain'] ?? $_GET['domain'] ?? ''));
 $rawQuery = trim((string)($input['query'] ?? $_GET['query'] ?? ''));
@@ -83,9 +85,57 @@ function sanitizeAndValidateDomain(string $raw): ?string {
 }
 
 /**
- * Calls Shopify MCP search_catalog via JSON-RPC 2.0
+ * ── MCP access layer: cache + parallel prefetch ──────────────────────────────
+ * Public catalog search results (NOT merchant data) are cached for 15 minutes in the
+ * system temp dir. This keeps repeated/demo queries instant and keeps load off mcp.shop.com
+ * so many visitors can use the scanner at the same time.
  */
-function callShopMcpSearch(string $query, int $limit = 8, string $country = 'US', string $currency = 'USD', string $targetDomain = ''): array {
+const MCP_CACHE_TTL = 900;
+$GLOBALS['MCP_MEMO'] = [];
+
+function mcpCacheKey(string $q, int $limit, string $country, string $currency): string {
+    return sha1(strtolower(trim($q)) . "|{$limit}|{$country}|{$currency}");
+}
+
+function mcpCacheDir(): string {
+    $d = rtrim(sys_get_temp_dir(), '/\\') . '/catalog_scanner_cache';
+    if (!is_dir($d)) {
+        @mkdir($d, 0700, true);
+    }
+    return $d;
+}
+
+function mcpCacheGet(string $key): ?array {
+    $f = mcpCacheDir() . "/{$key}.json";
+    if (is_file($f) && (time() - (int)@filemtime($f)) < MCP_CACHE_TTL) {
+        $d = json_decode((string)@file_get_contents($f), true);
+        if (is_array($d)) {
+            return $d;
+        }
+    }
+    return null;
+}
+
+function mcpCachePut(string $key, array $products): void {
+    if (empty($products)) {
+        return; // never cache failures / empty results
+    }
+    $f = mcpCacheDir() . "/{$key}.json";
+    $tmp = $f . '.' . bin2hex(random_bytes(4));
+    if (@file_put_contents($tmp, json_encode($products, JSON_UNESCAPED_SLASHES)) !== false) {
+        @rename($tmp, $f);
+    }
+    // Opportunistic cleanup (1% of writes)
+    if (random_int(1, 100) === 1) {
+        foreach ((array)@glob(mcpCacheDir() . '/*.json') as $old) {
+            if (time() - (int)@filemtime($old) > MCP_CACHE_TTL * 4) {
+                @unlink($old);
+            }
+        }
+    }
+}
+
+function buildMcpCurl(string $query, int $limit, string $country, string $currency) {
     $payload = [
         'jsonrpc' => '2.0',
         'id' => random_int(10000, 999999),
@@ -95,13 +145,8 @@ function callShopMcpSearch(string $query, int $limit = 8, string $country = 'US'
             'arguments' => [
                 'catalog' => [
                     'query' => $query,
-                    'context' => [
-                        'address_country' => $country,
-                        'currency' => $currency
-                    ],
-                    'pagination' => [
-                        'limit' => $limit
-                    ]
+                    'context' => ['address_country' => $country, 'currency' => $currency],
+                    'pagination' => ['limit' => $limit]
                 ]
             ],
             '_meta' => [
@@ -132,28 +177,127 @@ function callShopMcpSearch(string $query, int $limit = 8, string $country = 'US'
         CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_FOLLOWLOCATION => false
     ]);
+    return $ch;
+}
 
-    $resp = @curl_exec($ch);
-    $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    @curl_close($ch);
-
-    if ($resp === false || $httpCode !== 200) {
+function parseMcpRaw($resp, int $httpCode): array {
+    if ($resp === false || $resp === null || $httpCode !== 200) {
         return [];
     }
-
     $data = json_decode((string)$resp, true);
     $content = $data['result']['content'] ?? [];
     if (!is_array($content) || empty($content[0]['text'])) {
         return [];
     }
-
     $parsed = json_decode((string)$content[0]['text'], true);
-    $rawProducts = $parsed['products'] ?? [];
-    if (!is_array($rawProducts)) {
-        return [];
+    $raw = $parsed['products'] ?? [];
+    return is_array($raw) ? $raw : [];
+}
+
+/** Single raw fetch: memo -> disk cache -> network */
+function fetchMcpRaw(string $query, int $limit, string $country, string $currency): array {
+    $key = mcpCacheKey($query, $limit, $country, $currency);
+    if (isset($GLOBALS['MCP_MEMO'][$key])) {
+        return $GLOBALS['MCP_MEMO'][$key];
+    }
+    $cached = mcpCacheGet($key);
+    if ($cached !== null) {
+        return $GLOBALS['MCP_MEMO'][$key] = $cached;
+    }
+    $ch = buildMcpCurl($query, $limit, $country, $currency);
+    $resp = @curl_exec($ch);
+    $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    @curl_close($ch);
+    $raw = parseMcpRaw($resp, $code);
+    mcpCachePut($key, $raw);
+    return $GLOBALS['MCP_MEMO'][$key] = $raw;
+}
+
+/**
+ * Runs all uncached MCP searches IN PARALLEL (curl_multi) so one scan takes ~1 round-trip
+ * instead of 5 sequential ones. $jobs = [[query, limit], ...]
+ */
+function mcpPrefetch(array $jobs, string $country, string $currency): void {
+    $pending = [];
+    foreach ($jobs as [$q, $limit]) {
+        $key = mcpCacheKey($q, $limit, $country, $currency);
+        if (isset($GLOBALS['MCP_MEMO'][$key])) {
+            continue;
+        }
+        $cached = mcpCacheGet($key);
+        if ($cached !== null) {
+            $GLOBALS['MCP_MEMO'][$key] = $cached;
+            continue;
+        }
+        $pending[$key] = [$q, $limit];
+    }
+    if (empty($pending) || !function_exists('curl_multi_init')) {
+        return;
     }
 
-    return normalizeMcpProducts($rawProducts, $targetDomain);
+    $mh = curl_multi_init();
+    $handles = [];
+    foreach ($pending as $key => [$q, $limit]) {
+        $ch = buildMcpCurl($q, $limit, $country, $currency);
+        curl_multi_add_handle($mh, $ch);
+        $handles[$key] = $ch;
+    }
+    $running = null;
+    do {
+        $status = curl_multi_exec($mh, $running);
+        if ($running > 0) {
+            curl_multi_select($mh, 1.0);
+        }
+    } while ($running > 0 && $status === CURLM_OK);
+
+    foreach ($handles as $key => $ch) {
+        $resp = curl_multi_getcontent($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $raw = parseMcpRaw($resp, $code);
+        mcpCachePut($key, $raw);
+        $GLOBALS['MCP_MEMO'][$key] = $raw;
+        curl_multi_remove_handle($mh, $ch);
+        @curl_close($ch);
+    }
+    curl_multi_close($mh);
+}
+
+/**
+ * Calls Shopify MCP search_catalog (cached / prefetched) and normalizes results
+ */
+function callShopMcpSearch(string $query, int $limit = 8, string $country = 'US', string $currency = 'USD', string $targetDomain = ''): array {
+    return normalizeMcpProducts(fetchMcpRaw($query, $limit, $country, $currency), $targetDomain);
+}
+
+/**
+ * Per-IP rate limit (file based, stateless re: merchant data). Protects the shared MCP endpoint
+ * and Hostinger PHP workers from abuse while allowing many concurrent legit users.
+ */
+function enforceRateLimit(int $max = 30, int $windowSec = 60): void {
+    $ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    $file = mcpCacheDir() . '/rl_' . sha1((string)$ip) . '.txt';
+    $now = time();
+    $fh = @fopen($file, 'c+');
+    if (!$fh) {
+        return;
+    }
+    @flock($fh, LOCK_EX);
+    $raw = trim((string)stream_get_contents($fh));
+    $times = $raw === '' ? [] : array_filter(array_map('intval', explode(',', $raw)), fn($t) => $t > $now - $windowSec);
+    if (count($times) >= $max) {
+        @flock($fh, LOCK_UN);
+        @fclose($fh);
+        http_response_code(429);
+        header('Retry-After: ' . $windowSec);
+        echo json_encode(['status' => 'error', 'message' => 'Too many scans from your network in the last minute. Please wait a few seconds and try again.']);
+        exit;
+    }
+    $times[] = $now;
+    ftruncate($fh, 0);
+    rewind($fh);
+    fwrite($fh, implode(',', $times));
+    @flock($fh, LOCK_UN);
+    @fclose($fh);
 }
 
 /**
@@ -373,6 +517,19 @@ if (!isset($knownBrands[$domain]) && !empty($sampledSlice[0]['vendor'])) {
         $brandGuess = $vCandidate;
     }
 }
+
+// Fire every MCP query for this scan in parallel (exact + intent), then the loop below reads from memory
+$prefetchJobs = [];
+foreach ($sampledSlice as $pIdx => $pSp) {
+    $pTitle = (string)($pSp['title'] ?? 'Untitled Product');
+    $pType = trim((string)($pSp['product_type'] ?? ''));
+    $pVendor = trim((string)($pSp['vendor'] ?? $brandGuess));
+    $prefetchJobs[] = [trim("{$pTitle} {$brandGuess}"), 6];
+    if ($pIdx < 2) {
+        $prefetchJobs[] = [buildCategoryIntentQuery($pTitle, $pType, $pVendor), 6];
+    }
+}
+mcpPrefetch($prefetchJobs, $country, $currency);
 
 $productObservations = [];
 $catalogGridMap = [];
