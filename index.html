@@ -1,54 +1,1237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://duncanmakoyo.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Duncan Makoyo...</title>
+    <title>Shopify Catalog Intelligence | 1B Product AI Discovery Diagnostic — Duncan Makoyo</title>
+    <meta name="description" content="Test your Shopify storefront against Shopify's 1-Billion-Product AI Catalog (mcp.shop.com). Inspect product discovery observations, competing merchant offers, and underlying product-data mapping.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script>
-        window.location.replace("https://duncanmakoyo.com");
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        shop: {
+                            purple: '#5A31F4',
+                            purpleHover: '#4C24E0',
+                            glow: '#7C3AED',
+                            dark: '#08080C',
+                            card: '#11121A',
+                            elevated: '#171924',
+                            border: '#252736'
+                        }
+                    }
+                }
+            }
+        }
     </script>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 1.5rem;
+            background-color: #08080C;
+            color: #F4F4F6;
+            overflow-x: hidden;
         }
-        .card {
-            background: #1e293b;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            border: 1px solid #334155;
-            max-width: 420px;
+        /* Subtle ASCII / Dot-Matrix Hero Globe Effect */
+        .hero-matrix-bg {
+            background-image: 
+                radial-gradient(circle at 50% 22%, rgba(90, 49, 244, 0.22) 0%, rgba(124, 58, 237, 0.06) 38%, transparent 70%),
+                radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 100% 100%, 22px 22px;
         }
-        h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-        p { color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.5; }
-        a {
-            display: inline-block;
-            background: #10b981;
-            color: #0f172a;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            transition: background 0.2s;
+        .globe-ascii {
+            mask-image: radial-gradient(circle, rgba(0,0,0,0.85) 20%, transparent 68%);
+            -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.85) 20%, transparent 68%);
         }
-        a:hover { background: #34d399; }
+        .glass-panel {
+            background: rgba(17, 18, 26, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+        }
+        .shop-card {
+            background: #11121A;
+            border: 1px solid #232534;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .shop-card:hover {
+            border-color: rgba(90, 49, 244, 0.65);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px -10px rgba(90, 49, 244, 0.25);
+        }
+        .shop-card-active {
+            border-color: #5A31F4 !important;
+            box-shadow: 0 0 0 1px #5A31F4, 0 16px 36px -10px rgba(90, 49, 244, 0.35);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0D0E14;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2A2D3E;
+            border-radius: 3px;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-ring 3s infinite ease-in-out;
+        }
     </style>
 </head>
-<body>
-    <div class="card">
-        <h1>Duncan Makoyo</h1>
-        <p>E-Commerce Catalog & Shopify API Automation. Redirecting you to the main homepage...</p>
-        <a href="https://duncanmakoyo.com">Visit duncanmakoyo.com ↗</a>
+<body class="antialiased selection:bg-shop-purple selection:text-white">
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- TOP STICKY NAVIGATION (Shop.dev / Shop.md Inspired)                     -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <header class="sticky top-0 z-50 border-b border-white/[0.07] bg-[#08080C]/85 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="#" class="flex items-center gap-2.5 group">
+                    <span class="px-2.5 py-1 rounded-md bg-shop-purple text-white font-mono text-xs font-bold tracking-wider shadow-[0_0_16px_rgba(90,49,244,0.6)] group-hover:bg-shop-purpleHover transition">
+                        catalog.mcp
+                    </span>
+                    <span class="font-semibold text-sm text-white tracking-tight">Catalog Intelligence</span>
+                </a>
+                <span class="hidden sm:inline-block text-zinc-600 text-xs">|</span>
+                <a href="https://duncanmakoyo.com" target="_blank" class="hidden sm:inline-block text-xs text-zinc-400 hover:text-white transition">
+                    by Duncan Makoyo ↗
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
+                <a href="#scanner-console" class="hover:text-white transition">Live Scanner</a>
+                <a href="#billion-grid" class="hover:text-white transition">1B Product Grid</a>
+                <a href="#discovery-matrix" class="hover:text-white transition">Discovery Matrix</a>
+                <a href="#mcp-inspector" class="hover:text-white transition">Feed Inspector</a>
+                <a href="#sprint-checkout" class="hover:text-white transition">$400 Sprint</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-2.5">
+                <a href="#sprint-checkout" class="px-3.5 py-1.5 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold transition shadow-sm">
+                    Get 5-Product Preview
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- HERO SECTION + INTERACTIVE DIAGNOSTIC CONSOLE                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="scanner-console" class="relative hero-matrix-bg pt-14 pb-20 sm:pt-20 sm:pb-28 border-b border-white/[0.06]">
+        <!-- Subtle decorative ASCII matrix globe backdrop -->
+        <div aria-hidden="true" class="pointer-events-none select-none absolute inset-x-0 top-6 flex justify-center opacity-20 globe-ascii overflow-hidden">
+            <pre class="font-mono text-[9px] leading-[11px] text-indigo-300 text-center">
+                  . : : : · · · : : : .
+            . : · # # @ @ @ @ @ @ # # · : .
+         . : # @ @ # : · . . . · : # @ @ # : .
+       . · @ @ : .   mcp.shop.com    . : @ @ · .
+      : # @ # .   1,000,000,000+ SKUs   . # @ # :
+     : @ @ :   search_catalog · protocol  : @ @ :
+     · @ @ ·   2026-07-28 · Fall '26 AI   · @ @ ·
+     : @ @ :   structured_specs · schema  : @ @ :
+      : # @ # .   taxonomy · variants   . # @ # :
+       . · @ @ : .                   . : @ @ · .
+         . : # @ @ # : · . . . · : # @ @ # : .
+            . : · # # @ @ @ @ @ @ # # · : .
+                  . : : : · · · : : : .
+            </pre>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <!-- Protocol Status Pill -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-[11px] font-mono text-zinc-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>SHOPIFY FALL '26 EDITION · LIVE SHOP MCP (2026-07-28)</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.08] mb-5">
+                Verify how AI agents<br class="hidden sm:inline" />
+                <span class="bg-gradient-to-r from-white via-zinc-200 to-indigo-300 bg-clip-text text-transparent">discover your store</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed mb-8">
+                Test any Shopify storefront against Shopify's <strong class="text-zinc-200 font-medium">1-billion-product catalog</strong> in real time. Inspect whether your products appear in sample AI shopping searches, which competing offers surface alongside you, and which product-data fields require remediation.
+            </p>
+
+            <!-- Action Pills under headline -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+                <button onclick="focusDomainInput()" class="px-5 py-2.5 rounded-full bg-white text-zinc-950 font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition shadow-lg">
+                    Run Live Store Diagnostic
+                </button>
+                <a href="#sprint-checkout" class="px-5 py-2.5 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] text-zinc-200 font-medium text-xs sm:text-sm transition">
+                    Explore $400 Optimization Sprint →
+                </a>
+            </div>
+
+            <!-- ───────────────────────────────────────────────────────────────── -->
+            <!-- INTERACTIVE TERMINAL / SCANNER CONSOLE CARD                       -->
+            <!-- ───────────────────────────────────────────────────────────────── -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,0.75)] max-w-3xl mx-auto">
+                <!-- Console Header Tabs -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-white/[0.08]">
+                    <div class="flex items-center gap-2">
+                        <button id="tab-domain" onclick="switchMode('domain')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-shop-purple text-white shadow-sm">
+                            1. Storefront + MCP Audit
+                        </button>
+                        <button id="tab-search" onclick="switchMode('search')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-white/[0.04] text-zinc-400 hover:text-white">
+                            2. Direct 1B Catalog Search
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2 text-[11px] font-mono text-zinc-400">
+                        <span>Region:</span>
+                        <select id="country-select" class="bg-[#171924] border border-white/[0.12] text-zinc-200 rounded px-2 py-1 text-xs focus:outline-none focus:border-shop-purple">
+                            <option value="US">🇺🇸 US (USD)</option>
+                            <option value="CA" selected>🇨🇦 CA (CAD)</option>
+                            <option value="GB">🇬🇧 UK (GBP)</option>
+                            <option value="AU">🇦🇺 AU (AUD)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Input Row: Domain Mode -->
+                <div id="input-group-domain" class="space-y-3">
+                    <label class="block text-xs font-mono text-zinc-400">
+                        <span class="text-indigo-400">1</span> Enter your public Shopify domain to test product-data quality &amp; sample catalog discovery:
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-2.5">
+                        <div class="relative flex-1">
+                            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500 font-mono text-xs">https://</span>
+                            <input 
+                                id="domain-input" 
+                                type="text" 
+                                value="monodsports.com"
+                                placeholder="yourstore.com or brand.ca" 
+                                class="w-full pl-16 pr-4 py-3 rounded-xl bg-[#0B0C12] border border-white/[0.12] text-white font-mono text-sm placeholder:text-zinc-600 focus:outline-none focus:border-shop-purple focus:ring-1 focus:ring-shop-purple"
+                                onkeydown="if(event.key==='Enter') triggerScan()"
+                            />
+                        </div>
+                        <button 
+                            id="scan-btn"
+                            onclick="triggerScan()" 
+                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-sm transition flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(90,49,244,0.45)] shrink-0"
+                        >
+                            <span id="scan-btn-text">Scan Storefront</span>
+                            <span class="font-mono text-xs">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input Row: Direct 1B Search Mode (Hidden by default) -->
+                <div id="input-group-search" class="hidden space-y-3">
+                    <label class="block text-xs font-mono text-zinc-400">
+                        <span class="text-indigo-400">2</span> Query Shopify's 1-Billion-Product MCP Index (`search_catalog`) directly:
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-2.5">
+                        <input 
+                            id="query-input" 
+                            type="text" 
+                            placeholder="e.g. waterproof trail running jacket or ceramic pour over dripper" 
+                            class="flex-1 px-4 py-3 rounded-xl bg-[#0B0C12] border border-white/[0.12] text-white font-mono text-sm placeholder:text-zinc-600 focus:outline-none focus:border-shop-purple"
+                            onkeydown="if(event.key==='Enter') triggerScan()"
+                        />
+                        <input 
+                            id="optional-domain-input" 
+                            type="text" 
+                            placeholder="Optional: yourdomain.com" 
+                            class="sm:w-52 px-3.5 py-3 rounded-xl bg-[#0B0C12] border border-white/[0.12] text-white font-mono text-xs placeholder:text-zinc-600 focus:outline-none focus:border-shop-purple"
+                        />
+                        <button 
+                            onclick="triggerScan()" 
+                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-sm transition shrink-0"
+                        >
+                            Query 1B Index →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Terminal Log / Status Line -->
+                <div id="scan-progress-box" class="mt-4 p-3 rounded-xl bg-[#0B0C12] border border-white/[0.06] font-mono text-xs text-zinc-400 flex items-center justify-between">
+                    <div class="flex items-center gap-2.5 truncate">
+                        <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                        <span id="status-log-text" class="truncate">Ready · Stateless diagnostic (zero store admin permissions required)</span>
+                    </div>
+                    <span id="status-latency" class="text-[11px] text-zinc-500 shrink-0 ml-2">MCP v2026-07-28</span>
+                </div>
+
+                <!-- Preset Sample Stores Bar -->
+                <div class="mt-4 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 text-[11px]">
+                    <span class="text-zinc-500 font-mono">Try live presets:</span>
+                    <button onclick="runPresetDomain('monodsports.com', 'CA')" class="px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.07] text-zinc-300 font-mono transition">
+                        monodsports.com
+                    </button>
+                    <button onclick="runPresetDomain('thehandmadehouse.ca', 'CA')" class="px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.07] text-zinc-300 font-mono transition">
+                        thehandmadehouse.ca
+                    </button>
+                    <button onclick="runPresetDomain('blueruby.com', 'CA')" class="px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.07] text-zinc-300 font-mono transition">
+                        blueruby.com
+                    </button>
+                    <button onclick="runPresetDomain('shopmagnoliaandsalt.com', 'US')" class="px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.07] text-zinc-300 font-mono transition">
+                        shopmagnoliaandsalt.com
+                    </button>
+                    <button onclick="runPresetSearch('ceramic coffee dripper v60')" class="px-2.5 py-1 rounded-md bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 font-mono transition">
+                        🔍 "ceramic coffee dripper"
+                    </button>
+                </div>
+            </div>
+
+            <!-- ───────────────────────────────────────────────────────────────── -->
+            <!-- EXECUTIVE DIAGNOSTIC KPI STRIP (Appears / Updates on Scan)        -->
+            <!-- ───────────────────────────────────────────────────────────────── -->
+            <div id="kpi-strip" class="mt-6 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+                <div class="shop-card rounded-xl p-3.5">
+                    <div class="text-[11px] font-mono text-zinc-400">Audited Storefront</div>
+                    <div id="kpi-store-name" class="text-sm sm:text-base font-bold text-white truncate mt-0.5">Monod Sports</div>
+                    <div id="kpi-store-domain" class="text-[11px] font-mono text-indigo-400 truncate">monodsports.com</div>
+                </div>
+                <div class="shop-card rounded-xl p-3.5">
+                    <div class="text-[11px] font-mono text-zinc-400">Exact Title Searches</div>
+                    <div id="kpi-exact-obs" class="text-lg sm:text-xl font-extrabold text-emerald-400 mt-0.5">— / —</div>
+                    <div class="text-[11px] text-zinc-500">Observed in MCP sample</div>
+                </div>
+                <div class="shop-card rounded-xl p-3.5">
+                    <div class="text-[11px] font-mono text-zinc-400">Category / Intent Queries</div>
+                    <div id="kpi-intent-obs" class="text-lg sm:text-xl font-extrabold text-amber-400 mt-0.5">— / —</div>
+                    <div class="text-[11px] text-zinc-500">Generic discovery match</div>
+                </div>
+                <div class="shop-card rounded-xl p-3.5">
+                    <div class="text-[11px] font-mono text-zinc-400">Feed Data Issues</div>
+                    <div id="kpi-data-issues" class="text-lg sm:text-xl font-extrabold text-rose-400 mt-0.5">— SKUs</div>
+                    <div class="text-[11px] text-zinc-500">Unmapped taxonomy / specs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 2: SEARCH OVER 1 BILLION PRODUCTS (5x3 Visual Tile Grid)        -->
+    <!-- Mirrors the 15-tile square visual product grid in the screenshot        -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="billion-grid" class="py-20 sm:py-24 border-b border-white/[0.06]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+                    Search over 1 billion products<br />from all kinds of stores
+                </h2>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    Below are the live offers returned by Shopify's global catalog MCP (<code class="text-indigo-300 font-mono">mcp.shop.com</code>) during your diagnostic queries. Click any product tile to inspect the structured <code class="text-indigo-300 font-mono">tech_specs</code> and <code class="text-indigo-300 font-mono">top_features</code> AI agents read.
+                </p>
+            </div>
+
+            <!-- Interactive Filter & Search Bar above Grid -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-5 bg-[#11121A] p-3 rounded-xl border border-[#232534]">
+                <div class="flex flex-wrap items-center gap-1.5">
+                    <button onclick="filterCatalogGrid('all')" id="grid-filter-all" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 transition">
+                        All Returned Offers (<span id="count-all">0</span>)
+                    </button>
+                    <button onclick="filterCatalogGrid('target')" id="grid-filter-target" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/[0.04] text-emerald-400 hover:bg-white/[0.08] transition">
+                        ● Target Store Matches (<span id="count-target">0</span>)
+                    </button>
+                    <button onclick="filterCatalogGrid('competing')" id="grid-filter-competing" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/[0.04] text-amber-300 hover:bg-white/[0.08] transition">
+                        ▲ Other Merchant Offers (<span id="count-competing">0</span>)
+                    </button>
+                    <button onclick="filterCatalogGrid('specs')" id="grid-filter-specs" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/[0.04] text-indigo-300 hover:bg-white/[0.08] transition">
+                        ✦ Enriched AI Tech Specs
+                    </button>
+                </div>
+                <div class="text-right font-mono text-[11px] text-zinc-400 flex items-center gap-2 justify-end">
+                    <span>Click any tile to inspect MCP metadata</span>
+                </div>
+            </div>
+
+            <!-- 5-Column Visual Product Matrix (Matches the 5x3 grid in the screenshot) -->
+            <div id="catalog-visual-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                <!-- Populated dynamically by JS -->
+            </div>
+
+            <!-- Inline Quick Search Bar under the 5x3 Grid (Just like the screenshot) -->
+            <div class="mt-4 flex items-center gap-2 bg-[#11121A] border border-[#232534] rounded-xl px-4 py-2.5">
+                <span class="text-zinc-500 font-mono text-xs">mcp.shop.com ›</span>
+                <input 
+                    id="inline-grid-query" 
+                    type="text" 
+                    placeholder="Test another shopping query in the 1B catalog (e.g. 'merino wool hiking socks' or 'gold hoop earrings')..." 
+                    class="flex-1 bg-transparent text-xs sm:text-sm text-white font-mono placeholder:text-zinc-600 focus:outline-none"
+                    onkeydown="if(event.key==='Enter') runInlineGridSearch()"
+                />
+                <button onclick="runInlineGridSearch()" class="px-3.5 py-1.5 rounded-lg bg-shop-purple hover:bg-shop-purpleHover text-white font-mono text-xs font-semibold transition">
+                    Search 1B Catalog
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 3: PERSONALIZED / DISCOVERY OBSERVATION MATRIX                  -->
+    <!-- Mirrors the 6-card dark sneaker comparison section in the screenshot    -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="discovery-matrix" class="py-20 sm:py-24 border-b border-white/[0.06]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+                    Product discovery observations
+                </h2>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    A product can be eligible for Shopify Catalog yet fail to surface in specific shopping queries when underlying attributes, category taxonomy, or descriptions are unmapped. Here is how your sampled products performed:
+                </p>
+
+                <!-- Filter Pill Toggle (Matches the pill toggle above the sneaker cards) -->
+                <div class="inline-flex items-center p-1 rounded-full bg-[#11121A] border border-[#232534] mt-6">
+                    <button onclick="setMatrixView('all')" id="matrix-tab-all" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-shop-purple text-white transition">
+                        All Sampled SKUs
+                    </button>
+                    <button onclick="setMatrixView('exact')" id="matrix-tab-exact" class="px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white transition">
+                        Exact Title Search
+                    </button>
+                    <button onclick="setMatrixView('intent')" id="matrix-tab-intent" class="px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white transition">
+                        Category &amp; Intent Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3-Column Comparison Cards Grid -->
+            <div id="observations-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Populated dynamically by JS -->
+            </div>
+
+            <!-- Honest Classification Legend Pill Bar -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-[11px] font-mono text-zinc-400">
+                <span>Classification Legend:</span>
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">OBSERVED (Matched Domain)</span>
+                <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-300">NOT_OBSERVED_IN_SAMPLE</span>
+                <span class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">DATA_ISSUE_FOUND (Feed vs Theme Gap)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 4: ACCESS THE RICHEST PRODUCT DATASET (JSON / MCP Inspector)    -->
+    <!-- Mirrors the terminal/code inspector section in the screenshot           -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="mcp-inspector" class="py-20 sm:py-24 border-b border-white/[0.06]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+                    Why theme display differs from<br />AI channel product feeds
+                </h2>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    Human shoppers see your styled Liquid theme. AI shopping assistants (ChatGPT, Gemini, Shop App) query structured catalog fields: <code class="text-indigo-300 font-mono">product_type</code> taxonomy, <code class="text-indigo-300 font-mono">tech_specs</code>, <code class="text-indigo-300 font-mono">top_features</code>, and image <code class="text-indigo-300 font-mono">alt_text</code>.
+                </p>
+            </div>
+
+            <!-- Dual Code Terminal Box -->
+            <div class="shop-card rounded-2xl overflow-hidden shadow-2xl">
+                <div class="px-4 py-3 bg-[#161824] border-b border-[#252736] flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        <span class="ml-2 font-mono text-xs text-zinc-300">storefront_feed_vs_mcp_schema.json</span>
+                    </div>
+                    <span class="px-2.5 py-0.5 rounded bg-shop-purple/20 border border-shop-purple/40 text-indigo-300 font-mono text-[10px]">
+                        LIVE PAYLOAD COMPARISON
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#252736]">
+                    <!-- Left: Current Raw Storefront Feed -->
+                    <div class="p-5 bg-[#0B0C12]">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-mono font-semibold text-rose-400">1. Current Public Feed (/products.json)</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/10 text-rose-300">Unmapped Fields</span>
+                        </div>
+                        <pre id="raw-feed-json-box" class="font-mono text-[11px] leading-relaxed text-zinc-300 overflow-x-auto custom-scrollbar whitespace-pre-wrap"></pre>
+                    </div>
+
+                    <!-- Right: Enriched Shopify Catalog Schema -->
+                    <div class="p-5 bg-[#0E1018]">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-mono font-semibold text-emerald-400">2. Remediated Catalog Schema (Fall '26 Ready)</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">AI Discovery Optimized</span>
+                        </div>
+                        <pre id="enriched-schema-json-box" class="font-mono text-[11px] leading-relaxed text-indigo-200 overflow-x-auto custom-scrollbar whitespace-pre-wrap"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 5: THE BEST CONVERTING REMEDIATION SPRINT (Shop Pay Split Card) -->
+    <!-- Mirrors the two-column Shop Pay checkout card in the screenshot         -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="sprint-checkout" class="py-20 sm:py-28 border-b border-white/[0.06] relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-shop-purple/15 border border-shop-purple/40 text-indigo-300 font-mono text-[11px] mb-3">
+                    <span>DONE-FOR-YOU IMPLEMENTATION · ZERO APP BLOAT</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-3">
+                    Fix your catalog data<br />without installing an app
+                </h2>
+                <p class="text-xs sm:text-sm text-zinc-400">
+                    Start with a complimentary <strong class="text-white">5-Product Before &amp; After Preview</strong> for your store, or book our flat-rate <strong class="text-white">$400 Shopify Catalog Optimization Sprint</strong>.
+                </p>
+            </div>
+
+            <!-- Two-Column Shop-Pay-Style Split Conversion Card -->
+            <div class="shop-card rounded-2xl p-6 sm:p-8 shadow-[0_24px_90px_rgba(90,49,244,0.18)] border-[#2E3148]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Left Column (7 cols): Deliverables & Scope Breakdown -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Shopify Catalog Optimization Sprint</h3>
+                                <p class="text-xs text-zinc-400">Human-verified catalog engineering by Duncan Makoyo</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold">
+                                No Monthly Fees
+                            </span>
+                        </div>
+
+                        <!-- Line items styled like the screenshot checkout rows -->
+                        <div class="space-y-3.5">
+                            <div class="flex items-start justify-between gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                                <div class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-md bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-semibold text-white">Complimentary 5-Product Proof-of-Work Preview</div>
+                                        <div class="text-xs text-zinc-400 mt-0.5">We enrich 5 of your actual defective SKUs into a side-by-side Excel workbook &amp; ready-to-import Shopify CSV before you spend a cent.</div>
+                                    </div>
+                                </div>
+                                <span class="font-mono text-xs font-bold text-emerald-400 shrink-0">$0.00</span>
+                            </div>
+
+                            <div class="flex items-start justify-between gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                                <div class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-md bg-shop-purple/25 text-indigo-300 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-semibold text-white">Structured Product Copy &amp; Technical Attributes</div>
+                                        <div class="text-xs text-zinc-400 mt-0.5">Replaces thin descriptions with clear material, fit, dimension, and use-case attributes aligned with <code class="text-indigo-300">tech_specs</code>.</div>
+                                    </div>
+                                </div>
+                                <span class="font-mono text-xs text-zinc-400 shrink-0">Included</span>
+                            </div>
+
+                            <div class="flex items-start justify-between gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                                <div class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-md bg-shop-purple/25 text-indigo-300 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-semibold text-white">Shopify Standard Taxonomy &amp; Category Mapping</div>
+                                        <div class="text-xs text-zinc-400 mt-0.5">Maps empty <code class="text-indigo-300">product_type</code> and category fields so Shopify Catalog &amp; connected AI channels classify your items accurately.</div>
+                                    </div>
+                                </div>
+                                <span class="font-mono text-xs text-zinc-400 shrink-0">Included</span>
+                            </div>
+
+                            <div class="flex items-start justify-between gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                                <div class="flex items-start gap-3">
+                                    <span class="w-6 h-6 rounded-md bg-shop-purple/25 text-indigo-300 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-semibold text-white">Image Accessibility Alt-Text &amp; Feed Verification</div>
+                                        <div class="text-xs text-zinc-400 mt-0.5">Descriptive <code class="text-indigo-300">alt_text</code> for product imagery + native Shopify import CSV &amp; re-tested MCP search observations.</div>
+                                    </div>
+                                </div>
+                                <span class="font-mono text-xs text-zinc-400 shrink-0">Included</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-400 font-mono">
+                            <span>✦ Architect: Duncan Makoyo (<a href="mailto:duncan@duncanmakoyo.com" class="text-indigo-400 hover:underline">duncan@duncanmakoyo.com</a>)</span>
+                            <span>✦ Turnaround: 48–72 Hours</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (5 cols): Interactive Action / Request Card -->
+                    <div class="lg:col-span-5 bg-[#0B0C12] border border-[#272A3F] rounded-2xl p-5 sm:p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider text-zinc-400">Select Action</span>
+                            <span class="px-2 py-0.5 rounded bg-shop-purple text-white font-mono text-[10px] font-bold">shop.md verified</span>
+                        </div>
+
+                        <!-- Option Selector Buttons -->
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <button 
+                                type="button"
+                                id="tier-btn-free"
+                                onclick="selectTier('free_test_5')" 
+                                class="p-3 rounded-xl border text-left transition border-shop-purple bg-shop-purple/15"
+                            >
+                                <div class="text-xs font-bold text-white">5-SKU Preview</div>
+                                <div class="text-sm font-extrabold text-emerald-400 font-mono mt-0.5">$0 Free</div>
+                            </button>
+                            <button 
+                                type="button"
+                                id="tier-btn-paid"
+                                onclick="selectTier('full_upgrade')" 
+                                class="p-3 rounded-xl border text-left transition border-white/[0.1] bg-white/[0.02] hover:border-white/[0.2]"
+                            >
+                                <div class="text-xs font-bold text-white">Full Sprint</div>
+                                <div class="text-sm font-extrabold text-indigo-300 font-mono mt-0.5">$400 Flat</div>
+                            </button>
+                        </div>
+
+                        <form id="lead-capture-form" onsubmit="submitLeadForm(event)" class="space-y-3">
+                            <input type="hidden" id="lead-choice" value="free_test_5" />
+                            <div>
+                                <label class="block text-[11px] font-mono text-zinc-400 mb-1">Shopify Store Domain *</label>
+                                <input 
+                                    type="text" 
+                                    id="lead-domain" 
+                                    required
+                                    placeholder="yourstore.com" 
+                                    class="w-full px-3.5 py-2.5 rounded-lg bg-[#141622] border border-white/[0.1] text-white font-mono text-xs focus:outline-none focus:border-shop-purple"
+                                />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-mono text-zinc-400 mb-1">Your Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="lead-name" 
+                                    required
+                                    placeholder="Founder / E-Commerce Manager" 
+                                    class="w-full px-3.5 py-2.5 rounded-lg bg-[#141622] border border-white/[0.1] text-white text-xs focus:outline-none focus:border-shop-purple"
+                                />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-mono text-zinc-400 mb-1">Work Email (Where to send your preview) *</label>
+                                <input 
+                                    type="email" 
+                                    id="lead-email" 
+                                    required
+                                    placeholder="you@yourstore.com" 
+                                    class="w-full px-3.5 py-2.5 rounded-lg bg-[#141622] border border-white/[0.1] text-white font-mono text-xs focus:outline-none focus:border-shop-purple"
+                                />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-mono text-zinc-400 mb-1">Priority Products or Notes (Optional)</label>
+                                <textarea 
+                                    id="lead-note" 
+                                    rows="2" 
+                                    placeholder="e.g. Please include our top 5 bestsellers..." 
+                                    class="w-full px-3.5 py-2 rounded-lg bg-[#141622] border border-white/[0.1] text-white text-xs focus:outline-none focus:border-shop-purple"
+                                ></textarea>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                id="lead-submit-btn"
+                                class="w-full py-3.5 px-5 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-xs sm:text-sm transition shadow-[0_0_25px_rgba(90,49,244,0.5)] flex items-center justify-center gap-2"
+                            >
+                                <span id="lead-submit-label">Send My Free 5-Product Preview</span>
+                                <span>→</span>
+                            </button>
+
+                            <div id="lead-form-feedback" class="hidden p-3 rounded-lg text-xs font-mono"></div>
+
+                            <p class="text-[11px] text-zinc-500 text-center leading-relaxed pt-1">
+                                No admin credentials required. Or email directly: <a href="mailto:duncan@duncanmakoyo.com" class="text-zinc-300 underline">duncan@duncanmakoyo.com</a>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 6: BEFORE YOU BUILD / MERCHANT FAQ ACCORDION                    -->
+    <!-- Mirrors the bottom FAQ accordion in the screenshot                      -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <section id="faq" class="py-20 sm:py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-8">
+                Before you optimize · Technical FAQ
+            </h2>
+
+            <div class="divide-y divide-white/[0.08] border-t border-b border-white/[0.08]">
+                <details class="group py-4" open>
+                    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-semibold text-white">
+                        <span>What is the difference between Catalog Eligibility and Search Visibility?</span>
+                        <span class="text-zinc-500 group-open:rotate-45 transition-transform text-lg">+</span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                        Shopify automatically includes eligible products in Shopify Catalog when basic criteria (title, image, positive price) are met. However, <strong>catalog inclusion does not guarantee search visibility</strong>. When an AI shopping agent queries <code class="text-indigo-300 font-mono">mcp.shop.com</code> for specific buyer intents, materials, or categories, products with unmapped <code class="text-indigo-300 font-mono">product_type</code> taxonomy or thin descriptions often fail to appear in the returned sample.
+                    </p>
+                </details>
+
+                <details class="group py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-semibold text-white">
+                        <span>How does this scanner test my store without installing a Shopify App?</span>
+                        <span class="text-zinc-500 group-open:rotate-45 transition-transform text-lg">+</span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                        Our diagnostic engine runs two stateless checks: <strong>Engine A</strong> inspects your public storefront product snapshot (<code class="text-indigo-300 font-mono">/products.json</code>) for missing categories, thin copy, and missing alt-text. <strong>Engine B</strong> submits live JSON-RPC <code class="text-indigo-300 font-mono">search_catalog</code> queries to Shopify's official Model Context Protocol endpoint (<code class="text-indigo-300 font-mono">https://mcp.shop.com/</code>) and checks whether your domain appears in the returned offers.
+                    </p>
+                </details>
+
+                <details class="group py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-semibold text-white">
+                        <span>Do you store my catalog data or require Admin API permissions for the preview?</span>
+                        <span class="text-zinc-500 group-open:rotate-45 transition-transform text-lg">+</span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                        No. This web diagnostic is 100% stateless—it runs live in memory and stores zero database records of your catalog. For your complimentary 5-product preview and the $400 optimization sprint, we deliver clean, human-reviewed Excel comparison workbooks and native Shopify import CSVs that you approve before importing.
+                    </p>
+                </details>
+
+                <details class="group py-4">
+                    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-semibold text-white">
+                        <span>What exactly do I receive in the $400 Shopify Catalog Optimization Sprint?</span>
+                        <span class="text-zinc-500 group-open:rotate-45 transition-transform text-lg">+</span>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                        We remediate your priority catalog batch with enriched, fact-based product descriptions, structured material/dimension attributes, accurate Shopify Standard Product Taxonomy mapping, and complete image accessibility <code class="text-indigo-300 font-mono">alt_text</code>—delivered as a 1-click native Shopify CSV import file with before-and-after MCP query verification.
+                    </p>
+                </details>
+            </div>
+
+            <footer class="mt-14 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+                <div>
+                    <strong class="text-zinc-300">Duncan Makoyo</strong> · Shopify Developer | Product Data &amp; Catalog Optimization
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://duncanmakoyo.com" target="_blank" class="hover:text-zinc-300 transition">duncanmakoyo.com</a>
+                    <a href="mailto:duncan@duncanmakoyo.com" class="hover:text-zinc-300 transition">duncan@duncanmakoyo.com</a>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- PRODUCT AI METADATA & TECH SPECS MODAL DRAWER                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target===this) closeProductModal()">
+        <div class="shop-card rounded-2xl max-w-xl w-full p-6 bg-[#11121A] border border-[#2E3148] shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <span id="modal-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-shop-purple/20 text-indigo-300">MCP CATALOG ITEM</span>
+                    <h3 id="modal-title" class="text-lg font-bold text-white mt-1">Product Title</h3>
+                    <p id="modal-seller" class="text-xs font-mono text-zinc-400"></p>
+                </div>
+                <button onclick="closeProductModal()" class="text-zinc-400 hover:text-white text-xl leading-none">×</button>
+            </div>
+
+            <div class="flex gap-4 items-center bg-[#0B0C12] p-3 rounded-xl border border-white/[0.06]">
+                <img id="modal-img" src="" alt="" class="w-20 h-20 object-cover rounded-lg bg-zinc-900 shrink-0" />
+                <div class="space-y-1 text-xs">
+                    <div class="font-bold text-white text-base" id="modal-price"></div>
+                    <div class="text-zinc-400 font-mono text-[11px]" id="modal-alt"></div>
+                </div>
+            </div>
+
+            <div id="modal-usp-box" class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-200"></div>
+
+            <div>
+                <div class="text-xs font-mono uppercase text-zinc-400 mb-2">AI Extracted Tech Specs (metadata.tech_specs)</div>
+                <ul id="modal-specs" class="space-y-1.5 text-xs text-zinc-300 font-mono bg-[#0B0C12] p-3.5 rounded-xl border border-white/[0.06]"></ul>
+            </div>
+
+            <div>
+                <div class="text-xs font-mono uppercase text-zinc-400 mb-2">AI Top Features (metadata.top_features)</div>
+                <ul id="modal-features" class="space-y-1.5 text-xs text-zinc-300 bg-[#0B0C12] p-3.5 rounded-xl border border-white/[0.06]"></ul>
+            </div>
+
+            <div class="flex items-center justify-end gap-3 pt-2">
+                <a id="modal-product-link" href="#" target="_blank" class="px-4 py-2 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] text-xs font-medium text-white transition">
+                    View Storefront Listing ↗
+                </a>
+                <a id="modal-checkout-link" href="#" target="_blank" class="px-4 py-2 rounded-lg bg-shop-purple hover:bg-shop-purpleHover text-xs font-semibold text-white transition">
+                    1-Click Shop Pay Link ↗
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- CLIENT-SIDE APPLICATION ENGINE                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <script>
+        let currentMode = 'domain';
+        let currentDiagnosticData = null;
+        let currentCatalogItems = [];
+        let activeMatrixView = 'all';
+
+        function switchMode(mode) {
+            currentMode = mode;
+            const tabDom = document.getElementById('tab-domain');
+            const tabSearch = document.getElementById('tab-search');
+            const grpDom = document.getElementById('input-group-domain');
+            const grpSearch = document.getElementById('input-group-search');
+
+            if (mode === 'domain') {
+                tabDom.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-shop-purple text-white shadow-sm';
+                tabSearch.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-white/[0.04] text-zinc-400 hover:text-white';
+                grpDom.classList.remove('hidden');
+                grpSearch.classList.add('hidden');
+            } else {
+                tabSearch.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-shop-purple text-white shadow-sm';
+                tabDom.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-white/[0.04] text-zinc-400 hover:text-white';
+                grpSearch.classList.remove('hidden');
+                grpDom.classList.add('hidden');
+            }
+        }
+
+        function focusDomainInput() {
+            switchMode('domain');
+            const inp = document.getElementById('domain-input');
+            inp.focus();
+            inp.select();
+        }
+
+        function setStatus(text, isBusy = false, isError = false) {
+            const dot = document.getElementById('status-dot');
+            const log = document.getElementById('status-log-text');
+            log.textContent = text;
+            if (isError) {
+                dot.className = 'w-2 h-2 rounded-full bg-rose-500 shrink-0';
+            } else if (isBusy) {
+                dot.className = 'w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0';
+            } else {
+                dot.className = 'w-2 h-2 rounded-full bg-emerald-400 shrink-0';
+            }
+        }
+
+        async function runPresetDomain(domain, country) {
+            switchMode('domain');
+            document.getElementById('domain-input').value = domain;
+            document.getElementById('country-select').value = country || 'CA';
+            await triggerScan();
+        }
+
+        async function runPresetSearch(query) {
+            switchMode('search');
+            document.getElementById('query-input').value = query;
+            await triggerScan();
+        }
+
+        async function runInlineGridSearch() {
+            const q = document.getElementById('inline-grid-query').value.trim();
+            if (!q) return;
+            await runPresetSearch(q);
+            document.getElementById('billion-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function triggerScan() {
+            const country = document.getElementById('country-select').value;
+            const startTime = performance.now();
+            const btn = document.getElementById('scan-btn');
+            const btnText = document.getElementById('scan-btn-text');
+
+            let payload = { mode: currentMode, country };
+
+            if (currentMode === 'domain') {
+                const dom = document.getElementById('domain-input').value.trim();
+                if (!dom) {
+                    setStatus('Please enter a valid Shopify store domain.', false, true);
+                    return;
+                }
+                payload.domain = dom;
+                document.getElementById('lead-domain').value = dom.replace(/^https?:\/\//i, '').split('/')[0];
+                setStatus(`Scanning https://${dom}/products.json & querying mcp.shop.com...`, true);
+            } else {
+                const q = document.getElementById('query-input').value.trim();
+                const optDom = document.getElementById('optional-domain-input').value.trim();
+                if (!q) {
+                    setStatus('Please enter a search query for the 1B catalog.', false, true);
+                    return;
+                }
+                payload.query = q;
+                payload.domain = optDom;
+                setStatus(`Querying Shopify 1B Catalog MCP for "${q}"...`, true);
+            }
+
+            if (btn && btnText) {
+                btn.disabled = true;
+                btnText.textContent = 'Querying MCP...';
+            }
+
+            try {
+                const resp = await fetch('api.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await resp.json();
+                const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+                document.getElementById('status-latency').textContent = `${elapsed}s · MCP 2026-07-28`;
+
+                if (data.status !== 'ok') {
+                    setStatus(data.message || 'Unable to complete scan.', false, true);
+                    return;
+                }
+
+                currentDiagnosticData = data;
+                if (data.mode === 'search') {
+                    currentCatalogItems = data.catalog_products || [];
+                    setStatus(`Returned ${currentCatalogItems.length} live offers from mcp.shop.com for "${data.query}"`, false);
+                    renderCatalogGrid(currentCatalogItems);
+                } else {
+                    currentCatalogItems = data.catalog_grid || [];
+                    const s = data.summary || {};
+                    setStatus(
+                        `Audit complete for ${data.brand_name} (${data.domain}) · ${s.queries_tested} MCP queries executed`,
+                        false
+                    );
+                    updateKpiStrip(data);
+                    renderCatalogGrid(currentCatalogItems);
+                    renderObservationsMatrix(data.product_observations || []);
+                    renderJsonInspector(data.raw_sample_json);
+                }
+            } catch (err) {
+                setStatus('Network error connecting to diagnostic endpoint. Ensure server.py or api.php is active.', false, true);
+            } finally {
+                if (btn && btnText) {
+                    btn.disabled = false;
+                    btnText.textContent = 'Scan Storefront';
+                }
+            }
+        }
+
+        function updateKpiStrip(data) {
+            const s = data.summary || {};
+            document.getElementById('kpi-store-name').textContent = data.brand_name || data.domain;
+            document.getElementById('kpi-store-domain').textContent = data.domain;
+            document.getElementById('kpi-exact-obs').textContent = `${s.exact_observed_count ?? 0} / ${s.sampled_products_count ?? 0}`;
+            document.getElementById('kpi-intent-obs').textContent = `${s.intent_observed_count ?? 0} / ${Math.min(2, s.sampled_products_count || 2)}`;
+            document.getElementById('kpi-data-issues').textContent = `${s.data_issues_count ?? 0} / ${s.sampled_products_count ?? 0} SKUs`;
+        }
+
+        function renderCatalogGrid(items) {
+            const grid = document.getElementById('catalog-visual-grid');
+            const targetCount = items.filter(i => i.is_target_merchant).length;
+            const compCount = items.length - targetCount;
+
+            document.getElementById('count-all').textContent = items.length;
+            document.getElementById('count-target').textContent = targetCount;
+            document.getElementById('count-competing').textContent = compCount;
+
+            if (!items.length) {
+                grid.innerHTML = `<div class="col-span-full p-10 text-center text-zinc-500 font-mono text-xs border border-dashed border-zinc-800 rounded-xl">No catalog items returned for this query sample.</div>`;
+                return;
+            }
+
+            grid.innerHTML = items.slice(0, 15).map((item, idx) => {
+                const isTarget = item.is_target_merchant;
+                const badgeClass = isTarget
+                    ? 'bg-emerald-500 text-zinc-950 font-bold'
+                    : 'bg-black/75 text-zinc-200 border border-white/15';
+                const badgeText = isTarget ? '✓ YOUR STORE' : item.seller_name;
+                const borderClass = isTarget ? 'ring-2 ring-emerald-400' : '';
+
+                return `
+                <div onclick="openProductModal(${idx})" class="group cursor-pointer rounded-xl overflow-hidden bg-[#14151F] border border-[#252736] hover:border-shop-purple transition flex flex-col ${borderClass}">
+                    <div class="relative aspect-square bg-zinc-900 overflow-hidden">
+                        ${item.image_url 
+                            ? `<img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />`
+                            : `<div class="w-full h-full flex items-center justify-center text-zinc-600 font-mono text-xs">No Image</div>`
+                        }
+                        <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono truncate max-w-[85%] ${badgeClass}">
+                            ${escapeHtml(badgeText)}
+                        </span>
+                        ${item.has_ai_metadata ? `
+                            <span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-shop-purple/90 text-white font-mono text-[9px] font-semibold">
+                                ✦ AI Specs
+                            </span>
+                        ` : ''}
+                    </div>
+                    <div class="p-2.5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs font-semibold text-white line-clamp-1">${escapeHtml(item.title)}</div>
+                            <div class="text-[10px] font-mono text-zinc-400 truncate mt-0.5">${escapeHtml(item.seller_domain || item.seller_name)}</div>
+                        </div>
+                        <div class="mt-2 pt-1.5 border-t border-white/[0.06] flex items-center justify-between">
+                            <span class="text-xs font-bold text-indigo-300 font-mono">${escapeHtml(item.price)}</span>
+                            <span class="text-[10px] font-mono text-zinc-500 group-hover:text-white transition">Inspect →</span>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function filterCatalogGrid(filterType) {
+            ['all', 'target', 'competing', 'specs'].forEach(t => {
+                const btn = document.getElementById('grid-filter-' + t);
+                if (btn) {
+                    btn.className = t === filterType
+                        ? 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 transition'
+                        : 'px-3 py-1.5 rounded-lg text-xs font-medium bg-white/[0.04] text-zinc-300 hover:bg-white/[0.08] transition';
+                }
+            });
+
+            let filtered = currentCatalogItems;
+            if (filterType === 'target') filtered = currentCatalogItems.filter(i => i.is_target_merchant);
+            if (filterType === 'competing') filtered = currentCatalogItems.filter(i => !i.is_target_merchant);
+            if (filterType === 'specs') filtered = currentCatalogItems.filter(i => i.has_ai_metadata);
+            renderCatalogGrid(filtered);
+        }
+
+        function setMatrixView(view) {
+            activeMatrixView = view;
+            ['all', 'exact', 'intent'].forEach(v => {
+                const btn = document.getElementById('matrix-tab-' + v);
+                if (btn) {
+                    btn.className = v === view
+                        ? 'px-4 py-1.5 rounded-full text-xs font-semibold bg-shop-purple text-white transition'
+                        : 'px-4 py-1.5 rounded-full text-xs font-medium text-zinc-400 hover:text-white transition';
+                }
+            });
+            if (currentDiagnosticData && currentDiagnosticData.product_observations) {
+                renderObservationsMatrix(currentDiagnosticData.product_observations);
+            }
+        }
+
+        function renderObservationsMatrix(observations) {
+            const container = document.getElementById('observations-cards-grid');
+            if (!observations || !observations.length) {
+                container.innerHTML = `<div class="col-span-full p-8 text-center text-zinc-400 font-mono text-xs shop-card rounded-2xl">Public /products.json feed is custom-gated on this domain. Use the 1B Catalog Search above to inspect brand offers directly.</div>`;
+                return;
+            }
+
+            container.innerHTML = observations.map((obs, idx) => {
+                const exact = obs.exact_search || {};
+                const intent = obs.intent_search || null;
+                const exactOk = exact.status === 'OBSERVED';
+                const intentOk = intent && intent.status === 'OBSERVED';
+
+                const badgeHtml = exactOk
+                    ? `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Exact Search: OBSERVED (#${exact.rank})</span>`
+                    : `<span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-300 border border-amber-500/30">Exact Search: NOT_OBSERVED_IN_SAMPLE</span>`;
+
+                const highlightCardClass = !exactOk || (obs.defects && obs.defects.length > 0) ? 'shop-card-active' : '';
+
+                const competingList = (exact.competing_offers || []).slice(0, 2).map(c =>
+                    `<div class="flex items-center justify-between text-[11px] py-1 border-b border-white/[0.05] last:border-0">
+                        <span class="text-zinc-300 truncate max-w-[68%]">• ${escapeHtml(c.seller_name)}</span>
+                        <span class="font-mono text-indigo-300">${escapeHtml(c.price)}</span>
+                    </div>`
+                ).join('') || `<div class="text-[11px] text-zinc-500">No alternative offers in sample</div>`;
+
+                const defectsList = (obs.defects || []).map(d =>
+                    `<li class="flex items-start gap-1.5 text-[11px] text-rose-300">
+                        <span class="text-rose-400 shrink-0">▲</span>
+                        <span>${escapeHtml(d)}</span>
+                    </li>`
+                ).join('') || `<li class="text-[11px] text-emerald-400">✓ Core storefront fields present</li>`;
+
+                return `
+                <div class="shop-card rounded-2xl overflow-hidden flex flex-col justify-between ${highlightCardClass}">
+                    <div>
+                        <div class="relative h-48 bg-zinc-900 border-b border-white/[0.06] p-3 flex items-center justify-center">
+                            ${obs.image_url 
+                                ? `<img src="${escapeHtml(obs.image_url)}" alt="${escapeHtml(obs.title)}" class="max-h-full max-w-full object-contain rounded-lg" />`
+                                : `<div class="text-zinc-600 font-mono text-xs">No Product Image</div>`
+                            }
+                            <div class="absolute top-3 left-3">${badgeHtml}</div>
+                            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 text-white font-mono text-xs font-bold">
+                                ${escapeHtml(obs.price)}
+                            </div>
+                        </div>
+
+                        <div class="p-5 space-y-4">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase text-indigo-400">Sampled Storefront SKU #${idx + 1}</div>
+                                <h3 class="text-base font-bold text-white line-clamp-1 mt-0.5">${escapeHtml(obs.title)}</h3>
+                            </div>
+
+                            <!-- Query Discovery Results Box -->
+                            <div class="p-3 rounded-xl bg-[#0B0C12] border border-white/[0.06] space-y-2 text-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-zinc-400 font-mono text-[11px]">Exact Query:</span>
+                                    <span class="font-mono text-[11px] ${exactOk ? 'text-emerald-400 font-semibold' : 'text-amber-300'}">
+                                        ${exactOk ? `Observed (Rank #${exact.rank})` : 'Not observed in sample'}
+                                    </span>
+                                </div>
+                                ${intent ? `
+                                <div class="flex items-center justify-between pt-1.5 border-t border-white/[0.05]">
+                                    <span class="text-zinc-400 font-mono text-[11px]">Category Query:</span>
+                                    <span class="font-mono text-[11px] ${intentOk ? 'text-emerald-400 font-semibold' : 'text-amber-300'}">
+                                        ${intentOk ? `Observed (Rank #${intent.rank})` : 'Not observed in sample'}
+                                    </span>
+                                </div>
+                                <div class="text-[10px] font-mono text-zinc-500 truncate">Query: "${escapeHtml(intent.query)}"</div>
+                                ` : ''}
+                            </div>
+
+                            <!-- Storefront Product-Data Integrity -->
+                            <div>
+                                <div class="text-[11px] font-mono uppercase text-zinc-400 mb-1.5">Product-Data Findings (/products.json)</div>
+                                <ul class="space-y-1">${defectsList}</ul>
+                            </div>
+
+                            <!-- Other Merchant Offers Returned in Same Search -->
+                            <div class="pt-2 border-t border-white/[0.06]">
+                                <div class="text-[11px] font-mono text-zinc-400 mb-1">Other Merchant Offers in Query Sample:</div>
+                                ${competingList}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-5 py-3 bg-[#151722] border-t border-white/[0.06] flex items-center justify-between">
+                        <a href="${escapeHtml(obs.product_url)}" target="_blank" class="text-[11px] font-mono text-zinc-400 hover:text-white transition">
+                            View Store SKU ↗
+                        </a>
+                        <a href="#sprint-checkout" class="text-[11px] font-mono font-semibold text-indigo-300 hover:text-white transition">
+                            Fix SKU Mapping →
+                        </a>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function renderJsonInspector(rawSample) {
+            const rawBox = document.getElementById('raw-feed-json-box');
+            const enrichedBox = document.getElementById('enriched-schema-json-box');
+            if (!rawSample) {
+                rawBox.textContent = '// Public /products.json feed not exposed on this domain.';
+                enrichedBox.textContent = '// Run scan on a standard Shopify storefront to compare schemas.';
+                return;
+            }
+            rawBox.textContent = JSON.stringify(rawSample.storefront_feed_json, null, 2);
+            enrichedBox.textContent = JSON.stringify(rawSample.recommended_mcp_enriched_schema, null, 2);
+        }
+
+        function openProductModal(idx) {
+            const item = currentCatalogItems[idx];
+            if (!item) return;
+
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-seller').textContent = `Merchant: ${item.seller_name} (${item.seller_domain || 'Shopify Catalog'})`;
+            document.getElementById('modal-price').textContent = item.price;
+            document.getElementById('modal-img').src = item.image_url || '';
+            document.getElementById('modal-alt').textContent = item.alt_text
+                ? `Alt-Text: "${item.alt_text}"`
+                : 'Alt-Text: None mapped in catalog payload';
+
+            const uspBox = document.getElementById('modal-usp-box');
+            if (item.usp) {
+                uspBox.textContent = `✦ AI Summary: ${item.usp}`;
+                uspBox.classList.remove('hidden');
+            } else {
+                uspBox.classList.add('hidden');
+            }
+
+            const specsList = document.getElementById('modal-specs');
+            specsList.innerHTML = (item.tech_specs && item.tech_specs.length)
+                ? item.tech_specs.map(s => `<li>• ${escapeHtml(s)}</li>`).join('')
+                : `<li class="text-zinc-500">No structured tech_specs present on this offer.</li>`;
+
+            const featList = document.getElementById('modal-features');
+            featList.innerHTML = (item.top_features && item.top_features.length)
+                ? item.top_features.map(f => `<li>• ${escapeHtml(f)}</li>`).join('')
+                : `<li class="text-zinc-500">No structured top_features present on this offer.</li>`;
+
+            document.getElementById('modal-product-link').href = item.product_url || '#';
+            const checkoutBtn = document.getElementById('modal-checkout-link');
+            if (item.checkout_url) {
+                checkoutBtn.href = item.checkout_url;
+                checkoutBtn.classList.remove('hidden');
+            } else {
+                checkoutBtn.classList.add('hidden');
+            }
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        function selectTier(choice) {
+            document.getElementById('lead-choice').value = choice;
+            const btnFree = document.getElementById('tier-btn-free');
+            const btnPaid = document.getElementById('tier-btn-paid');
+            const submitLabel = document.getElementById('lead-submit-label');
+
+            if (choice === 'free_test_5') {
+                btnFree.className = 'p-3 rounded-xl border text-left transition border-shop-purple bg-shop-purple/15';
+                btnPaid.className = 'p-3 rounded-xl border text-left transition border-white/[0.1] bg-white/[0.02] hover:border-white/[0.2]';
+                submitLabel.textContent = 'Send My Free 5-Product Preview';
+            } else {
+                btnPaid.className = 'p-3 rounded-xl border text-left transition border-shop-purple bg-shop-purple/15';
+                btnFree.className = 'p-3 rounded-xl border text-left transition border-white/[0.1] bg-white/[0.02] hover:border-white/[0.2]';
+                submitLabel.textContent = 'Book $400 Catalog Optimization Sprint';
+            }
+        }
+
+        async function submitLeadForm(e) {
+            e.preventDefault();
+            const rawDom = document.getElementById('lead-domain').value.trim();
+            const name = document.getElementById('lead-name').value.trim();
+            const email = document.getElementById('lead-email').value.trim();
+            const choice = document.getElementById('lead-choice').value;
+            const note = document.getElementById('lead-note').value.trim();
+            const feedback = document.getElementById('lead-form-feedback');
+            const btn = document.getElementById('lead-submit-btn');
+
+            const cleanSlug = rawDom.toLowerCase().replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 55) || 'inbound-scanner-lead';
+
+            btn.disabled = true;
+            feedback.className = 'p-3 rounded-lg text-xs font-mono bg-white/[0.05] text-zinc-300';
+            feedback.textContent = 'Submitting request to Duncan Makoyo...';
+            feedback.classList.remove('hidden');
+
+            // Post to Hostinger tracker.php (tries ../tracker.php and ./tracker.php)
+            let logged = false;
+            for (const endpoint of ['../tracker.php', 'tracker.php', 'https://duncanmakoyo.com/audits/tracker.php']) {
+                try {
+                    const r = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            store: cleanSlug,
+                            event: 'lead_submission',
+                            name,
+                            email,
+                            choice,
+                            note: `[Scanner Domain: ${rawDom}] ${note}`
+                        })
+                    });
+                    if (r.ok) {
+                        logged = true;
+                        break;
+                    }
+                } catch (_) {}
+            }
+
+            feedback.className = 'p-3 rounded-lg text-xs font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-300';
+            feedback.innerHTML = `✓ Request received for <strong>${escapeHtml(rawDom)}</strong>! Duncan Makoyo will deliver your ${choice === 'free_test_5' ? '5-Product Preview' : '$400 Sprint onboarding'} to <strong>${escapeHtml(email)}</strong>.`;
+            btn.disabled = false;
+        }
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        // Auto-run initial live showcase scan on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const urlDomain = params.get('domain') || params.get('store');
+            if (urlDomain) {
+                document.getElementById('domain-input').value = urlDomain;
+            }
+            triggerScan();
+        });
+    </script>
 </body>
 </html>
