@@ -34,17 +34,33 @@
         }
     </script>
     <style>
+        html { -webkit-text-size-adjust: 100%; }
         body {
             background-color: #08080C;
             color: #F4F4F6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
-        /* Subtle ASCII / Dot-Matrix Hero Globe Effect */
-        .hero-matrix-bg {
-            background-image: 
-                radial-gradient(circle at 50% 22%, rgba(90, 49, 244, 0.22) 0%, rgba(124, 58, 237, 0.06) 38%, transparent 70%),
+        /* Hero dot-matrix + purple glow, applied to the WHOLE page (fixed layer, works on mobile too) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-color: #08080C;
+            background-image:
+                radial-gradient(circle at 50% 18%, rgba(90, 49, 244, 0.24) 0%, rgba(124, 58, 237, 0.07) 38%, transparent 70%),
+                radial-gradient(circle at 12% 85%, rgba(90, 49, 244, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 90% 60%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
                 radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 100% 100%, 22px 22px;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 22px 22px;
+        }
+        section, footer { background: transparent; }
+        pre, code { overflow-wrap: anywhere; }
+        img { max-width: 100%; }
+        @media (max-width: 640px) {
+            .glass-panel { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         }
         .globe-ascii {
             mask-image: radial-gradient(circle, rgba(0,0,0,0.85) 20%, transparent 68%);
@@ -121,19 +137,31 @@
             </nav>
 
             <div class="flex items-center gap-2.5">
-                <a href="#sprint-checkout" class="px-3.5 py-1.5 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold transition shadow-sm">
+                <a href="#sprint-checkout" class="hidden sm:inline-block px-3.5 py-1.5 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-semibold transition shadow-sm">
                     Get 5-Product Preview
                 </a>
+                <button id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileMenu()" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-white/[0.06] border border-white/[0.1] text-white">
+                    <span id="menu-icon" class="text-lg leading-none">☰</span>
+                </button>
             </div>
         </div>
+        <!-- Mobile dropdown menu -->
+        <nav id="mobile-menu" class="hidden md:hidden border-t border-white/[0.07] bg-[#08080C]/95 backdrop-blur-xl px-4 py-3 text-sm font-medium text-zinc-300">
+            <a href="#scanner-console" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Live Scanner</a>
+            <a href="#billion-grid" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">1B Product Grid</a>
+            <a href="#discovery-matrix" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Discovery Matrix</a>
+            <a href="#mcp-inspector" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">Feed Inspector</a>
+            <a href="#faq" onclick="closeMobileMenu()" class="block py-2.5 hover:text-white">FAQ</a>
+            <a href="#sprint-checkout" onclick="closeMobileMenu()" class="mt-2 block text-center py-2.5 rounded-full bg-white text-zinc-950 font-semibold">Get 5-Product Preview</a>
+        </nav>
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- HERO SECTION + INTERACTIVE DIAGNOSTIC CONSOLE                           -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="scanner-console" class="relative hero-matrix-bg pt-14 pb-20 sm:pt-20 sm:pb-28 border-b border-white/[0.06]">
-        <!-- Subtle decorative ASCII matrix globe backdrop -->
-        <div aria-hidden="true" class="pointer-events-none select-none absolute inset-x-0 top-6 flex justify-center opacity-20 globe-ascii overflow-hidden">
+    <section id="scanner-console" class="relative pt-12 pb-16 sm:pt-20 sm:pb-28 scroll-mt-16">
+        <!-- Subtle decorative ASCII matrix globe backdrop (desktop only) -->
+        <div aria-hidden="true" class="pointer-events-none select-none absolute inset-x-0 top-6 hidden md:flex justify-center opacity-20 globe-ascii overflow-hidden">
             <pre class="font-mono text-[9px] leading-[11px] text-indigo-300 text-center">
                   . : : : · · · : : : .
             . : · # # @ @ @ @ @ @ # # · : .
@@ -159,7 +187,7 @@
             </div>
 
             <!-- Main Headline -->
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.08] mb-5">
+            <h1 class="text-[2rem] sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
                 Verify how AI agents<br class="hidden sm:inline" />
                 <span class="bg-gradient-to-r from-white via-zinc-200 to-indigo-300 bg-clip-text text-transparent">discover your store</span>
             </h1>
@@ -184,7 +212,7 @@
             <div class="glass-panel rounded-2xl p-4 sm:p-6 text-left shadow-[0_24px_80px_rgba(0,0,0,0.75)] max-w-3xl mx-auto">
                 <!-- Console Header Tabs -->
                 <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-4 border-b border-white/[0.08]">
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2">
                         <button id="tab-domain" onclick="switchMode('domain')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold transition bg-shop-purple text-white shadow-sm">
                             1. Storefront + MCP Audit
                         </button>
@@ -222,8 +250,9 @@
                         </div>
                         <button 
                             id="scan-btn"
+                            data-scan-btn
                             onclick="triggerScan()" 
-                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-sm transition flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(90,49,244,0.45)] shrink-0"
+                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-sm transition flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(90,49,244,0.45)] shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             <span id="scan-btn-text">Scan Storefront</span>
                             <span class="font-mono text-xs">→</span>
@@ -251,8 +280,9 @@
                             class="sm:w-52 px-3.5 py-3 rounded-xl bg-[#0B0C12] border border-white/[0.12] text-white font-mono text-xs placeholder:text-zinc-600 focus:outline-none focus:border-shop-purple"
                         />
                         <button 
+                            data-scan-btn
                             onclick="triggerScan()" 
-                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover text-white font-semibold text-sm transition shrink-0"
+                            class="px-6 py-3 rounded-xl bg-shop-purple hover:bg-shop-purpleHover disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold text-sm transition shrink-0"
                         >
                             Query 1B Index →
                         </button>
@@ -321,7 +351,7 @@
     <!-- SECTION 2: SEARCH OVER 1 BILLION PRODUCTS (5x3 Visual Tile Grid)        -->
     <!-- Mirrors the 15-tile square visual product grid in the screenshot        -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="billion-grid" class="py-20 sm:py-24 border-b border-white/[0.06]">
+    <section id="billion-grid" class="py-14 sm:py-24 scroll-mt-16">
         <div class="max-w-5xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
@@ -359,16 +389,16 @@
             </div>
 
             <!-- Inline Quick Search Bar under the 5x3 Grid (Just like the screenshot) -->
-            <div class="mt-4 flex items-center gap-2 bg-[#11121A] border border-[#232534] rounded-xl px-4 py-2.5">
-                <span class="text-zinc-500 font-mono text-xs">mcp.shop.com ›</span>
+            <div class="mt-4 flex flex-wrap sm:flex-nowrap items-center gap-2 bg-[#11121A] border border-[#232534] rounded-xl px-3 sm:px-4 py-2.5">
+                <span class="hidden sm:inline text-zinc-500 font-mono text-xs shrink-0">mcp.shop.com ›</span>
                 <input 
                     id="inline-grid-query" 
                     type="text" 
                     placeholder="Test another shopping query in the 1B catalog (e.g. 'merino wool hiking socks' or 'gold hoop earrings')..." 
-                    class="flex-1 bg-transparent text-xs sm:text-sm text-white font-mono placeholder:text-zinc-600 focus:outline-none"
+                    class="flex-1 min-w-0 w-full sm:w-auto bg-transparent text-xs sm:text-sm text-white font-mono placeholder:text-zinc-600 focus:outline-none"
                     onkeydown="if(event.key==='Enter') runInlineGridSearch()"
                 />
-                <button onclick="runInlineGridSearch()" class="px-3.5 py-1.5 rounded-lg bg-shop-purple hover:bg-shop-purpleHover text-white font-mono text-xs font-semibold transition">
+                <button onclick="runInlineGridSearch()" class="w-full sm:w-auto shrink-0 px-3.5 py-2 sm:py-1.5 rounded-lg bg-shop-purple hover:bg-shop-purpleHover text-white font-mono text-xs font-semibold transition">
                     Search 1B Catalog
                 </button>
             </div>
@@ -379,7 +409,7 @@
     <!-- SECTION 3: PERSONALIZED / DISCOVERY OBSERVATION MATRIX                  -->
     <!-- Mirrors the 6-card dark sneaker comparison section in the screenshot    -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="discovery-matrix" class="py-20 sm:py-24 border-b border-white/[0.06]">
+    <section id="discovery-matrix" class="py-14 sm:py-24 scroll-mt-16">
         <div class="max-w-5xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-8">
                 <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
@@ -390,7 +420,7 @@
                 </p>
 
                 <!-- Filter Pill Toggle (Matches the pill toggle above the sneaker cards) -->
-                <div class="inline-flex items-center p-1 rounded-full bg-[#11121A] border border-[#232534] mt-6">
+                <div class="inline-flex flex-wrap justify-center items-center p-1 rounded-2xl sm:rounded-full bg-[#11121A] border border-[#232534] mt-6">
                     <button onclick="setMatrixView('all')" id="matrix-tab-all" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-shop-purple text-white transition">
                         All Sampled SKUs
                     </button>
@@ -422,7 +452,7 @@
     <!-- SECTION 4: ACCESS THE RICHEST PRODUCT DATASET (JSON / MCP Inspector)    -->
     <!-- Mirrors the terminal/code inspector section in the screenshot           -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="mcp-inspector" class="py-20 sm:py-24 border-b border-white/[0.06]">
+    <section id="mcp-inspector" class="py-14 sm:py-24 scroll-mt-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
@@ -435,12 +465,12 @@
 
             <!-- Dual Code Terminal Box -->
             <div class="shop-card rounded-2xl overflow-hidden shadow-2xl">
-                <div class="px-4 py-3 bg-[#161824] border-b border-[#252736] flex items-center justify-between">
-                    <div class="flex items-center gap-2">
+                <div class="px-4 py-3 bg-[#161824] border-b border-[#252736] flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-2 min-w-0">
                         <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
                         <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                        <span class="ml-2 font-mono text-xs text-zinc-300">storefront_feed_vs_mcp_schema.json</span>
+                        <span class="ml-2 font-mono text-xs text-zinc-300 truncate">storefront_feed_vs_mcp_schema.json</span>
                     </div>
                     <span class="px-2.5 py-0.5 rounded bg-shop-purple/20 border border-shop-purple/40 text-indigo-300 font-mono text-[10px]">
                         LIVE PAYLOAD COMPARISON
@@ -474,13 +504,13 @@
     <!-- SECTION 5: THE BEST CONVERTING REMEDIATION SPRINT (Shop Pay Split Card) -->
     <!-- Mirrors the two-column Shop Pay checkout card in the screenshot         -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="sprint-checkout" class="py-20 sm:py-28 border-b border-white/[0.06] relative">
+    <section id="sprint-checkout" class="py-14 sm:py-28 relative scroll-mt-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-shop-purple/15 border border-shop-purple/40 text-indigo-300 font-mono text-[11px] mb-3">
                     <span>DONE-FOR-YOU IMPLEMENTATION · ZERO APP BLOAT</span>
                 </div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-3">
+                <h2 class="text-[1.75rem] sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-3">
                     Fix your catalog data<br />without installing an app
                 </h2>
                 <p class="text-xs sm:text-sm text-zinc-400">
@@ -654,7 +684,7 @@
     <!-- SECTION 6: BEFORE YOU BUILD / MERCHANT FAQ ACCORDION                    -->
     <!-- Mirrors the bottom FAQ accordion in the screenshot                      -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
-    <section id="faq" class="py-20 sm:py-24">
+    <section id="faq" class="py-14 sm:py-24 scroll-mt-16">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-8">
                 Before you optimize · Technical FAQ
@@ -719,13 +749,13 @@
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target===this) closeProductModal()">
         <div class="shop-card rounded-2xl max-w-xl w-full p-6 bg-[#11121A] border border-[#2E3148] shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <div class="flex items-start justify-between gap-4">
-                <div>
+            <div class="flex items-start justify-between gap-3">
+                <div class="min-w-0 flex-1">
                     <span id="modal-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-shop-purple/20 text-indigo-300">MCP CATALOG ITEM</span>
-                    <h3 id="modal-title" class="text-lg font-bold text-white mt-1">Product Title</h3>
-                    <p id="modal-seller" class="text-xs font-mono text-zinc-400"></p>
+                    <h3 id="modal-title" class="text-base sm:text-lg font-bold text-white mt-1 break-words">Product Title</h3>
+                    <p id="modal-seller" class="text-xs font-mono text-zinc-400 break-words"></p>
                 </div>
-                <button onclick="closeProductModal()" class="text-zinc-400 hover:text-white text-xl leading-none">×</button>
+                <button type="button" aria-label="Close" onclick="closeProductModal()" class="shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-white/[0.06] text-zinc-300 hover:text-white text-xl leading-none">×</button>
             </div>
 
             <div class="flex gap-4 items-center bg-[#0B0C12] p-3 rounded-xl border border-white/[0.06]">
@@ -748,7 +778,7 @@
                 <ul id="modal-features" class="space-y-1.5 text-xs text-zinc-300 bg-[#0B0C12] p-3.5 rounded-xl border border-white/[0.06]"></ul>
             </div>
 
-            <div class="flex items-center justify-end gap-3 pt-2">
+            <div class="flex flex-wrap items-center justify-end gap-3 pt-2">
                 <a id="modal-product-link" href="#" target="_blank" class="px-4 py-2 rounded-lg bg-white/[0.06] hover:bg-white/[0.12] text-xs font-medium text-white transition">
                     View Storefront Listing ↗
                 </a>
@@ -766,7 +796,25 @@
         let currentMode = 'domain';
         let currentDiagnosticData = null;
         let currentCatalogItems = [];
+        let displayedItems = [];
         let activeMatrixView = 'all';
+        let isScanning = false;
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const open = menu.classList.toggle('hidden') === false;
+            document.getElementById('menu-toggle').setAttribute('aria-expanded', String(open));
+            document.getElementById('menu-icon').textContent = open ? '\u2715' : '\u2630';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+            document.getElementById('menu-icon').textContent = '\u2630';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { closeProductModal(); closeMobileMenu(); }
+        });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
 
         function switchMode(mode) {
             currentMode = mode;
@@ -829,6 +877,7 @@
         }
 
         async function triggerScan() {
+            if (isScanning) return;
             const country = document.getElementById('country-select').value;
             const startTime = performance.now();
             const btn = document.getElementById('scan-btn');
@@ -857,18 +906,24 @@
                 setStatus(`Querying Shopify 1B Catalog MCP for "${q}"...`, true);
             }
 
+            isScanning = true;
+            document.querySelectorAll('[data-scan-btn]').forEach(b => b.disabled = true);
             if (btn && btnText) {
-                btn.disabled = true;
                 btnText.textContent = 'Querying MCP...';
             }
 
+            const ctrl = new AbortController();
+            const timer = setTimeout(() => ctrl.abort(), 60000);
             try {
                 const resp = await fetch('api.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(payload),
+                    signal: ctrl.signal
                 });
-                const data = await resp.json();
+                let data;
+                try { data = await resp.json(); }
+                catch (_) { setStatus('The diagnostic endpoint returned an unexpected response. Please try again.', false, true); return; }
                 const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
                 document.getElementById('status-latency').textContent = `${elapsed}s · MCP 2026-07-28`;
 
@@ -895,12 +950,14 @@
                     renderJsonInspector(data.raw_sample_json);
                 }
             } catch (err) {
-                setStatus('Network error connecting to diagnostic endpoint. Ensure server.py or api.php is active.', false, true);
+                setStatus(err && err.name === 'AbortError'
+                    ? 'The scan timed out. Please try again in a moment.'
+                    : 'Network error connecting to the diagnostic endpoint. Please try again.', false, true);
             } finally {
-                if (btn && btnText) {
-                    btn.disabled = false;
-                    btnText.textContent = 'Scan Storefront';
-                }
+                clearTimeout(timer);
+                isScanning = false;
+                document.querySelectorAll('[data-scan-btn]').forEach(b => b.disabled = false);
+                if (btnText) btnText.textContent = 'Scan Storefront';
             }
         }
 
@@ -915,10 +972,11 @@
 
         function renderCatalogGrid(items) {
             const grid = document.getElementById('catalog-visual-grid');
-            const targetCount = items.filter(i => i.is_target_merchant).length;
-            const compCount = items.length - targetCount;
+            displayedItems = items.slice(0, 15);
+            const targetCount = currentCatalogItems.filter(i => i.is_target_merchant).length;
+            const compCount = currentCatalogItems.length - targetCount;
 
-            document.getElementById('count-all').textContent = items.length;
+            document.getElementById('count-all').textContent = currentCatalogItems.length;
             document.getElementById('count-target').textContent = targetCount;
             document.getElementById('count-competing').textContent = compCount;
 
@@ -939,7 +997,7 @@
                 <div onclick="openProductModal(${idx})" class="group cursor-pointer rounded-xl overflow-hidden bg-[#14151F] border border-[#252736] hover:border-shop-purple transition flex flex-col ${borderClass}">
                     <div class="relative aspect-square bg-zinc-900 overflow-hidden">
                         ${item.image_url 
-                            ? `<img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />`
+                            ? `<img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.title)}" loading="lazy" onerror="imgFallback(this)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />`
                             : `<div class="w-full h-full flex items-center justify-center text-zinc-600 font-mono text-xs">No Image</div>`
                         }
                         <span class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono truncate max-w-[85%] ${badgeClass}">
@@ -1035,7 +1093,7 @@
                     <div>
                         <div class="relative h-48 bg-zinc-900 border-b border-white/[0.06] p-3 flex items-center justify-center">
                             ${obs.image_url 
-                                ? `<img src="${escapeHtml(obs.image_url)}" alt="${escapeHtml(obs.title)}" class="max-h-full max-w-full object-contain rounded-lg" />`
+                                ? `<img src="${escapeHtml(obs.image_url)}" alt="${escapeHtml(obs.title)}" onerror="imgFallback(this)" class="max-h-full max-w-full object-contain rounded-lg" />`
                                 : `<div class="text-zinc-600 font-mono text-xs">No Product Image</div>`
                             }
                             <div class="absolute top-3 left-3">${badgeHtml}</div>
@@ -1108,7 +1166,7 @@
         }
 
         function openProductModal(idx) {
-            const item = currentCatalogItems[idx];
+            const item = displayedItems[idx];
             if (!item) return;
 
             document.getElementById('modal-title').textContent = item.title;
@@ -1189,7 +1247,7 @@
 
             // Post to Hostinger tracker.php (tries ../tracker.php and ./tracker.php)
             let logged = false;
-            for (const endpoint of ['../tracker.php', 'tracker.php', 'https://duncanmakoyo.com/audits/tracker.php']) {
+            for (const endpoint of ['tracker.php', '../tracker.php', 'https://duncanmakoyo.com/audits/tracker.php']) {
                 try {
                     const r = await fetch(endpoint, {
                         method: 'POST',
@@ -1204,15 +1262,32 @@
                         })
                     });
                     if (r.ok) {
-                        logged = true;
-                        break;
+                        const j = await r.json().catch(() => null);
+                        if (j && j.status === 'ok') {
+                            logged = true;
+                            break;
+                        }
                     }
                 } catch (_) {}
             }
 
-            feedback.className = 'p-3 rounded-lg text-xs font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-300';
-            feedback.innerHTML = `✓ Request received for <strong>${escapeHtml(rawDom)}</strong>! Duncan Makoyo will deliver your ${choice === 'free_test_5' ? '5-Product Preview' : '$400 Sprint onboarding'} to <strong>${escapeHtml(email)}</strong>.`;
+            if (logged) {
+                feedback.className = 'p-3 rounded-lg text-xs font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-300';
+                feedback.innerHTML = `✓ Request received for <strong>${escapeHtml(rawDom)}</strong>! Duncan Makoyo will deliver your ${choice === 'free_test_5' ? '5-Product Preview' : '$400 Sprint onboarding'} to <strong>${escapeHtml(email)}</strong>.`;
+                document.getElementById('lead-capture-form').reset();
+                document.getElementById('lead-choice').value = choice;
+            } else {
+                const subj = encodeURIComponent(choice === 'free_test_5' ? `Free 5-Product Preview request: ${rawDom}` : `Catalog Optimization Sprint request: ${rawDom}`);
+                const bodyTxt = encodeURIComponent(`Store: ${rawDom}\nName: ${name}\nEmail: ${email}\nNotes: ${note}`);
+                feedback.className = 'p-3 rounded-lg text-xs font-mono bg-amber-500/15 border border-amber-500/30 text-amber-200';
+                feedback.innerHTML = `We couldn't submit automatically. <a class="underline font-semibold" href="mailto:duncan@duncanmakoyo.com?subject=${subj}&body=${bodyTxt}">Click here to email your request to Duncan</a>.`;
+            }
             btn.disabled = false;
+        }
+
+        function imgFallback(el) {
+            el.onerror = null;
+            el.style.display = 'none';
         }
 
         function escapeHtml(str) {
@@ -1235,3 +1310,4 @@
     </script>
 </body>
 </html>
+
